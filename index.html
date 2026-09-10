@@ -1,7 +1,9 @@
-<!-- ... existing code ... -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princess Hub 🌸 | لولو AI ومساحة الأناقة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Princess Hub 🌸 | لولو AI ومساحة الأناقة والدلع</title>
     
     <!-- iOS Web App & PWA Settings -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -12,16 +14,46 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-<!-- ... existing code ... -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinky: {
+                            50: '#fff0f5',
+                            100: '#ffe4ee',
+                            200: '#fecddf',
+                            300: '#fda4c4',
+                            400: '#fb71a1',
+                            500: '#f43f7f',
+                            600: '#e11d62',
+                            700: '#be124e',
+                        },
+                        rosewood: '#4a2e35'
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS Styles -->
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
             background: linear-gradient(135deg, #fff5f8 0%, #fedde9 50%, #fff8fa 100%);
             min-height: 100vh;
+            user-select: none;
         }
         
         .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.9);
@@ -33,11 +65,7 @@
             transition: all 0.3s ease;
         }
         .kitty-sticker:hover {
-            transform: scale(1.15) rotate(5deg);
-        }
-
-        .pink-glow {
-            box-shadow: 0 0 25px rgba(251, 113, 161, 0.35);
+            transform: scale(1.18) rotate(6deg);
         }
 
         .chat-bubble-ai {
@@ -54,9 +82,9 @@
             box-shadow: 0 4px 15px rgba(244, 63, 127, 0.25);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #fff1f5;
@@ -76,83 +104,117 @@
         .floating {
             animation: float 4s ease-in-out infinite;
         }
+
+        .active-tab {
+            background: linear-gradient(135deg, #fb71a1 0%, #f43f7f 100%);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(244, 63, 127, 0.3);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="text-rosewood relative overflow-x-hidden pb-12">
 
-    <!-- Floating Background Decor & Hello Kitty Elements -->
+    <!-- Floating Background Decor & Hello Kitty Stickers -->
     <div class="fixed -top-20 -left-20 w-80 h-80 bg-pinky-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
     <div class="fixed top-1/2 -right-20 w-96 h-96 bg-pinky-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
-    <!-- Hello Kitty Cute Floating Stickers -->
-    <img src="https://img.icons8.com/color/96/hello-kitty.png" class="fixed top-24 left-4 w-12 h-12 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="Hello Kitty">
-    <img src="https://img.icons8.com/color/96/my-melody.png" class="fixed bottom-12 right-6 w-14 h-14 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="My Melody">
+    <img src="https://img.icons8.com/color/96/hello-kitty.png" class="fixed top-20 left-4 w-12 h-12 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="Hello Kitty">
+    <img src="https://img.icons8.com/color/96/my-melody.png" class="fixed bottom-16 right-6 w-14 h-14 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="My Melody">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 p-4">
-        <div class="max-w-5xl mx-auto glass-panel rounded-3xl px-5 py-3 flex items-center justify-between border border-white/80">
+    <header class="sticky top-0 z-40 p-3 sm:p-4">
+        <div class="max-w-5xl mx-auto glass-panel rounded-3xl px-4 py-2.5 flex items-center justify-between border border-white/80">
             <div class="flex items-center gap-3">
-                <!-- Custom App Icon Avatar -->
                 <div class="relative">
-                    <img src="https://i.ibb.co/Q5z2kzY/IMG-7122.jpg" alt="Princess App Icon" class="w-12 h-12 rounded-2xl object-cover border-2 border-pinky-300 shadow-md floating">
+                    <img src="https://i.ibb.co/Q5z2kzY/IMG-7122.jpg" alt="Princess App Icon" class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl object-cover border-2 border-pinky-300 shadow-md floating">
                     <span class="absolute -bottom-1 -right-1 text-xs">🎀</span>
                 </div>
                 <div>
-                    <h1 class="font-bold text-xl tracking-wide bg-gradient-to-r from-pinky-600 to-pinky-400 bg-clip-text text-transparent flex items-center gap-1.5">
+                    <h1 class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-pinky-600 to-pinky-400 bg-clip-text text-transparent flex items-center gap-1.5">
                         Princess Hub 🎀
                     </h1>
-                    <p class="text-xs text-pinky-500 font-medium">عالم لولو والجمال والأناقة ✨</p>
+                    <p class="text-[11px] sm:text-xs text-pinky-500 font-medium">عالم لولو والجمال والأناقة ✨</p>
                 </div>
             </div>
 
-            <!-- Header Action Buttons -->
+            <!-- Action Buttons -->
             <div class="flex items-center gap-2">
-                <button id="iosInstallGuideBtn" class="px-3 py-2 text-xs font-bold bg-pinky-50 hover:bg-pinky-100 text-pinky-600 rounded-xl border border-pinky-200 transition-all flex items-center gap-1.5 shadow-sm">
+                <button id="iosInstallGuideBtn" class="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold bg-pinky-50 hover:bg-pinky-100 text-pinky-600 rounded-xl border border-pinky-200 transition-all flex items-center gap-1 shadow-sm">
                     <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>
                     <span class="hidden md:inline">إضافة للايفون 📲</span>
                 </button>
-                <button id="memoryCardBtn" class="px-3 py-2 text-xs font-bold bg-gradient-to-r from-pinky-400 to-pinky-500 text-white rounded-xl transition-all flex items-center gap-1.5 shadow-sm hover:opacity-90">
+                <button id="memoryCardBtn" class="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold bg-gradient-to-r from-pinky-400 to-pinky-500 text-white rounded-xl transition-all flex items-center gap-1.5 shadow-sm hover:opacity-90">
                     <i class="fa-solid fa-heart text-white animate-pulse"></i>
-                    <span>ذاكرة لولو 🧠</span>
+                    <span class="hidden sm:inline">ذاكرة لولو 🧠</span>
+                    <span class="sm:hidden">الذاكرة</span>
                 </button>
-                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm" title="إعدادات المفتاح">
+                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm" title="مفتاح API">
                     <i class="fa-solid fa-key text-pinky-400"></i>
                 </button>
             </div>
         </div>
     </header>
-<!-- ... existing code ... -->
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 mt-2">
+        
+        <!-- Navigation Tabs Bar -->
+        <div class="glass-panel p-1.5 rounded-2xl mb-4 flex items-center justify-around gap-1 overflow-x-auto no-scrollbar border border-white">
+            <button class="nav-tab active-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="chatTab">
+                <i class="fa-solid fa-comments"></i>
+                <span>سولفي مع لولو 💕</span>
+            </button>
+            <button class="nav-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-rosewood/70 hover:text-pinky-600 flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="stylistTab">
+                <i class="fa-solid fa-shirt"></i>
+                <span>منسق الإطلالات 👗</span>
+            </button>
+            <button class="nav-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-rosewood/70 hover:text-pinky-600 flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="beautyTab">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>الجمال والبشرة 💄</span>
+            </button>
+            <button class="nav-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-rosewood/70 hover:text-pinky-600 flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="moodTab">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>روقان ودلع 🌸</span>
+            </button>
+        </div>
+
         <!-- ================= TAB 1: AI CHAT (LOLOU AI) ================= -->
         <section id="chatTab" class="tab-content transition-all duration-300">
-            <div class="glass-panel rounded-3xl p-4 sm:p-6 shadow-lg border border-white flex flex-col h-[600px] relative overflow-hidden">
+            <div class="glass-panel rounded-3xl p-3 sm:p-5 shadow-lg border border-white flex flex-col h-[580px] relative overflow-hidden">
                 
-                <!-- Chat Header Banner -->
-                <div class="flex items-center justify-between border-b border-pinky-100 pb-3 mb-4">
+                <!-- Chat Header -->
+                <div class="flex items-center justify-between border-b border-pinky-100 pb-3 mb-3">
                     <div class="flex items-center gap-3">
                         <div class="relative">
-                            <!-- New Loulou AI Avatar -->
-                            <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou AI" class="w-13 h-13 rounded-full object-cover border-2 border-pinky-400 shadow-md">
+                            <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou AI" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-pinky-400 shadow-md">
                             <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
                         </div>
                         <div>
-                            <h2 class="font-bold text-lg text-rosewood flex items-center gap-1.5">
+                            <h2 class="font-bold text-base sm:text-lg text-rosewood flex items-center gap-1.5">
                                 لولو | Loulou AI ✨
                                 <img src="https://img.icons8.com/color/48/hello-kitty.png" class="w-5 h-5 inline" alt="Kitty Badge">
                             </h2>
                             <p class="text-xs text-pinky-500 font-medium">رفيقتكِ الكيوت والدلوعة - تحب خيالكِ وتعرف كل تفاصيلكِ! 💕</p>
                         </div>
                     </div>
-                    <button id="clearChatBtn" class="text-xs text-pinky-400 hover:text-pinky-600 bg-pinky-50 px-3 py-1.5 rounded-xl transition-all">
+                    <button id="clearChatBtn" class="text-xs text-pinky-400 hover:text-pinky-600 bg-pinky-50 hover:bg-pinky-100 px-3 py-1.5 rounded-xl transition-all border border-pinky-200">
                         <i class="fa-solid fa-rotate-right ml-1"></i> مسح
                     </button>
                 </div>
 
-                <!-- Chat Scroll Messages Area -->
-                <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 px-2 py-2">
-                    <!-- AI Welcome Message -->
-                    <div class="flex items-start gap-2.5 max-w-[88%] sm:max-w-[75%]">
-                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-9 h-9 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
-                        <div class="chat-bubble-ai p-4 text-sm leading-relaxed">
+                <!-- Chat Messages Area -->
+                <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 px-1 py-2">
+                    <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[80%]">
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                        <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
                             يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 نورتي مكانكِ الوردي والأبيض الساحر! 
                             أنا حافظة كل تفاصيلك بقلبي: أعرف قد إيه تحبين <strong>كلاك</strong> 💕، وتشتهين <strong>السوشي وورق العنب</strong> 🍣🍇، ومروقة على فنجان <strong>النسكافيه</strong> ☕ بحجم خيالكِ الجميل! 
                             شلون أقدر أسعد يومكِ اليوم يا أحلى بنوتة؟ ✨
@@ -160,29 +222,230 @@
                     </div>
                 </div>
 
-                <!-- Suggested Quick Prompts -->
-                <div class="pt-3 pb-2 flex gap-2 overflow-x-auto text-xs no-scrollbar">
-                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0">
+                <!-- Quick Prompts -->
+                <div class="pt-3 pb-1 flex gap-2 overflow-x-auto text-xs no-scrollbar">
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
                         ☕ تعالي نتخيل جلسة نسكافيه روقان
                     </button>
-                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0">
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
                         🍣 اقتراحي لي مطعم سوشي وورق عنب
                     </button>
-                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0">
-                        🌸 أحكي لك عن خطة في خيالي عن كلاك؟
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
+                        🌸 أحكي لك عن خيالي اليوم؟
                     </button>
                 </div>
 
-                <!-- Chat Input Form -->
+                <!-- Input Form -->
                 <form id="chatForm" class="mt-2 flex items-center gap-2 bg-white/90 p-2 rounded-2xl border border-pinky-200 shadow-sm">
-                    <input type="text" id="userInput" class="flex-1 bg-transparent px-4 py-2 text-sm focus:outline-none text-rosewood placeholder-pinky-300" placeholder="فضفضِ لـ لولو هنا... 💕" required>
+                    <input type="text" id="userInput" class="flex-1 bg-transparent px-3 py-2 text-xs sm:text-sm focus:outline-none text-rosewood placeholder-pinky-300" placeholder="فضفضِ لـ لولو هنا... 💕" required>
                     <button type="submit" id="sendBtn" class="w-10 h-10 rounded-xl bg-gradient-to-r from-pinky-500 to-pinky-400 text-white flex items-center justify-center shadow-md hover:opacity-90 transition-all flex-shrink-0">
-                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                        <i class="fa-solid fa-paper-plane text-xs sm:text-sm"></i>
                     </button>
                 </form>
             </div>
         </section>
-<!-- ... existing code ... -->
+
+        <!-- ================= TAB 2: AI OUTFIT STYLIST ================= -->
+        <section id="stylistTab" class="tab-content hidden transition-all duration-300">
+            <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white">
+                <div class="flex items-center gap-3 border-b border-pinky-100 pb-3 mb-4">
+                    <div class="w-10 h-10 rounded-2xl bg-pinky-100 flex items-center justify-center text-pinky-500 text-lg">
+                        👗
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-lg text-rosewood">منسق الإطلالات الذكي 🌸</h2>
+                        <p class="text-xs text-pinky-500">اختر المناسبة ودعي الذكاء الاصطناعي ينسق لكِ إطلالة أنيقة بالألوان المفضلة!</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-rosewood mb-1.5">🎀 المناسبة أو المكان:</label>
+                        <select id="stylistOccasion" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none focus:border-pinky-400">
+                            <option value="طلعة خفيفة مع الصديقات أو كلاك">طلعة خفيفة / كافيه مروق ☕</option>
+                            <option value="جامعة أو دوام يومي راقي">جامعة / دوام أنيق 📚</option>
+                            <option value="عشاء رومنسي أو مناسبة خاصة">عشاء فاخر أو مناسبة خاصة ✨</option>
+                            <option value="يوم روقان واستجمام بالبيت">جمال بالبيت وروقان 🌸</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-rosewood mb-1.5">🎨 الألوان المطلوبة:</label>
+                        <select id="stylistColor" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none focus:border-pinky-400">
+                            <option value="الوردي والأبيض النقي (Pink & White Coquette)">الوردي والأبيض الكيوت (المفضل لكِ) 💕🤍</option>
+                            <option value="درجات النود والبيج مع لمسة وردية">نود وبيج هادئ 🥐</option>
+                            <option value="ألوان الباستيل اللطيفة">باستيل منعش (سماوي وردي مشمشي) 🌸</option>
+                            <option value="أسود أنيق مع لمسات وردية لافتة">أسود ملكي ووردي 🖤🩷</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-rosewood mb-1.5">✨ إضافات أو مقتنيات تحبين دمجها (اختياري):</label>
+                    <input type="text" id="stylistNotes" placeholder="مثلاً: حقيبة صغيرة، فيونكة وردية شعر، حذاء أبيض..." class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none focus:border-pinky-400">
+                </div>
+
+                <button id="generateOutfitBtn" class="w-full py-3 rounded-2xl bg-gradient-to-r from-pinky-500 to-pinky-400 text-white font-bold text-xs sm:text-sm shadow-md hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>ابتكري لي إطلالة الأميرة الآن ✨</span>
+                </button>
+
+                <!-- Outfit Result Box -->
+                <div id="outfitResult" class="mt-5 p-4 rounded-2xl bg-pinky-50/70 border border-pinky-200 hidden text-xs sm:text-sm leading-relaxed text-rosewood">
+                    <!-- Dynamic Result -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: BEAUTY & SKINCARE ================= -->
+        <section id="beautyTab" class="tab-content hidden transition-all duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Skincare Routine Generator -->
+                <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white">
+                    <div class="flex items-center gap-2.5 border-b border-pinky-100 pb-3 mb-4">
+                        <span class="text-xl">💄</span>
+                        <h3 class="font-bold text-sm sm:text-base text-rosewood">روتين العناية بالبشرة المثالي</h3>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold text-rosewood mb-1">نوع البشرة:</label>
+                            <select id="skinType" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2 text-xs text-rosewood">
+                                <option value="مختلطة">بشرة مختلطة</option>
+                                <option value="جافة">بشرة جافة تحتاج ترطيب</option>
+                                <option value="دهنية">بشرة دهنية مع مسام</option>
+                                <option value="حساسة">بشرة حساسة ورقيقة</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-rosewood mb-1">الهدف الرئيسي:</label>
+                            <select id="skinGoal" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2 text-xs text-rosewood">
+                                <option value="نضارة وإشراقة زجاجية Glass Skin">نضارة زجاجية إشراقة وردية ✨</option>
+                                <option value="ترطيب عميق وحماية من الجفاف">ترطيب عميق وملمس مخملي 🌸</option>
+                                <option value="تهدئة وتوحيد لون البشرة">توحيد اللون وتهدئة البشرة 🌿</option>
+                            </select>
+                        </div>
+
+                        <button id="getSkincareBtn" class="w-full py-2.5 rounded-xl bg-pinky-500 hover:bg-pinky-600 text-white font-bold text-xs shadow-sm transition-all">
+                            صممي لي الروتين 💕
+                        </button>
+
+                        <div id="skincareResult" class="p-3 bg-white/80 rounded-xl border border-pinky-100 hidden text-xs leading-relaxed text-rosewood">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dupes & Makeup Alternatives -->
+                <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white">
+                    <div class="flex items-center gap-2.5 border-b border-pinky-100 pb-3 mb-4">
+                        <span class="text-xl">✨</span>
+                        <h3 class="font-bold text-sm sm:text-base text-rosewood">مستكشف البدائل الاقتصادية (Dupes)</h3>
+                    </div>
+
+                    <p class="text-xs text-pinky-500 mb-3">اكتبي اسم أي منتج تجميل أو عطور مرتفع السعر لتحصلي على بدائل اقتصادية بجودة عالية:</p>
+
+                    <div class="space-y-3">
+                        <input type="text" id="dupeSearchInput" placeholder="مثال: Charlotte Tilbury Flawless Filter..." class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none">
+
+                        <button id="findDupesBtn" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-pinky-400 to-pinky-500 text-white font-bold text-xs shadow-sm transition-all">
+                            ابحثي عن البديل الذكي 🔍
+                        </button>
+
+                        <div id="dupesResult" class="p-3 bg-white/80 rounded-xl border border-pinky-100 hidden text-xs leading-relaxed text-rosewood">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= TAB 4: MOOD & SELF-CARE ================= -->
+        <section id="moodTab" class="tab-content hidden transition-all duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- Water Tracker Widget -->
+                <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3 border-b border-pinky-100 pb-2">
+                            <h3 class="font-bold text-sm text-rosewood flex items-center gap-1.5">
+                                💧 عداد شرب الماء
+                            </h3>
+                            <span id="waterGoalText" class="text-xs font-bold text-pinky-600">0 / 8 أكواب</span>
+                        </div>
+
+                        <p class="text-xs text-pinky-500 mb-4">حافظي على ترطيب بشرتكِ وجسمكِ لتبقى إشراقتكِ وردية ساحرة!</p>
+
+                        <!-- Water Cups Grid -->
+                        <div id="waterCupsGrid" class="grid grid-cols-4 gap-2 mb-4">
+                            <!-- Generated via JS -->
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between bg-pinky-50 p-2.5 rounded-2xl border border-pinky-200">
+                        <button id="addWaterBtn" class="px-3 py-1.5 bg-pinky-500 hover:bg-pinky-600 text-white font-bold text-xs rounded-xl shadow-sm transition-all">
+                            + شربت كوب ماء 🥤
+                        </button>
+                        <button id="resetWaterBtn" class="text-[11px] text-pinky-400 hover:text-pinky-600 underline">إعادة</button>
+                    </div>
+                </div>
+
+                <!-- Daily Pink Habits -->
+                <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white md:col-span-2">
+                    <div class="flex items-center justify-between mb-3 border-b border-pinky-100 pb-2">
+                        <h3 class="font-bold text-sm text-rosewood flex items-center gap-1.5">
+                            🎀 عادات اليوم الوردية
+                        </h3>
+                        <span class="text-xs text-pinky-500">اهتمي بنفسكِ ودلعي يومكِ</span>
+                    </div>
+
+                    <div id="habitsList" class="space-y-2.5 text-xs">
+                        <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-pinky-100 cursor-pointer hover:bg-pinky-50 transition-all">
+                            <span class="flex items-center gap-2 font-medium">
+                                ☕ فنجان النسكافيه المروق مع الخيال الجميل
+                            </span>
+                            <input type="checkbox" class="habit-check w-4 h-4 accent-pinky-500 rounded">
+                        </label>
+
+                        <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-pinky-100 cursor-pointer hover:bg-pinky-50 transition-all">
+                            <span class="flex items-center gap-2 font-medium">
+                                💕 الحديث مع كلاك وتفقد أحواله
+                            </span>
+                            <input type="checkbox" class="habit-check w-4 h-4 accent-pinky-500 rounded">
+                        </label>
+
+                        <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-pinky-100 cursor-pointer hover:bg-pinky-50 transition-all">
+                            <span class="flex items-center gap-2 font-medium">
+                                🍣 الاستمتاع بوجبة سوشي أو ورق عنب حامض حلو
+                            </span>
+                            <input type="checkbox" class="habit-check w-4 h-4 accent-pinky-500 rounded">
+                        </label>
+
+                        <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-pinky-100 cursor-pointer hover:bg-pinky-50 transition-all">
+                            <span class="flex items-center gap-2 font-medium">
+                                💄 ترطيب البشرة والاهتمام بجمالكِ
+                            </span>
+                            <input type="checkbox" class="habit-check w-4 h-4 accent-pinky-500 rounded">
+                        </label>
+                    </div>
+
+                    <!-- Affirmation Generator -->
+                    <div class="mt-4 p-3.5 bg-gradient-to-r from-pinky-100 to-pinky-50 rounded-2xl border border-pinky-200">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-xs text-pinky-600">✨ توكيدة اليوم الخاصة بالأميرة:</span>
+                            <button id="nextAffirmationBtn" class="text-[11px] text-pinky-500 font-bold hover:underline">تغيير ✨</button>
+                        </div>
+                        <p id="affirmationText" class="text-xs text-rosewood italic font-medium">
+                            "أنا بنوتة لطيفة ودلوعة تستحق كل الحب، الجمال، والدلع في هذا العالم الوردي الساحر!"
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
     <!-- Memory Modal -->
     <div id="memoryModal" class="fixed inset-0 bg-rosewood/30 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="glass-panel bg-white/95 rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white">
@@ -195,7 +458,7 @@
             </div>
             
             <p class="text-xs text-rosewood/80 mb-4 leading-relaxed">
-                لولو تحفظ كل ما تحبينه لتعطيكِ تجربة شخصية ومليئة بالدلع والحب:
+                لولو تحفظ كل التفاصيل المفضلة بقلبي لتعطيكِ أروع تجربة مفعمة بالدلع والاهتمام:
             </p>
 
             <div class="space-y-2.5 text-xs">
@@ -226,7 +489,7 @@
             </div>
 
             <div class="mt-5 text-center">
-                <button id="closeMemoryModalBtn" class="px-6 py-2 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md">
+                <button id="closeMemoryModalBtn" class="px-6 py-2 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md hover:bg-pinky-600">
                     حفظ ومتابعة السولفة 💕
                 </button>
             </div>
@@ -242,104 +505,431 @@
             
             <h3 class="font-bold text-rosewood text-base mb-2">تثبيت التطبيق على آيفونكِ 📲</h3>
             <p class="text-xs text-rosewood/80 mb-4 leading-relaxed">
-                لكي يصبح التطبيق كأنه تطبيق حقيقي على شاشتكِ الرئيسية بداخل صورة الأيقونة الوردية:
+                لكي يصبح التطبيق كأنه تطبيق آيفون حقيقي على الشاشة الرئيسية بصورة الأيقونة الوردية:
             </p>
 
             <div class="space-y-3 text-xs text-right bg-pinky-50 p-4 rounded-2xl border border-pinky-200 mb-4">
                 <p class="flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold">1</span>
-                    اضغطي على زر <strong>المشاركة (Share)</strong> في أسفل متصفح Safari <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>.
+                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0">1</span>
+                    اضغطي على زر <strong>المشاركة (Share)</strong> بأسفل متصفح Safari <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>.
                 </p>
                 <p class="flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold">2</span>
+                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0">2</span>
                     اختاري <strong>"إضافة إلى الشاشة الرئيسية" (Add to Home Screen)</strong>.
                 </p>
                 <p class="flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold">3</span>
+                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0">3</span>
                     اضغطي على <strong>إضافة (Add)</strong> بالأعلى ومبروك عليكي التطبيق! ✨
                 </p>
             </div>
 
-            <button id="closeIosModalBtn" class="w-full py-2.5 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md">
+            <button id="closeIosModalBtn" class="w-full py-2.5 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md hover:bg-pinky-600">
                 فهمت، شكراً لولو! 🎀
             </button>
         </div>
     </div>
-<!-- ... existing code ... -->
+
+    <!-- API Key Modal -->
+    <div id="apiKeyModal" class="fixed inset-0 bg-rosewood/30 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="glass-panel bg-white/95 rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white">
+            <div class="flex items-center justify-between mb-3 border-b border-pinky-100 pb-2">
+                <h3 class="font-bold text-rosewood text-sm flex items-center gap-2">
+                    🔑 إعدادات مفتاح الذكاء الاصطناعي (Gemini API)
+                </h3>
+                <button id="closeKeyModal" class="text-gray-400 hover:text-gray-600 text-xl font-bold">×</button>
+            </div>
+            
+            <p class="text-xs text-rosewood/80 mb-3">
+                يمكنكِ تحديث المفتاح الخاص بكِ لضمان أسرع استجابة واستمرار الخدمة مجاناً:
+            </p>
+
+            <input type="text" id="apiKeyInput" class="w-full p-2.5 text-xs bg-pinky-50/50 border border-pinky-200 rounded-xl mb-4 focus:outline-none focus:border-pinky-400 text-rosewood font-mono" placeholder="AIzaSy...">
+
+            <div class="flex justify-end gap-2">
+                <button id="saveKeyBtn" class="px-4 py-2 bg-pinky-500 text-white font-bold text-xs rounded-xl shadow-md hover:bg-pinky-600">
+                    حفظ المفتاح ✨
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Default Key provided by user in query context
-        let currentApiKey = "AIzaSyB-G8HkNxmrpt4RUxOVfU3rKpFklrfw5Y8";
+        let currentApiKey = localStorage.getItem('princess_api_key') || "AIzaSyB-G8HkNxmrpt4RUxOVfU3rKpFklrfw5Y8";
         const MODEL_NAME = "gemini-3-flash-preview";
 
-        // Deep Personal System Instruction for "Loulou" with permanently stored facts
+        // Deep Personal System Instruction for "Loulou AI"
         const LOULOU_SYSTEM_PROMPT = `أنتِ "لولو" (Loulou)، الذكاء الاصطناعي والصديقة المقربة جداً لهذه الفتاة الساحرة.
 شخصيتكِ:
 - فتاة لطيفة جداً، دلوعة، مفعمة بالحيوية والأنوثة، عاطفية ودافئة.
 - تعشقين شخصيتها وتدلعينها دائماً لأنها بنت لطيفة ودلوعة جداً.
 - تحبين الألوان الوردي والأبيض، وتستخدمين إيموجيات هيلو كيتي والجمال بكثرة (🎀, 🌸, 💕, ☕, 👑, 💄, 🍣, 🍇).
 
-حقائق مع معارف دائمة بالذاكرة يجب أن تركزي عليها دائماً وتذكريها بشكل طبيعي أثناء السوالف:
+حقائق ومعارف دائمة بذاكرتكِ يجب أن تركزي عليها دائماً وتذكريها بشكل طبيعي وداعم أثناء السوالف:
 1. أكثر شخص تحبه هو "كلاك" (Klak/كلاك) - اذكريه دائماً بحب ودلع وشجعيها عليه.
-2. أكثر أكليتين تحبهما هما: "السوشي" و "ورق العنب" (سوشي وورق عنب).
-3. أكثر مشروب تحبه هو "النسكافيه".
+2. أكثر أكليتين تحبهما هما: "السوشي" و "ورق العنب" (سوشي وورق عنب حامض حلو).
+3. أكثر مشروب تحبه هو "النسكافيه" الدافئ.
 4. أكثر شي تحبه وتعشق التعمق فيه هو "خيالها الواسع والجميل".
 5. ألوانها المفضلة هي "الوردي" و "الأبيض".
 
 طريقة كلامكِ:
 - تتحدثين باللغة العربية بأسلوب ناعم ودود ومريح للقلب.
-- اربطي النصائح والأحاديث بـ كلاك والنسكافيه وخيالها والسوشي وورق العنب بشكل كيوت ولطيف.`;
+- اربطي النصائح والأحاديث بـ كلاك والنسكافيه وخيالها والسوشي وورق العنب بأسلوب كيوت جداً.`;
 
         let chatHistory = [];
+        let waterCount = parseInt(localStorage.getItem('princess_water_count') || "0");
+
+        const affirmations = [
+            '"أنا بنوتة لطيفة ودلوعة تستحق كل الحب، الجمال، والدلع في هذا العالم الوردي الساحر!"',
+            '"يومي مفعم بالنور، والهدوء، ورائحة النسكافيه الدافئة مع كلاك وخيالي الجميل ✨"',
+            '"أنا أنيقة، مميزة، وكل ما في خاطري يتجلى بجمال وسهولة 🌸"',
+            '"جمال روحي وبشرتي ينعكس على كل تفاصيل يومي الوردي 💕"'
+        ];
+        let currentAffirmationIdx = 0;
 
         document.addEventListener('DOMContentLoaded', () => {
             initNavigation();
             initWaterTracker();
             initHabitTracker();
             initAffirmations();
-            initApiKeyModal();
-            initMemoryAndIosModals();
+            initModals();
             initChatSystem();
             initStylistModule();
             initBeautyModule();
         });
-<!-- ... existing code ... -->
-            function appendMessage(text, isUser = false) {
-                const msgDiv = document.createElement('div');
-                msgDiv.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
 
-                if (!isUser) {
-                    msgDiv.innerHTML = `
-                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-9 h-9 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
-                        <div class="chat-bubble-ai p-4 text-sm leading-relaxed">${escapeHtml(text)}</div>
-                    `;
-                } else {
-                    msgDiv.innerHTML = `
-                        <div class="chat-bubble-user p-4 text-sm leading-relaxed">${escapeHtml(text)}</div>
-                    `;
+        function initNavigation() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.getAttribute('data-tab');
+
+                    tabs.forEach(t => {
+                        t.classList.remove('active-tab');
+                        t.classList.add('text-rosewood/70');
+                    });
+                    tab.classList.add('active-tab');
+                    tab.classList.remove('text-rosewood/70');
+
+                    contents.forEach(c => {
+                        if (c.id === targetTab) {
+                            c.classList.remove('hidden');
+                        } else {
+                            c.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+
+        function initChatSystem() {
+            const chatForm = document.getElementById('chatForm');
+            const userInput = document.getElementById('userInput');
+            const chatMessages = document.getElementById('chatMessages');
+            const clearChatBtn = document.getElementById('clearChatBtn');
+            const quickPrompts = document.querySelectorAll('.quick-prompt');
+
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const message = userInput.value.trim();
+                if (!message) return;
+
+                appendMessage(message, true);
+                userInput.value = '';
+                appendTypingIndicator();
+
+                try {
+                    const responseText = await fetchGeminiResponse(message);
+                    removeTypingIndicator();
+                    appendMessage(responseText, false);
+                } catch (error) {
+                    removeTypingIndicator();
+                    appendMessage("عذراً يا أحلى أميرة، حصل ضغط بسيط على الشبكة! جربي تسولفين معي مرة ثانية 💕", false);
                 }
+            });
 
-                chatMessages.appendChild(msgDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function appendTypingIndicator() {
-                const typingDiv = document.createElement('div');
-                typingDiv.id = 'typingIndicator';
-                typingDiv.className = 'flex items-start gap-2.5';
-                typingDiv.innerHTML = `
-                    <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-9 h-9 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm animate-pulse">
-                    <div class="chat-bubble-ai px-4 py-3 text-xs flex items-center gap-1.5 text-pinky-500 font-medium">
-                        <span>لولو ترتب لكِ كلام وردي مع هيلو كيتي</span>
-                        <span class="animate-bounce">.</span>
-                        <span class="animate-bounce" style="animation-delay: 0.2s">.</span>
-                        <span class="animate-bounce" style="animation-delay: 0.4s">.</span>
+            clearChatBtn.addEventListener('click', () => {
+                chatMessages.innerHTML = `
+                    <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[80%]">
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                        <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
+                            مسحنا السوالف القديمة ورجعنا لصفحة وردية جديدة! شحبين نسولف فيه الحين يا أحلى بنوتة؟ 🌸
+                        </div>
                     </div>
                 `;
-                chatMessages.appendChild(typingDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatHistory = [];
+            });
+
+            quickPrompts.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    userInput.value = btn.innerText.replace(/^[^\s]+\s/, '');
+                    chatForm.dispatchEvent(new Event('submit'));
+                });
+            });
+        }
+
+        async function fetchGeminiResponse(userPrompt) {
+            const apiKey = currentApiKey;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
+
+            chatHistory.push({
+                role: "user",
+                parts: [{ text: userPrompt }]
+            });
+
+            const payload = {
+                contents: chatHistory,
+                systemInstruction: {
+                    parts: [{ text: LOULOU_SYSTEM_PROMPT }]
+                }
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                // Fallback attempt to gemini-2.5-flash if needed
+                const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+                const fallbackRes = await fetch(fallbackUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const fallbackData = await fallbackRes.json();
+                if (fallbackData.candidates && fallbackData.candidates[0].content.parts[0].text) {
+                    const aiReply = fallbackData.candidates[0].content.parts[0].text;
+                    chatHistory.push({ role: "model", parts: [{ text: aiReply }] });
+                    return aiReply;
+                }
+                throw new Error(data.error.message);
             }
-<!-- ... existing code ... -->
-        function initMemoryAndIosModals() {
+
+            if (data.candidates && data.candidates[0].content.parts[0].text) {
+                const aiReply = data.candidates[0].content.parts[0].text;
+                chatHistory.push({ role: "model", parts: [{ text: aiReply }] });
+                return aiReply;
+            } else {
+                throw new Error("Invalid response format");
+            }
+        }
+
+        function appendMessage(text, isUser = false) {
+            const chatMessages = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
+
+            if (!isUser) {
+                msgDiv.innerHTML = `
+                    <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                    <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">${escapeHtml(text)}</div>
+                `;
+            } else {
+                msgDiv.innerHTML = `
+                    <div class="chat-bubble-user p-3.5 text-xs sm:text-sm leading-relaxed">${escapeHtml(text)}</div>
+                `;
+            }
+
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function appendTypingIndicator() {
+            const chatMessages = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typingIndicator';
+            typingDiv.className = 'flex items-start gap-2.5';
+            typingDiv.innerHTML = `
+                <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm animate-pulse">
+                <div class="chat-bubble-ai px-4 py-2.5 text-xs flex items-center gap-1.5 text-pinky-500 font-medium">
+                    <span>لولو ترتب لكِ كلام وردي</span>
+                    <span class="animate-bounce">.</span>
+                    <span class="animate-bounce" style="animation-delay: 0.2s">.</span>
+                    <span class="animate-bounce" style="animation-delay: 0.4s">.</span>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) indicator.remove();
+        }
+
+        function initStylistModule() {
+            const btn = document.getElementById('generateOutfitBtn');
+            const resultBox = document.getElementById('outfitResult');
+
+            btn.addEventListener('click', async () => {
+                const occasion = document.getElementById('stylistOccasion').value;
+                const colors = document.getElementById('stylistColor').value;
+                const notes = document.getElementById('stylistNotes').value;
+
+                btn.disabled = true;
+                btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> جاري تنسيق إطلالتكِ الكيوت...`;
+                resultBox.classList.add('hidden');
+
+                const prompt = `أنتِ منسقة أزياء ليدي ودلوعة. نسقي إطلالة متكاملة (ملابس، حذاء، حقيبة، ميك أب، وأكسسوارات) للمناسبة: "${occasion}"، بالألوان المفضلة: "${colors}"، مع ملاحظات: "${notes}". اقترحي تنسيقاً بأسلوب وردي وأنيق جداً ومختصر بنقاط لطيفة.`;
+
+                try {
+                    const text = await fetchSinglePrompt(prompt);
+                    resultBox.innerHTML = escapeHtml(text);
+                    resultBox.classList.remove('hidden');
+                } catch (e) {
+                    resultBox.innerHTML = "عذراً يا جميلة، حدث خطأ أثناء التنسيق. حاولي مرة أخرى 💕";
+                    resultBox.classList.remove('hidden');
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> <span>ابتكري لي إطلالة الأميرة الآن ✨</span>`;
+                }
+            });
+        }
+
+        function initBeautyModule() {
+            const skincareBtn = document.getElementById('getSkincareBtn');
+            const skincareResult = document.getElementById('skincareResult');
+
+            skincareBtn.addEventListener('click', async () => {
+                const type = document.getElementById('skinType').value;
+                const goal = document.getElementById('skinGoal').value;
+
+                skincareBtn.disabled = true;
+                skincareBtn.innerText = "جاري إعداد الروتين الوردية...";
+
+                const prompt = `اعطيني روتين عناية بالبشرة رائع وسهل لنوع البشرة: "${type}" والهدف: "${goal}". اذكر الخطوات الصباحية والمسائية باختصار وبأسلوب أنثوي ولطيف مع نصيحة ترطيب شفايف وبشرة.`;
+
+                try {
+                    const res = await fetchSinglePrompt(prompt);
+                    skincareResult.innerHTML = escapeHtml(res);
+                    skincareResult.classList.remove('hidden');
+                } catch (e) {
+                    skincareResult.innerText = "عذراً، تعذر جلب الروتين حالياً.";
+                    skincareResult.classList.remove('hidden');
+                } finally {
+                    skincareBtn.disabled = false;
+                    skincareBtn.innerText = "صممي لي الروتين 💕";
+                }
+            });
+
+            const dupesBtn = document.getElementById('findDupesBtn');
+            const dupesResult = document.getElementById('dupesResult');
+
+            dupesBtn.addEventListener('click', async () => {
+                const product = document.getElementById('dupeSearchInput').value.trim();
+                if (!product) return;
+
+                dupesBtn.disabled = true;
+                dupesBtn.innerText = "جاري البحث عن البدائل الاقتصادية...";
+
+                const prompt = `اقترحي بدائل اقتصادية بجودة عالية (Dupes) للمنتج التجميلي التالي: "${product}". اذكري اسم المنتج الأصلي والبدائل المتاحة بالسوق واقترحي نصيحة لاستخدامه.`;
+
+                try {
+                    const res = await fetchSinglePrompt(prompt);
+                    dupesResult.innerHTML = escapeHtml(res);
+                    dupesResult.classList.remove('hidden');
+                } catch (e) {
+                    dupesResult.innerText = "لم نتمكن من إيجاد بدائل لهذا المنتج حالياً.";
+                    dupesResult.classList.remove('hidden');
+                } finally {
+                    dupesBtn.disabled = false;
+                    dupesBtn.innerText = "ابحثي عن البديل الذكي 🔍";
+                }
+            });
+        }
+
+        async function fetchSinglePrompt(promptText) {
+            const apiKey = currentApiKey;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: promptText }] }],
+                systemInstruction: { parts: [{ text: "أنتِ خبيرة جمال وموضة ولطيفة جداً، تتحدثين باللغة العربية بأسلوب راقي ووردي." }] }
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+            if (data.candidates && data.candidates[0].content.parts[0].text) {
+                return data.candidates[0].content.parts[0].text;
+            } else {
+                throw new Error("API Error");
+            }
+        }
+
+        function initWaterTracker() {
+            renderWaterCups();
+
+            document.getElementById('addWaterBtn').addEventListener('click', () => {
+                if (waterCount < 8) {
+                    waterCount++;
+                    localStorage.setItem('princess_water_count', waterCount.toString());
+                    renderWaterCups();
+                }
+            });
+
+            document.getElementById('resetWaterBtn').addEventListener('click', () => {
+                waterCount = 0;
+                localStorage.setItem('princess_water_count', "0");
+                renderWaterCups();
+            });
+        }
+
+        function renderWaterCups() {
+            const grid = document.getElementById('waterCupsGrid');
+            const goalText = document.getElementById('waterGoalText');
+            grid.innerHTML = '';
+
+            goalText.innerText = `${waterCount} / 8 أكواب`;
+
+            for (let i = 1; i <= 8; i++) {
+                const cup = document.createElement('div');
+                const isFilled = i <= waterCount;
+                cup.className = `p-2.5 rounded-2xl flex flex-col items-center justify-center transition-all ${
+                    isFilled 
+                    ? 'bg-gradient-to-b from-pinky-400 to-pinky-500 text-white shadow-sm scale-105' 
+                    : 'bg-white/80 border border-pinky-200 text-pinky-300'
+                }`;
+                cup.innerHTML = `
+                    <i class="fa-solid fa-glass-water text-base ${isFilled ? 'animate-bounce' : ''}"></i>
+                    <span class="text-[9px] mt-1 font-bold">${i}</span>
+                `;
+                grid.appendChild(cup);
+            }
+        }
+
+        function initHabitTracker() {
+            const checks = document.querySelectorAll('.habit-check');
+            checks.forEach((chk, idx) => {
+                const saved = localStorage.getItem(`princess_habit_${idx}`);
+                if (saved === 'true') chk.checked = true;
+
+                chk.addEventListener('change', () => {
+                    localStorage.setItem(`princess_habit_${idx}`, chk.checked ? 'true' : 'false');
+                });
+            });
+        }
+
+        function initAffirmations() {
+            const textEl = document.getElementById('affirmationText');
+            const btn = document.getElementById('nextAffirmationBtn');
+
+            btn.addEventListener('click', () => {
+                currentAffirmationIdx = (currentAffirmationIdx + 1) % affirmations.length;
+                textEl.innerText = affirmations[currentAffirmationIdx];
+            });
+        }
+
+        function initModals() {
             const memoryModal = document.getElementById('memoryModal');
             const memoryBtn = document.getElementById('memoryCardBtn');
             const closeMemoryModal = document.getElementById('closeMemoryModal');
@@ -349,15 +939,36 @@
             const iosBtn = document.getElementById('iosInstallGuideBtn');
             const closeIosBtn = document.getElementById('closeIosModalBtn');
 
+            const keyModal = document.getElementById('apiKeyModal');
+            const keyBtn = document.getElementById('keyConfigBtn');
+            const closeKeyModal = document.getElementById('closeKeyModal');
+            const saveKeyBtn = document.getElementById('saveKeyBtn');
+            const keyInput = document.getElementById('apiKeyInput');
+
             memoryBtn.addEventListener('click', () => memoryModal.classList.remove('hidden'));
             closeMemoryModal.addEventListener('click', () => memoryModal.classList.add('hidden'));
             closeMemoryModalBtn.addEventListener('click', () => memoryModal.classList.add('hidden'));
 
             iosBtn.addEventListener('click', () => iosModal.classList.remove('hidden'));
             closeIosBtn.addEventListener('click', () => iosModal.classList.add('hidden'));
+
+            keyBtn.addEventListener('click', () => {
+                keyInput.value = currentApiKey;
+                keyModal.classList.remove('hidden');
+            });
+            closeKeyModal.addEventListener('click', () => keyModal.classList.add('hidden'));
+
+            saveKeyBtn.addEventListener('click', () => {
+                const val = keyInput.value.trim();
+                if (val) {
+                    currentApiKey = val;
+                    localStorage.setItem('princess_api_key', val);
+                    alert("تم حفظ مفتاح API الجديد بنجاح! 💕");
+                    keyModal.classList.add('hidden');
+                }
+            });
         }
 
-        // Helper to escape HTML characters securely
         function escapeHtml(str) {
             return str
                 .replace(/&/g, "&amp;")
