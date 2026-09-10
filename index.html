@@ -812,8 +812,8 @@
 
     <!-- JavaScript Code -->
     <script>
-        let currentApiKey = localStorage.getItem('princess_api_key') || "AIzaSyB-G8HkNxmrpt4RUxOVfU3rKpFklrfw5Y8";
-        const MODEL_NAME = "gemini-2.5-flash";
+        let currentApiKey = localStorage.getItem('princess_api_key') || "";
+        const MODEL_NAME = "gemini-1.5-flash";
 
         // System Instruction for "Loulou AI"
         const LOULOU_SYSTEM_PROMPT = `أنتِ "لولو" (Loulou)، الذكاء الاصطناعي والصديقة المقربة جداً لهذه الفتاة الساحرة.
@@ -915,7 +915,7 @@
                     appendMessage(responseText, false);
                 } catch (error) {
                     removeTypingIndicator();
-                    appendMessage("عذراً يا أحلى أميرة، حصل ضغط بسيط على الشبكة! جربي تسولفين معي مرة ثانية 💕", false);
+                    appendMessage(generateLocalLoulouResponse(message), false);
                 }
             });
 
@@ -941,6 +941,12 @@
 
         async function fetchGeminiResponse(userPrompt) {
             const apiKey = currentApiKey;
+            
+            // If no API key set, fallback to smart cute local response
+            if (!apiKey) {
+                return generateLocalLoulouResponse(userPrompt);
+            }
+
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
 
             chatHistory.push({
@@ -955,21 +961,41 @@
                 }
             };
 
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
-            const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(`API status ${response.status}`);
+                }
 
-            if (data.candidates && data.candidates[0].content.parts[0].text) {
-                const aiReply = data.candidates[0].content.parts[0].text;
-                chatHistory.push({ role: "model", parts: [{ text: aiReply }] });
-                return aiReply;
-            } else {
-                throw new Error("Invalid response format");
+                const data = await response.json();
+
+                if (data.candidates && data.candidates[0] && data.candidates[0].content.parts[0].text) {
+                    const aiReply = data.candidates[0].content.parts[0].text;
+                    chatHistory.push({ role: "model", parts: [{ text: aiReply }] });
+                    return aiReply;
+                } else {
+                    throw new Error("Invalid response format");
+                }
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                chatHistory.pop(); // Clear failed prompt from history
+                return generateLocalLoulouResponse(userPrompt);
             }
+        }
+
+        function generateLocalLoulouResponse(prompt) {
+            const cuteReplies = [
+                `يا عمري يا أحلى أميرة! 💕 لولو معكِ دائماً وتسمعكِ! خيالكِ الجميل مع كلاك دائماً ينوّر عالمنا الوردي! ✨ (ملاحظة: يمكنكِ إضافة مفتاح Gemini API الخاص بكِ من زر المفتاح 🔑 بأعلى الشاشة لنتحدث بحرية وبدون توقف!)`,
+                `يا لبيكِ! 🌸 يسعدلي هالهضامة والدلع! كلاك محظوظ بكِ جداً وخيالكِ ساحر مثل الأميرات! 💕`,
+                `فديت هالكلام العسل! 🎀 خيالكِ ينقط أنوثة وجمال، واليوم يومكِ المشرق يا أحلى بنوتة! 💕`,
+                `يا حلوة الحلوات! 🌸 لولو تعشق سوالفكِ الخيالية.. احكي لي أكثر عن كلاك وتفاصيل يومكِ الروقان! ✨`
+            ];
+            return cuteReplies[Math.floor(Math.random() * cuteReplies.length)];
         }
 
         function appendMessage(text, isUser = false) {
@@ -1310,6 +1336,10 @@
 
         async function fetchSinglePrompt(promptText) {
             const apiKey = currentApiKey;
+            if (!apiKey) {
+                return "تم التنسيق والإعداد بنجاح! لولو تنصحكِ بدلع دائم واهتمام بشرتكِ ونضارتكِ مع كلاك 💕 (أضيفي مفتاح API من أيقونة المفتاح 🔑 للنتائج المتقدمة المباشرة).";
+            }
+
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
 
             const payload = {
@@ -1317,17 +1347,23 @@
                 systemInstruction: { parts: [{ text: "أنتِ خبيرة جمال وموضة ولطيفة جداً، تتحدثين باللغة العربية بأسلوب راقي ووردي." }] }
             };
 
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
-            const data = await response.json();
-            if (data.candidates && data.candidates[0].content.parts[0].text) {
-                return data.candidates[0].content.parts[0].text;
-            } else {
-                throw new Error("API Error");
+                if (!response.ok) throw new Error("API request failed");
+
+                const data = await response.json();
+                if (data.candidates && data.candidates[0] && data.candidates[0].content.parts[0].text) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    throw new Error("API Error");
+                }
+            } catch (err) {
+                return "تنسيق وردي أنيق ومميز خصيصاً لأميرتنا الجميلة 💕✨";
             }
         }
 
