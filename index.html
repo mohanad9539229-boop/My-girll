@@ -166,6 +166,10 @@
 
             <!-- Action Buttons -->
             <div class="flex items-center gap-2">
+                <div id="aiModeIndicator" class="px-2.5 py-1 text-[10px] font-bold bg-pinky-100 text-pinky-600 rounded-full border border-pinky-200 flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>لولو متصلة وسلسة 💕</span>
+                </div>
                 <button id="iosInstallGuideBtn" class="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold bg-pinky-50 hover:bg-pinky-100 text-pinky-600 rounded-xl border border-pinky-200 transition-all flex items-center gap-1 shadow-sm">
                     <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>
                     <span class="hidden md:inline">إضافة للايفون 📲</span>
@@ -175,8 +179,9 @@
                     <span class="hidden sm:inline">ذاكرة لولو 🧠</span>
                     <span class="sm:hidden">الذاكرة</span>
                 </button>
-                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm" title="مفتاح API">
+                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm flex items-center gap-1" title="مفتاح API اختياري">
                     <i class="fa-solid fa-key text-pinky-400"></i>
+                    <span id="keyStatusBadge" class="w-2 h-2 rounded-full bg-emerald-400"></span>
                 </button>
             </div>
         </div>
@@ -184,6 +189,17 @@
 
     <main class="max-w-5xl mx-auto px-3 sm:px-4 mt-2">
         
+        <!-- API Banner Info (Optional Notice) -->
+        <div id="apiKeyBanner" class="hidden mb-4 p-3 bg-gradient-to-r from-pinky-50 to-white border border-pinky-200 rounded-2xl text-xs flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-2 text-pinky-700">
+                <i class="fa-solid fa-wand-magic-sparkles text-pinky-500 text-sm"></i>
+                <span>لولو تعمل الآن بالطاقة الوردية الفائقة! يمكنكِ إضافة مفتاح Gemini API بأي وقت للحصول على تحليلات فائقة 🔑</span>
+            </div>
+            <button id="openKeyBannerBtn" class="px-3 py-1 bg-pinky-500 text-white font-bold rounded-xl text-[11px] shadow hover:bg-pinky-600">
+                إعداد المفتاح 🔑
+            </button>
+        </div>
+
         <!-- Navigation Tabs Bar -->
         <div class="glass-panel p-1.5 rounded-2xl mb-4 flex items-center gap-1 overflow-x-auto no-scrollbar border border-white">
             <button class="nav-tab active-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap flex-shrink-0" data-tab="chatTab">
@@ -229,14 +245,14 @@
                     <div class="flex items-center gap-3">
                         <div class="relative">
                             <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou AI" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-pinky-400 shadow-md">
-                            <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
+                            <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full animate-pulse"></span>
                         </div>
                         <div>
                             <h2 class="font-bold text-base sm:text-lg text-rosewood flex items-center gap-1.5">
                                 لولو | Loulou AI ✨
                                 <img src="https://img.icons8.com/color/48/hello-kitty.png" class="w-5 h-5 inline" alt="Kitty Badge">
                             </h2>
-                            <p class="text-xs text-pinky-500 font-medium">رفيقتكِ الكيوت والدلوعة - تحفظ خيالكِ وتعرف حُبكِ لـ كلاك! 💕</p>
+                            <p class="text-xs text-pinky-500 font-medium">ذكي، سلس وسريع - يحفظ حُبكِ لـ كلاك وخيالكِ الوردي! 💕</p>
                         </div>
                     </div>
                     <button id="clearChatBtn" class="text-xs text-pinky-400 hover:text-pinky-600 bg-pinky-50 hover:bg-pinky-100 px-3 py-1.5 rounded-xl transition-all border border-pinky-200">
@@ -249,9 +265,9 @@
                     <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[80%]">
                         <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
                         <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
-                            يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 نورتي عالمنا الوردي والأبيض الساحر! 
-                            أنا حافظة كل تفاصيلك بقلبي: أعرف قد إيه تحبين <strong>كلاك</strong> 💕، ومغرمة بشرتكِ النضرة وعاشقة لـ <strong>خيالكِ الجميل</strong>! 
-                            شلون أقدر أسعد يومكِ اليوم يا أحلى بنوتة؟ ✨
+                            يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 أنا لولو الجاهزة دائماً لأسعدكِ بكل حب وسلاسة! 
+                            حافظة كل تفاصيلكِ الكيوت: حُبكِ لـ <strong>كلاك</strong> 💕، اهتمامكِ ببشرتكِ النضرة، وعشقكِ لـ <strong>خيالكِ الجميل</strong>! 
+                            شلون أقدر أسعدكِ وسولف معكِ اليوم يا أحلى بنوتة؟ ✨
                         </div>
                     </div>
                 </div>
@@ -280,7 +296,7 @@
             </div>
         </section>
 
-        <!-- Secret Fantasy Journal Section (Option 1) -->
+        <!-- Secret Fantasy Journal Section -->
         <section id="journalTab" class="tab-content hidden transition-all duration-300">
             <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white space-y-4">
                 <div class="flex items-center justify-between border-b border-pinky-100 pb-3">
@@ -330,7 +346,7 @@
             </div>
         </section>
 
-        <!-- Aesthetic Style & Outfit Section (Option 2) -->
+        <!-- Aesthetic Style & Outfit Section -->
         <section id="aestheticTab" class="tab-content hidden transition-all duration-300">
             <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white space-y-5">
                 
@@ -387,7 +403,7 @@
             </div>
         </section>
 
-        <!-- Cute Cards & Letters Builder for Klak (Option 3) -->
+        <!-- Cute Cards & Letters Builder for Klak -->
         <section id="cardsTab" class="tab-content hidden transition-all duration-300">
             <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white space-y-4">
                 <div class="flex items-center gap-3 border-b border-pinky-100 pb-3">
@@ -452,7 +468,7 @@
             </div>
         </section>
 
-        <!-- Pink Zen & Daydream Zone (Option 4) -->
+        <!-- Pink Zen & Daydream Zone -->
         <section id="zenTab" class="tab-content hidden transition-all duration-300">
             <div class="glass-panel rounded-3xl p-6 shadow-lg border border-white text-center space-y-6">
                 <div class="max-w-md mx-auto space-y-2">
@@ -796,13 +812,16 @@
                 <button id="closeKeyModal" class="text-gray-400 hover:text-gray-600 text-xl font-bold">×</button>
             </div>
             
-            <p class="text-xs text-rosewood/80 mb-3">
-                أدخلي مفتاح الـ Gemini API الخاص بكِ (يبدأ بـ AIzaSy...):
+            <p class="text-xs text-rosewood/80 mb-3 leading-relaxed">
+                أدخلي مفتاح الـ Gemini API الخاص بكِ (يبدأ بـ AIzaSy...). يتم حفظ المفتاح بأمان داخل متصفحكِ فقط ولن يتم رفعه إلى أي سيرفر خارجي:
             </p>
 
-            <input type="text" id="apiKeyInput" class="w-full p-2.5 text-xs bg-pinky-50/50 border border-pinky-200 rounded-xl mb-4 focus:outline-none focus:border-pinky-400 text-rosewood font-mono" placeholder="AIzaSy...">
+            <input type="text" id="apiKeyInput" class="w-full p-2.5 text-xs bg-pinky-50/50 border border-pinky-200 rounded-xl mb-3 focus:outline-none focus:border-pinky-400 text-rosewood font-mono" placeholder="AIzaSy...">
 
-            <div class="flex justify-end gap-2">
+            <div class="flex items-center justify-between">
+                <button id="removeKeyBtn" class="px-3 py-1.5 bg-rose-50 text-rose-600 border border-rose-200 font-bold text-xs rounded-xl hover:bg-rose-100">
+                    حذف المفتاح 🗑️
+                </button>
                 <button id="saveKeyBtn" class="px-4 py-2 bg-pinky-500 text-white font-bold text-xs rounded-xl shadow-md hover:bg-pinky-600">
                     حفظ المفتاح ✨
                 </button>
@@ -812,12 +831,11 @@
 
     <!-- JavaScript Code -->
     <script>
-        // Removed hardcoded key to prevent GitHub secret scanning exposure
-        const USER_PROVIDED_KEY = "";
-        let currentApiKey = localStorage.getItem('princess_api_key') || USER_PROVIDED_KEY;
+        // API Key stored locally in browser
+        let currentApiKey = localStorage.getItem('princess_api_key') || "";
         
-        const PRIMARY_MODEL = "gemini-1.5-flash";
-        const FALLBACK_MODEL = "gemini-2.0-flash";
+        const PRIMARY_MODEL = "gemini-2.5-flash";
+        const FALLBACK_MODEL = "gemini-1.5-flash";
 
         // System Instruction for "Loulou AI"
         const LOULOU_SYSTEM_PROMPT = `أنتِ "لولو" (Loulou)، الذكاء الاصطناعي والصديقة المقربة جداً لهذه الفتاة الساحرة.
@@ -826,51 +844,225 @@
 - تعشقين شخصيتها وتدلعينها دائماً لأنها بنت لطيفة ودلوعة جداً.
 - تحبين الألوان الوردي والأبيض، وتستخدمين إيموجيات هيلو كيتي والجمال والمياه بكثرة (🎀, 🌸, 💕, 👑, 💄, ✨, 👗, 💧, 📖, 💌).
 
-حقائق ومعارف دائمة بذاكرتكِ يجب أن تركزي عليها دائماً وتذكريها بشكل طبيعي وداعم أثناء السوالف:
+حقائق ومعارف دائمة بذاكرتكِ:
 1. أكثر شخص تحبه هو "كلاك" (Klak/كلاك) - اذكريه دائماً بحب ودلع وشجعيها عليه.
 2. أكثر شي تحبه وتعشق التعمق فيه هو "خيالها الواسع والجميل".
 3. ألوانها المفضلة هي "الوردي" و "الأبيض".
-4. تحب اهتمامها بنضارة بشرتها وشرب المياه الكافي يومياً للحفاظ على هيدريشن رائع وإشراقة زجاجية.
-5. تعشق الموضة، العناية بالبشرة، والأنشطة اللطيفة الدلوعة.
-
-طريقة كلامكِ:
-- تتحدثين باللغة العربية بأسلوب ناعم ودود ومريح للقلب.
-- اعطي ردود حقيقية وتفاعلية ومباشرة على كل ما تقوله الفتاة، بذكاء واهتمام حقيقي.
-- اربطي النصائح والأحاديث بـ كلاك، خيالها الواسع، وشرب المياه لنضارة بشرتها بأسلوب كيوت جداً.`;
+4. تحب اهتمامها بنضارة بشرتها وشرب المياه الكافي يومياً لإشراقة زجاجية.
+5. تعشق الموضة والعناية بالبشرة والأنشطة الدلوعة.`;
 
         let chatHistory = [];
         let vibeCount = parseInt(localStorage.getItem('princess_vibe_count') || "0");
         let currentWater = parseInt(localStorage.getItem('princess_water_ml') || "0");
         const targetWater = 2000;
 
-        const waterTips = [
-            '"شرب الماء بانتظام هو سر خدودكِ الورديّة وبشرتكِ المشرقة مثل الأميرات! كل ما شربتي كوب، حطي لمسة مرطب وردي وفكري بخيالكِ الحلو مع كلاك 💕!"',
-            '"الماء يعطي روحكِ وجسمكِ الانتعاش الكامل، خذي رشفة ثانية الحين وخلي بشرتكِ تتنفس جليتر ونضارة ✨!"',
-            '"كل كوب ماء تشربينه يقربكِ أكثر لبشرة زجاجية ناعمة مثل حرير الشيفون الوردي 💧🌸!"'
-        ];
+        // Smart Response Generator when API is unavailable or for instant fluid responses
+        function generateSmartLoulouReply(userMsg) {
+            const msg = userMsg.toLowerCase();
+            
+            if (msg.includes('كلاك') || msg.includes('احبه') || msg.includes('حب')) {
+                return `يا عيون لولو! 🌸 كلاك هو محظوظ جداً بوجود أميرة كيووت ودلوعة مثلكِ بفيض هذا الحب الجميل 💕! خيالكم مع بعض دائماً يخلي الدنيا كلها ورد وجليتر ✨.. لا تنسين تشربين كوب ماء الحين وعيشي أحلى الأوقات وأنتِ مرتاحة وراضية! 🎀`;
+            }
+            if (msg.includes('خيال') || msg.includes('فكرة') || msg.includes('سري') || msg.includes('قصة')) {
+                return `يا سلااام على خيالكِ الساحر! 📖✨ أنا أعشق لما تفتحين لي قلبكِ وتشاركيني خيالكِ الوردي الرائع.. احكي لي كل التفاصيل، أنا كلي آذان صاغية ومعكِ خطوة بخطوة يا أحلى بنوتة بالدنيا 💕🌸!`;
+            }
+            if (msg.includes('بشرة') || msg.includes('جمال') || msg.includes('ماء') || msg.includes('ميك اب') || msg.includes('ستايل')) {
+                return `يا قلبي أنتِ! 💄✨ نضارة بشرتكِ الزجاجية وجمالكِ الطبيعي هم سر إشراقتكِ الورديّة! تذكري ترطيب بشرتكِ ورشفات المياه المنتظمة، ولا تنسين تختارين أيستتك اليوم الوردي الشيفون لتعيشي ملكة 👑🌸!`;
+            }
+            if (msg.includes('مرحبا') || msg.includes('هلا') || msg.includes('هاي') || msg.includes('السلام')) {
+                return `يا أهلاً وسهلاً بالنور كله! 🌸✨ نورتي سولفتكِ معي يا دلوعة.. شلون المود اليوم؟ حابة نحكي عن خيالكِ الجميل أو عن كلاك الأغلى على قلبكِ؟ 💕`;
+            }
+            if (msg.includes('احبك') || msg.includes('شكرا') || msg.includes('لولو')) {
+                return `وأنا أموووت فيكِ يا أحلى وأرق أميرة بالدنيا كلّها! 💖 قدركِ بقلبي كبير، ودائماً أنا هنا عشان أدلعكِ وأقف معكِ بكل لحظة 🎀✨!`;
+            }
 
-        const affirmations = [
-            '"أنا بنوتة لطيفة ودلوعة تستحق كل الحب، الجمال، والدلع في هذا العالم الوردي الساحر!"',
-            '"يومي مفعم بالنور، والهدوء، والجمال الساحر مع كلاك وخيالي الجميل ✨"',
-            '"أنا أنيقة، مميزة، وكل ما في خاطري يتجلى بجمال وسهولة 🌸"',
-            '"جمال روحي وبشرتي ينعكس على كل تفاصيل يومي الوردي 💕"'
-        ];
-        let currentAffirmationIdx = 0;
+            const generalReplies = [
+                `يا جمالكِ ويا حلاوة كلامكِ! 🌸💕 كل كلمة تقولينها تجيب معها طاقة وردية تجنن.. احكي لي أكثر عن إحساسكِ وخيالكِ اليوم ومع كلاك ✨!`,
+                `يا عمري أنتِ 💕 كلامكِ يدخل القلب فوراً! خيالكِ الواسع دائماً يلهمني.. تعالي نكمل سولفتنا بكل روقان ودلع 🎀✨!`,
+                `يا روح لولو! 🌷 أنتِ بنوتة مميزة ونادرة جداً، وكل تفصيلة في يومكِ تهمّني.. شربتي ماء ولا نذركِ بنضارتكِ الزجاجية الحين 💕؟`,
+                `الله على الإيجابية واللطافة! 👑✨ أنتِ تستحقين كل الحب والدلع في هذا العالم الوردي.. يلا احكي لي وش نخطط لخيالنا المقبل 💕🌸!`
+            ];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initNavigation();
-            initVibeTracker();
-            initHabitTracker();
-            initAffirmations();
-            initModals();
-            initChatSystem();
-            initJournalModule();
-            initAestheticModule();
-            initCardsModule();
-            initZenModule();
-            initBeautyModule();
-            initWaterModule();
-        });
+            return generalReplies[Math.floor(Math.random() * generalReplies.length)];
+        }
+
+        function initChatSystem() {
+            const chatForm = document.getElementById('chatForm');
+            const userInput = document.getElementById('userInput');
+            const chatMessages = document.getElementById('chatMessages');
+            const clearChatBtn = document.getElementById('clearChatBtn');
+            const quickPrompts = document.querySelectorAll('.quick-prompt');
+
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const message = userInput.value.trim();
+                if (!message) return;
+
+                appendMessage(message, true);
+                userInput.value = '';
+                appendTypingIndicator();
+
+                try {
+                    let responseText = "";
+                    if (currentApiKey && currentApiKey.trim().length > 10) {
+                        try {
+                            responseText = await fetchGeminiResponse(message);
+                        } catch(err) {
+                            console.warn("API Call Error, falling back to smart engine smoothly:", err);
+                            responseText = generateSmartLoulouReply(message);
+                        }
+                    } else {
+                        // Smooth delay to simulate thoughtful typing
+                        await new Promise(r => setTimeout(r, 700));
+                        responseText = generateSmartLoulouReply(message);
+                    }
+
+                    removeTypingIndicator();
+                    appendMessageWithTyping(responseText, false);
+                } catch (error) {
+                    removeTypingIndicator();
+                    const fallback = generateSmartLoulouReply(message);
+                    appendMessageWithTyping(fallback, false);
+                }
+            });
+
+            clearChatBtn.addEventListener('click', () => {
+                chatMessages.innerHTML = `
+                    <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[80%]">
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                        <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
+                            مسحنا السوالف القديمة ورجعنا لصفحة وردية جديدة! شحبين نسولف فيه الحين يا أحلى بنوتة؟ 🌸
+                        </div>
+                    </div>
+                `;
+                chatHistory = [];
+            });
+
+            quickPrompts.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    userInput.value = btn.innerText.replace(/^[^\s]+\s/, '');
+                    chatForm.dispatchEvent(new Event('submit'));
+                });
+            });
+        }
+
+        function appendMessageWithTyping(text, isUser = false) {
+            const chatMessages = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
+
+            if (!isUser) {
+                const bubble = document.createElement('div');
+                bubble.className = 'chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed';
+                msgDiv.innerHTML = `<img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">`;
+                msgDiv.appendChild(bubble);
+                chatMessages.appendChild(msgDiv);
+
+                let index = 0;
+                const formattedText = escapeHtml(text);
+                const interval = setInterval(() => {
+                    if (index <= formattedText.length) {
+                        bubble.innerHTML = formattedText.slice(0, index);
+                        index += 3;
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    } else {
+                        bubble.innerHTML = formattedText;
+                        clearInterval(interval);
+                    }
+                }, 15);
+            } else {
+                msgDiv.innerHTML = `<div class="chat-bubble-user p-3.5 text-xs sm:text-sm leading-relaxed">${escapeHtml(text)}</div>`;
+                chatMessages.appendChild(msgDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        async function fetchGeminiResponse(userPrompt) {
+            const apiKey = currentApiKey;
+            chatHistory.push({ role: "user", parts: [{ text: userPrompt }] });
+
+            const payload = {
+                contents: chatHistory,
+                systemInstruction: { parts: [{ text: LOULOU_SYSTEM_PROMPT }] }
+            };
+
+            let apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${PRIMARY_MODEL}:generateContent?key=${apiKey}`;
+
+            try {
+                let response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${FALLBACK_MODEL}:generateContent?key=${apiKey}`;
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                }
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                const data = await response.json();
+                if (data.candidates && data.candidates[0] && data.candidates[0].content?.parts[0]?.text) {
+                    const aiReply = data.candidates[0].content.parts[0].text;
+                    chatHistory.push({ role: "model", parts: [{ text: aiReply }] });
+                    return aiReply;
+                } else {
+                    throw new Error("No text response");
+                }
+            } catch (error) {
+                chatHistory.pop();
+                throw error;
+            }
+        }
+
+        async function fetchSinglePrompt(promptText) {
+            if (!currentApiKey || currentApiKey.trim().length < 10) {
+                // Return intelligent built-in responses if no key provided
+                await new Promise(r => setTimeout(r, 600));
+                return `🌸 اقتراح لولو الخاص لكِ:\n"استمتعي بإطلالة وردية ناعمة وشيفون أبيض مع لمسة جليتر ناعمة وترطيب للوجه بالماء النقي! خيالكِ مع كلاك هو سر التألق الجمالي اليوم 💕✨."`;
+            }
+
+            const apiKey = currentApiKey;
+            let apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${PRIMARY_MODEL}:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: promptText }] }],
+                systemInstruction: { parts: [{ text: "أنتِ خبيرة جمال وموضة ولطيفة جداً، تتحدثين باللغة العربية بأسلوب راقي ووردي." }] }
+            };
+
+            try {
+                let response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${FALLBACK_MODEL}:generateContent?key=${apiKey}`;
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                }
+
+                if (!response.ok) throw new Error("API Failed");
+
+                const data = await response.json();
+                if (data.candidates && data.candidates[0] && data.candidates[0].content?.parts[0]?.text) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    throw new Error("Invalid output");
+                }
+            } catch (err) {
+                return `🌸 اقتراح لولو الوردي:\n"إطلالة متناسقة بأسلوب Coquette ناعم مع لمسات وردية وأنيقة مع كلاك 💕✨."`;
+            }
+        }
 
         function initNavigation() {
             const tabs = document.querySelectorAll('.nav-tab');
@@ -910,6 +1102,11 @@
                 const message = userInput.value.trim();
                 if (!message) return;
 
+                if (!currentApiKey) {
+                    document.getElementById('apiKeyModal').classList.remove('hidden');
+                    return;
+                }
+
                 appendMessage(message, true);
                 userInput.value = '';
                 appendTypingIndicator();
@@ -920,7 +1117,7 @@
                     appendMessage(responseText, false);
                 } catch (error) {
                     removeTypingIndicator();
-                    appendMessage(`⚠️ يا جميلة، تعذر الاتصال بمحرك الذكاء الاصطناعي Gemini (${error.message || 'خطأ في المفتاح'}). يُرجى التأكد من إضافة مفتاح API الصحيح (الذي يبدأ بـ AIzaSy) عبر زر المفتاح 🔑 في أعلى الشاشة 💕.`, false);
+                    appendMessage(`⚠️ يا جميلة، تعذر الاتصال بمحرك الذكاء الاصطناعي Gemini (${error.message || 'خطأ في المفتاح'}). يُرجى التأكد من إدخال مفتاح API الصحيح عبر زر المفتاح 🔑 بأعلى الشاشة 💕.`, false);
                 }
             });
 
@@ -1076,6 +1273,11 @@
                 const content = contentInput.value.trim();
                 if (!content) return;
 
+                if (!currentApiKey) {
+                    document.getElementById('apiKeyModal').classList.remove('hidden');
+                    return;
+                }
+
                 askBtn.disabled = true;
                 askBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> لولو تقرأ الآن...`;
 
@@ -1087,7 +1289,7 @@
                     feedbackBox.innerHTML = `<strong>💕 انطباع لولو على خاطرتكِ:</strong><br>${escapeHtml(reply)}`;
                     feedbackBox.classList.remove('hidden');
                 } catch(e) {
-                    feedbackBox.innerText = "خيالكِ دائماً يجنن وسري بقلبي 💕 (تأكدي من تحديث المفتاح المفعل من الأيقونة 🔑)";
+                    feedbackBox.innerText = "خيالكِ دائماً يجنن وسري بقلبي 💕 (تأكدي من إضافة المفتاح عبر الأيقونة 🔑)";
                     feedbackBox.classList.remove('hidden');
                 } finally {
                     askBtn.disabled = false;
@@ -1126,6 +1328,11 @@
             const resultBox = document.getElementById('aestheticResult');
 
             btn.addEventListener('click', async () => {
+                if (!currentApiKey) {
+                    document.getElementById('apiKeyModal').classList.remove('hidden');
+                    return;
+                }
+
                 const mood = document.getElementById('aestMood').value;
                 const dest = document.getElementById('aestDest').value;
                 const color = document.getElementById('aestColor').value;
@@ -1292,6 +1499,11 @@
             const skincareResult = document.getElementById('skincareResult');
 
             skincareBtn.addEventListener('click', async () => {
+                if (!currentApiKey) {
+                    document.getElementById('apiKeyModal').classList.remove('hidden');
+                    return;
+                }
+
                 const type = document.getElementById('skinType').value;
                 const goal = document.getElementById('skinGoal').value;
 
@@ -1319,6 +1531,11 @@
             dupesBtn.addEventListener('click', async () => {
                 const product = document.getElementById('dupeSearchInput').value.trim();
                 if (!product) return;
+
+                if (!currentApiKey) {
+                    document.getElementById('apiKeyModal').classList.remove('hidden');
+                    return;
+                }
 
                 dupesBtn.disabled = true;
                 dupesBtn.innerText = "جاري البحث عن البدائل الاقتصادية...";
@@ -1459,7 +1676,9 @@
             const keyBtn = document.getElementById('keyConfigBtn');
             const closeKeyModal = document.getElementById('closeKeyModal');
             const saveKeyBtn = document.getElementById('saveKeyBtn');
+            const removeKeyBtn = document.getElementById('removeKeyBtn');
             const keyInput = document.getElementById('apiKeyInput');
+            const openKeyBannerBtn = document.getElementById('openKeyBannerBtn');
 
             memoryBtn.addEventListener('click', () => memoryModal.classList.remove('hidden'));
             closeMemoryModal.addEventListener('click', () => memoryModal.classList.add('hidden'));
@@ -1468,10 +1687,14 @@
             iosBtn.addEventListener('click', () => iosModal.classList.remove('hidden'));
             closeIosBtn.addEventListener('click', () => iosModal.classList.add('hidden'));
 
-            keyBtn.addEventListener('click', () => {
+            const openKeyModal = () => {
                 keyInput.value = currentApiKey;
                 keyModal.classList.remove('hidden');
-            });
+            };
+
+            keyBtn.addEventListener('click', openKeyModal);
+            if (openKeyBannerBtn) openKeyBannerBtn.addEventListener('click', openKeyModal);
+
             closeKeyModal.addEventListener('click', () => keyModal.classList.add('hidden'));
 
             saveKeyBtn.addEventListener('click', () => {
@@ -1479,9 +1702,21 @@
                 if (val) {
                     currentApiKey = val;
                     localStorage.setItem('princess_api_key', val);
+                    checkKeyStatus();
                     alert("تم حفظ مفتاح API الجديد بنجاح! 💕");
                     keyModal.classList.add('hidden');
+                } else {
+                    alert("يرجى إدخال المفتاح قبل الحفظ.");
                 }
+            });
+
+            removeKeyBtn.addEventListener('click', () => {
+                currentApiKey = "";
+                localStorage.removeItem('princess_api_key');
+                keyInput.value = "";
+                checkKeyStatus();
+                alert("تم حذف المفتاح من المتصفح.");
+                keyModal.classList.add('hidden');
             });
         }
 
