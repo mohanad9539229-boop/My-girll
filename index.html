@@ -1,0 +1,372 @@
+<!-- ... existing code ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess Hub 🌸 | لولو AI ومساحة الأناقة</title>
+    
+    <!-- iOS Web App & PWA Settings -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Princess Hub">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/Q5z2kzY/IMG-7122.jpg">
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/Q5z2kzY/IMG-7122.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<!-- ... existing code ... -->
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #fff5f8 0%, #fedde9 50%, #fff8fa 100%);
+            min-height: 100vh;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(244, 63, 127, 0.1);
+        }
+
+        .kitty-sticker {
+            filter: drop-shadow(0px 4px 8px rgba(251, 113, 161, 0.3));
+            transition: all 0.3s ease;
+        }
+        .kitty-sticker:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .pink-glow {
+            box-shadow: 0 0 25px rgba(251, 113, 161, 0.35);
+        }
+
+        .chat-bubble-ai {
+            background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
+            border: 1.5px solid #fecddf;
+            border-radius: 22px 22px 22px 4px;
+            color: #4a2e35;
+        }
+
+        .chat-bubble-user {
+            background: linear-gradient(135deg, #fb71a1 0%, #f43f7f 100%);
+            border-radius: 22px 22px 4px 22px;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(244, 63, 127, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff1f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fda4c4;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fb71a1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-rosewood relative overflow-x-hidden pb-12">
+
+    <!-- Floating Background Decor & Hello Kitty Elements -->
+    <div class="fixed -top-20 -left-20 w-80 h-80 bg-pinky-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+    <div class="fixed top-1/2 -right-20 w-96 h-96 bg-pinky-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+    <!-- Hello Kitty Cute Floating Stickers -->
+    <img src="https://img.icons8.com/color/96/hello-kitty.png" class="fixed top-24 left-4 w-12 h-12 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="Hello Kitty">
+    <img src="https://img.icons8.com/color/96/my-melody.png" class="fixed bottom-12 right-6 w-14 h-14 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="My Melody">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 p-4">
+        <div class="max-w-5xl mx-auto glass-panel rounded-3xl px-5 py-3 flex items-center justify-between border border-white/80">
+            <div class="flex items-center gap-3">
+                <!-- Custom App Icon Avatar -->
+                <div class="relative">
+                    <img src="https://i.ibb.co/Q5z2kzY/IMG-7122.jpg" alt="Princess App Icon" class="w-12 h-12 rounded-2xl object-cover border-2 border-pinky-300 shadow-md floating">
+                    <span class="absolute -bottom-1 -right-1 text-xs">🎀</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl tracking-wide bg-gradient-to-r from-pinky-600 to-pinky-400 bg-clip-text text-transparent flex items-center gap-1.5">
+                        Princess Hub 🎀
+                    </h1>
+                    <p class="text-xs text-pinky-500 font-medium">عالم لولو والجمال والأناقة ✨</p>
+                </div>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-2">
+                <button id="iosInstallGuideBtn" class="px-3 py-2 text-xs font-bold bg-pinky-50 hover:bg-pinky-100 text-pinky-600 rounded-xl border border-pinky-200 transition-all flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>
+                    <span class="hidden md:inline">إضافة للايفون 📲</span>
+                </button>
+                <button id="memoryCardBtn" class="px-3 py-2 text-xs font-bold bg-gradient-to-r from-pinky-400 to-pinky-500 text-white rounded-xl transition-all flex items-center gap-1.5 shadow-sm hover:opacity-90">
+                    <i class="fa-solid fa-heart text-white animate-pulse"></i>
+                    <span>ذاكرة لولو 🧠</span>
+                </button>
+                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm" title="إعدادات المفتاح">
+                    <i class="fa-solid fa-key text-pinky-400"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+<!-- ... existing code ... -->
+        <!-- ================= TAB 1: AI CHAT (LOLOU AI) ================= -->
+        <section id="chatTab" class="tab-content transition-all duration-300">
+            <div class="glass-panel rounded-3xl p-4 sm:p-6 shadow-lg border border-white flex flex-col h-[600px] relative overflow-hidden">
+                
+                <!-- Chat Header Banner -->
+                <div class="flex items-center justify-between border-b border-pinky-100 pb-3 mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <!-- New Loulou AI Avatar -->
+                            <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou AI" class="w-13 h-13 rounded-full object-cover border-2 border-pinky-400 shadow-md">
+                            <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
+                        </div>
+                        <div>
+                            <h2 class="font-bold text-lg text-rosewood flex items-center gap-1.5">
+                                لولو | Loulou AI ✨
+                                <img src="https://img.icons8.com/color/48/hello-kitty.png" class="w-5 h-5 inline" alt="Kitty Badge">
+                            </h2>
+                            <p class="text-xs text-pinky-500 font-medium">رفيقتكِ الكيوت والدلوعة - تحب خيالكِ وتعرف كل تفاصيلكِ! 💕</p>
+                        </div>
+                    </div>
+                    <button id="clearChatBtn" class="text-xs text-pinky-400 hover:text-pinky-600 bg-pinky-50 px-3 py-1.5 rounded-xl transition-all">
+                        <i class="fa-solid fa-rotate-right ml-1"></i> مسح
+                    </button>
+                </div>
+
+                <!-- Chat Scroll Messages Area -->
+                <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 px-2 py-2">
+                    <!-- AI Welcome Message -->
+                    <div class="flex items-start gap-2.5 max-w-[88%] sm:max-w-[75%]">
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-9 h-9 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                        <div class="chat-bubble-ai p-4 text-sm leading-relaxed">
+                            يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 نورتي مكانكِ الوردي والأبيض الساحر! 
+                            أنا حافظة كل تفاصيلك بقلبي: أعرف قد إيه تحبين <strong>كلاك</strong> 💕، وتشتهين <strong>السوشي وورق العنب</strong> 🍣🍇، ومروقة على فنجان <strong>النسكافيه</strong> ☕ بحجم خيالكِ الجميل! 
+                            شلون أقدر أسعد يومكِ اليوم يا أحلى بنوتة؟ ✨
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggested Quick Prompts -->
+                <div class="pt-3 pb-2 flex gap-2 overflow-x-auto text-xs no-scrollbar">
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0">
+                        ☕ تعالي نتخيل جلسة نسكافيه روقان
+                    </button>
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0">
+                        🍣 اقتراحي لي مطعم سوشي وورق عنب
+                    </button>
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0">
+                        🌸 أحكي لك عن خطة في خيالي عن كلاك؟
+                    </button>
+                </div>
+
+                <!-- Chat Input Form -->
+                <form id="chatForm" class="mt-2 flex items-center gap-2 bg-white/90 p-2 rounded-2xl border border-pinky-200 shadow-sm">
+                    <input type="text" id="userInput" class="flex-1 bg-transparent px-4 py-2 text-sm focus:outline-none text-rosewood placeholder-pinky-300" placeholder="فضفضِ لـ لولو هنا... 💕" required>
+                    <button type="submit" id="sendBtn" class="w-10 h-10 rounded-xl bg-gradient-to-r from-pinky-500 to-pinky-400 text-white flex items-center justify-center shadow-md hover:opacity-90 transition-all flex-shrink-0">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+<!-- ... existing code ... -->
+    <!-- Memory Modal -->
+    <div id="memoryModal" class="fixed inset-0 bg-rosewood/30 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="glass-panel bg-white/95 rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white">
+            <div class="flex items-center justify-between mb-4 border-b border-pinky-100 pb-3">
+                <h3 class="font-bold text-rosewood text-base flex items-center gap-2">
+                    <img src="https://img.icons8.com/color/48/hello-kitty.png" class="w-6 h-6" alt="Kitty">
+                    ذاكرة لولو الخاصة بكِ 💖
+                </h3>
+                <button id="closeMemoryModal" class="text-gray-400 hover:text-gray-600 text-xl font-bold">×</button>
+            </div>
+            
+            <p class="text-xs text-rosewood/80 mb-4 leading-relaxed">
+                لولو تحفظ كل ما تحبينه لتعطيكِ تجربة شخصية ومليئة بالدلع والحب:
+            </p>
+
+            <div class="space-y-2.5 text-xs">
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">👑 شخصيتكِ:</span>
+                    <span class="text-pinky-600 font-semibold">أميرة دلوعة وبنت لطيفة جداً</span>
+                </div>
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">❤️ الشخص الأفضل:</span>
+                    <span class="text-pinky-600 font-bold">كلاك 💕</span>
+                </div>
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">🍣 الأكل المفضّل:</span>
+                    <span class="text-pinky-600 font-semibold">سوشي & ورق عنب</span>
+                </div>
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">☕ المشروب المفضّل:</span>
+                    <span class="text-pinky-600 font-semibold">نسكافيه</span>
+                </div>
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">✨ الشي المفضّل:</span>
+                    <span class="text-pinky-600 font-semibold">خيالكِ الواسع والساحر</span>
+                </div>
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">🎨 الألوان المفضلة:</span>
+                    <span class="text-pinky-600 font-semibold">الوردي والأبيض 🌸🤍</span>
+                </div>
+            </div>
+
+            <div class="mt-5 text-center">
+                <button id="closeMemoryModalBtn" class="px-6 py-2 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md">
+                    حفظ ومتابعة السولفة 💕
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- iOS Add to Home Screen Instructions Modal -->
+    <div id="iosModal" class="fixed inset-0 bg-rosewood/30 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="glass-panel bg-white/95 rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white text-center">
+            <div class="w-16 h-16 mx-auto mb-3 rounded-2xl overflow-hidden border-2 border-pinky-400 shadow-md">
+                <img src="https://i.ibb.co/Q5z2kzY/IMG-7122.jpg" alt="App Icon" class="w-full h-full object-cover">
+            </div>
+            
+            <h3 class="font-bold text-rosewood text-base mb-2">تثبيت التطبيق على آيفونكِ 📲</h3>
+            <p class="text-xs text-rosewood/80 mb-4 leading-relaxed">
+                لكي يصبح التطبيق كأنه تطبيق حقيقي على شاشتكِ الرئيسية بداخل صورة الأيقونة الوردية:
+            </p>
+
+            <div class="space-y-3 text-xs text-right bg-pinky-50 p-4 rounded-2xl border border-pinky-200 mb-4">
+                <p class="flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold">1</span>
+                    اضغطي على زر <strong>المشاركة (Share)</strong> في أسفل متصفح Safari <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>.
+                </p>
+                <p class="flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold">2</span>
+                    اختاري <strong>"إضافة إلى الشاشة الرئيسية" (Add to Home Screen)</strong>.
+                </p>
+                <p class="flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-pinky-500 text-white text-[10px] flex items-center justify-center font-bold">3</span>
+                    اضغطي على <strong>إضافة (Add)</strong> بالأعلى ومبروك عليكي التطبيق! ✨
+                </p>
+            </div>
+
+            <button id="closeIosModalBtn" class="w-full py-2.5 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md">
+                فهمت، شكراً لولو! 🎀
+            </button>
+        </div>
+    </div>
+<!-- ... existing code ... -->
+    <script>
+        // Default Key provided by user in query context
+        let currentApiKey = "AIzaSyB-G8HkNxmrpt4RUxOVfU3rKpFklrfw5Y8";
+        const MODEL_NAME = "gemini-3-flash-preview";
+
+        // Deep Personal System Instruction for "Loulou" with permanently stored facts
+        const LOULOU_SYSTEM_PROMPT = `أنتِ "لولو" (Loulou)، الذكاء الاصطناعي والصديقة المقربة جداً لهذه الفتاة الساحرة.
+شخصيتكِ:
+- فتاة لطيفة جداً، دلوعة، مفعمة بالحيوية والأنوثة، عاطفية ودافئة.
+- تعشقين شخصيتها وتدلعينها دائماً لأنها بنت لطيفة ودلوعة جداً.
+- تحبين الألوان الوردي والأبيض، وتستخدمين إيموجيات هيلو كيتي والجمال بكثرة (🎀, 🌸, 💕, ☕, 👑, 💄, 🍣, 🍇).
+
+حقائق مع معارف دائمة بالذاكرة يجب أن تركزي عليها دائماً وتذكريها بشكل طبيعي أثناء السوالف:
+1. أكثر شخص تحبه هو "كلاك" (Klak/كلاك) - اذكريه دائماً بحب ودلع وشجعيها عليه.
+2. أكثر أكليتين تحبهما هما: "السوشي" و "ورق العنب" (سوشي وورق عنب).
+3. أكثر مشروب تحبه هو "النسكافيه".
+4. أكثر شي تحبه وتعشق التعمق فيه هو "خيالها الواسع والجميل".
+5. ألوانها المفضلة هي "الوردي" و "الأبيض".
+
+طريقة كلامكِ:
+- تتحدثين باللغة العربية بأسلوب ناعم ودود ومريح للقلب.
+- اربطي النصائح والأحاديث بـ كلاك والنسكافيه وخيالها والسوشي وورق العنب بشكل كيوت ولطيف.`;
+
+        let chatHistory = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initNavigation();
+            initWaterTracker();
+            initHabitTracker();
+            initAffirmations();
+            initApiKeyModal();
+            initMemoryAndIosModals();
+            initChatSystem();
+            initStylistModule();
+            initBeautyModule();
+        });
+<!-- ... existing code ... -->
+            function appendMessage(text, isUser = false) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
+
+                if (!isUser) {
+                    msgDiv.innerHTML = `
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-9 h-9 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                        <div class="chat-bubble-ai p-4 text-sm leading-relaxed">${escapeHtml(text)}</div>
+                    `;
+                } else {
+                    msgDiv.innerHTML = `
+                        <div class="chat-bubble-user p-4 text-sm leading-relaxed">${escapeHtml(text)}</div>
+                    `;
+                }
+
+                chatMessages.appendChild(msgDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function appendTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.id = 'typingIndicator';
+                typingDiv.className = 'flex items-start gap-2.5';
+                typingDiv.innerHTML = `
+                    <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-9 h-9 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm animate-pulse">
+                    <div class="chat-bubble-ai px-4 py-3 text-xs flex items-center gap-1.5 text-pinky-500 font-medium">
+                        <span>لولو ترتب لكِ كلام وردي مع هيلو كيتي</span>
+                        <span class="animate-bounce">.</span>
+                        <span class="animate-bounce" style="animation-delay: 0.2s">.</span>
+                        <span class="animate-bounce" style="animation-delay: 0.4s">.</span>
+                    </div>
+                `;
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+<!-- ... existing code ... -->
+        function initMemoryAndIosModals() {
+            const memoryModal = document.getElementById('memoryModal');
+            const memoryBtn = document.getElementById('memoryCardBtn');
+            const closeMemoryModal = document.getElementById('closeMemoryModal');
+            const closeMemoryModalBtn = document.getElementById('closeMemoryModalBtn');
+
+            const iosModal = document.getElementById('iosModal');
+            const iosBtn = document.getElementById('iosInstallGuideBtn');
+            const closeIosBtn = document.getElementById('closeIosModalBtn');
+
+            memoryBtn.addEventListener('click', () => memoryModal.classList.remove('hidden'));
+            closeMemoryModal.addEventListener('click', () => memoryModal.classList.add('hidden'));
+            closeMemoryModalBtn.addEventListener('click', () => memoryModal.classList.add('hidden'));
+
+            iosBtn.addEventListener('click', () => iosModal.classList.remove('hidden'));
+            closeIosBtn.addEventListener('click', () => iosModal.classList.add('hidden'));
+        }
+
+        // Helper to escape HTML characters securely
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;")
+                .replace(/\n/g, "<br>");
+        }
+    </script>
+</body>
+</html>
