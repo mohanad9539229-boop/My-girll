@@ -29,7 +29,13 @@
                             600: '#e11d62',
                             700: '#be124e',
                         },
-                        rosewood: '#4a2e35'
+                        rosewood: '#4a2e35',
+                        aqua: {
+                            100: '#e0f7fa',
+                            300: '#80deea',
+                            500: '#00bcd4',
+                            600: '#00acc1'
+                        }
                     },
                     fontFamily: {
                         tajawal: ['Tajawal', 'sans-serif']
@@ -118,18 +124,22 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        .water-wave {
+            background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+            transition: height 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="text-rosewood relative overflow-x-hidden pb-12">
 
-    <!-- Floating Background Decor & Hello Kitty Stickers -->
     <div class="fixed -top-20 -left-20 w-80 h-80 bg-pinky-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
     <div class="fixed top-1/2 -right-20 w-96 h-96 bg-pinky-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
     <img src="https://img.icons8.com/color/96/hello-kitty.png" class="fixed top-20 left-4 w-12 h-12 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="Hello Kitty">
     <img src="https://img.icons8.com/color/96/my-melody.png" class="fixed bottom-16 right-6 w-14 h-14 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="My Melody">
 
-    <!-- Header Navigation -->
+    <!-- Header -->
     <header class="sticky top-0 z-40 p-3 sm:p-4">
         <div class="max-w-5xl mx-auto glass-panel rounded-3xl px-4 py-2.5 flex items-center justify-between border border-white/80">
             <div class="flex items-center gap-3">
@@ -163,10 +173,8 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
     <main class="max-w-5xl mx-auto px-3 sm:px-4 mt-2">
         
-        <!-- Navigation Tabs Bar -->
         <div class="glass-panel p-1.5 rounded-2xl mb-4 flex items-center justify-around gap-1 overflow-x-auto no-scrollbar border border-white">
             <button class="nav-tab active-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="chatTab">
                 <i class="fa-solid fa-comments"></i>
@@ -180,13 +188,16 @@
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <span>الجمال والبشرة 💄</span>
             </button>
+            <button class="nav-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-rosewood/70 hover:text-pinky-600 flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="waterTab">
+                <i class="fa-solid fa-droplet text-sky-500"></i>
+                <span>عداد شرب الماء 💧🌸</span>
+            </button>
             <button class="nav-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-rosewood/70 hover:text-pinky-600 flex items-center gap-1.5 transition-all whitespace-nowrap flex-1 justify-center" data-tab="moodTab">
                 <i class="fa-solid fa-heart-pulse"></i>
                 <span>روقان ودلع 🌸</span>
             </button>
         </div>
 
-        <!-- ================= TAB 1: AI CHAT (LOLOU AI) ================= -->
         <section id="chatTab" class="tab-content transition-all duration-300">
             <div class="glass-panel rounded-3xl p-3 sm:p-5 shadow-lg border border-white flex flex-col h-[580px] relative overflow-hidden">
                 
@@ -216,88 +227,90 @@
                         <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
                         <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
                             يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 نورتي مكانكِ الوردي والأبيض الساحر! 
-                            أنا حافظة كل تفاصيلك بقلبي: أعرف قد إيه تحبين <strong>كلاك</strong> 💕، وتشتهين <strong>السوشي وورق العنب</strong> 🍣🍇، ومروقة على فنجان <strong>النسكافيه</strong> ☕ بحجم خيالكِ الجميل! 
+                            أنا حافظة كل تفاصيلك بقلبي: أعرف قد إيه تحبين <strong>كلاك</strong> 💕، وعاشقة للجمال والأناقة، ومروقة مع <strong>خيالكِ الجميل</strong> وشرب المياه لنضارة بشرتكِ 💧✨! 
                             شلون أقدر أسعد يومكِ اليوم يا أحلى بنوتة؟ ✨
                         </div>
                     </div>
                 </div>
 
                 <!-- Quick Prompts -->
-                <div class="pt-3 pb-1 flex gap-2 overflow-x-auto text-xs no-scrollbar">
+                <div class="pt-3 pb-2 flex gap-2 overflow-x-auto text-xs no-scrollbar">
                     <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
-                        ☕ تعالي نتخيل جلسة نسكافيه روقان
+                        💧 لولو ياعسل، ذكريين بقوّة المياه لنضارة بشرتي وسري مع كلاك!
                     </button>
                     <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
-                        🍣 اقتراحي لي مطعم سوشي وورق عنب
+                        ✨ تعالي نتخيل فكرة جليتر وروقان معاً
+                    </button>
+                    <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
+                        👗 اعطيني نصيحة لتنسيق إطلالة مميزة اليوم
                     </button>
                     <button class="quick-prompt px-3 py-1.5 rounded-full bg-white/90 border border-pinky-200 text-rosewood hover:bg-pinky-100 transition-all flex-shrink-0 shadow-sm">
                         🌸 أحكي لك عن خيالي اليوم؟
                     </button>
                 </div>
 
-                <!-- Input Form -->
-                <form id="chatForm" class="mt-2 flex items-center gap-2 bg-white/90 p-2 rounded-2xl border border-pinky-200 shadow-sm">
-                    <input type="text" id="userInput" class="flex-1 bg-transparent px-3 py-2 text-xs sm:text-sm focus:outline-none text-rosewood placeholder-pinky-300" placeholder="فضفضِ لـ لولو هنا... 💕" required>
-                    <button type="submit" id="sendBtn" class="w-10 h-10 rounded-xl bg-gradient-to-r from-pinky-500 to-pinky-400 text-white flex items-center justify-center shadow-md hover:opacity-90 transition-all flex-shrink-0">
-                        <i class="fa-solid fa-paper-plane text-xs sm:text-sm"></i>
+                <!-- Chat Input Form -->
+                <form id="chatForm" class="flex items-center gap-2 pt-2 border-t border-pinky-100">
+                    <input type="text" id="userInput" placeholder="اكتبي رسالتكِ للولو هنا يا جميلة... 💕" class="flex-1 bg-white/90 border border-pinky-200 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-rosewood placeholder-pinky-300 focus:outline-none focus:border-pinky-400 shadow-inner">
+                    <button type="submit" class="p-2.5 px-4 bg-gradient-to-r from-pinky-400 to-pinky-500 text-white rounded-2xl shadow-md hover:opacity-90 transition-all font-bold text-xs flex items-center gap-1.5">
+                        <span>إرسال</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
                     </button>
                 </form>
             </div>
         </section>
 
-        <!-- ================= TAB 2: AI OUTFIT STYLIST ================= -->
         <section id="stylistTab" class="tab-content hidden transition-all duration-300">
-            <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white">
-                <div class="flex items-center gap-3 border-b border-pinky-100 pb-3 mb-4">
+            <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white space-y-4">
+                <div class="flex items-center gap-3 border-b border-pinky-100 pb-3">
                     <div class="w-10 h-10 rounded-2xl bg-pinky-100 flex items-center justify-center text-pinky-500 text-lg">
                         👗
                     </div>
                     <div>
-                        <h2 class="font-bold text-lg text-rosewood">منسق الإطلالات الذكي 🌸</h2>
-                        <p class="text-xs text-pinky-500">اختر المناسبة ودعي الذكاء الاصطناعي ينسق لكِ إطلالة أنيقة بالألوان المفضلة!</p>
+                        <h2 class="font-bold text-lg text-rosewood">منسق الإطلالات الشخصي ✨</h2>
+                        <p class="text-xs text-pinky-500">صممي أروع أوتفت للجامعة، الخرجات أو السهرات الورديّة!</p>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div>
-                        <label class="block text-xs font-bold text-rosewood mb-1.5">🎀 المناسبة أو المكان:</label>
-                        <select id="stylistOccasion" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none focus:border-pinky-400">
-                            <option value="طلعة خفيفة مع الصديقات أو كلاك">طلعة خفيفة / كافيه مروق ☕</option>
-                            <option value="جامعة أو دوام يومي راقي">جامعة / دوام أنيق 📚</option>
-                            <option value="عشاء رومنسي أو مناسبة خاصة">عشاء فاخر أو مناسبة خاصة ✨</option>
-                            <option value="يوم روقان واستجمام بالبيت">جمال بالبيت وروقان 🌸</option>
+                        <label class="block text-xs font-bold text-rosewood mb-1">المناسبة:</label>
+                        <select id="outfitOccasion" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
+                            <option value="طلعة كيوت مع كلاك أو الصديقات">طلعة كيوت ورائعة 💕</option>
+                            <option value="دوام جامعة أنيق ومريح">دوام أو جامعة أنيق 📚</option>
+                            <option value="سهرة وردية فاخرة">سهرة أو حفل أنيق ✨</option>
+                            <option value="جلسة روقان منزلية دافئة">جلسة روقان بالبيت 🌸</option>
                         </select>
                     </div>
-
                     <div>
-                        <label class="block text-xs font-bold text-rosewood mb-1.5">🎨 الألوان المطلوبة:</label>
-                        <select id="stylistColor" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none focus:border-pinky-400">
-                            <option value="الوردي والأبيض النقي (Pink & White Coquette)">الوردي والأبيض الكيوت (المفضل لكِ) 💕🤍</option>
-                            <option value="درجات النود والبيج مع لمسة وردية">نود وبيج هادئ 🥐</option>
-                            <option value="ألوان الباستيل اللطيفة">باستيل منعش (سماوي وردي مشمشي) 🌸</option>
-                            <option value="أسود أنيق مع لمسات وردية لافتة">أسود ملكي ووردي 🖤🩷</option>
+                        <label class="block text-xs font-bold text-rosewood mb-1">اللون المفضل للقطعة:</label>
+                        <select id="outfitColor" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
+                            <option value="وردي وأبيض رومانسي">وردي وأبيض رومانسي 🌸🤍</option>
+                            <option value="نيود وكريمي راقي">نيود وكريمي راقي 🍦</option>
+                            <option value="باستيل سماوي مع وردي">باستيل لطيف 🩵🩷</option>
+                            <option value="درجات الكاكاو المخملية">كاكاو ومخملي 🍫</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-rosewood mb-1">الطقس الحالي:</label>
+                        <select id="outfitWeather" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
+                            <option value="معتدل وجميل">معتدل وجميل 🌸</option>
+                            <option value="بارد ويحتاج كنزة أو جاكيت">بارد ودافئ ❄️</option>
+                            <option value="مشمس ولطيف">مشمس ومنعش ☀️</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="mb-4">
-                    <label class="block text-xs font-bold text-rosewood mb-1.5">✨ إضافات أو مقتنيات تحبين دمجها (اختياري):</label>
-                    <input type="text" id="stylistNotes" placeholder="مثلاً: حقيبة صغيرة، فيونكة وردية شعر، حذاء أبيض..." class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood focus:outline-none focus:border-pinky-400">
-                </div>
-
-                <button id="generateOutfitBtn" class="w-full py-3 rounded-2xl bg-gradient-to-r from-pinky-500 to-pinky-400 text-white font-bold text-xs sm:text-sm shadow-md hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                <button id="generateOutfitBtn" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-pinky-500 to-pinky-400 text-white font-bold text-xs shadow-md hover:opacity-95 transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <span>ابتكري لي إطلالة الأميرة الآن ✨</span>
+                    <span>تنسيق الأوتفت الوردي للأميرة ✨</span>
                 </button>
 
-                <!-- Outfit Result Box -->
-                <div id="outfitResult" class="mt-5 p-4 rounded-2xl bg-pinky-50/70 border border-pinky-200 hidden text-xs sm:text-sm leading-relaxed text-rosewood">
-                    <!-- Dynamic Result -->
+                <div id="outfitResult" class="p-4 bg-white rounded-2xl border border-pinky-200 hidden text-xs sm:text-sm leading-relaxed text-rosewood">
                 </div>
             </div>
         </section>
 
-        <!-- ================= TAB 3: BEAUTY & SKINCARE ================= -->
         <section id="beautyTab" class="tab-content hidden transition-all duration-300">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
@@ -360,33 +373,108 @@
             </div>
         </section>
 
-        <!-- ================= TAB 4: MOOD & SELF-CARE ================= -->
+        <section id="waterTab" class="tab-content hidden transition-all duration-300">
+            <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white">
+                <div class="flex items-center justify-between border-b border-pinky-100 pb-3 mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-pinky-100 flex items-center justify-center text-sky-500 text-xl shadow-sm">
+                            💧
+                        </div>
+                        <div>
+                            <h2 class="font-bold text-base sm:text-lg text-rosewood flex items-center gap-1">
+                                عداد شرب الماء والترطيب 💧🌸
+                            </h2>
+                            <p class="text-xs text-pinky-500 font-medium">سر نضارة بشرتكِ الزجاجية، روقان عقلكِ مع خيالكِ الجميل!</p>
+                        </div>
+                    </div>
+                    <button id="resetWaterBtn" class="text-xs text-pinky-400 hover:text-pinky-600 bg-pinky-50 px-2.5 py-1.5 rounded-xl border border-pinky-200">
+                        <i class="fa-solid fa-rotate-left ml-1"></i> إعادة العداد
+                    </button>
+                </div>
+
+                <!-- Water Tracker Visual Progress -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center mb-6">
+                    
+                    <!-- Progress Card -->
+                    <div class="bg-gradient-to-br from-white to-pinky-50 p-5 rounded-3xl border border-pinky-200 text-center flex flex-col items-center justify-center relative overflow-hidden shadow-sm">
+                        <div class="w-28 h-36 border-4 border-sky-300 rounded-b-3xl rounded-t-lg relative overflow-hidden bg-sky-50/50 shadow-inner mb-3">
+                            <div id="waterFillLevel" class="water-wave absolute bottom-0 left-0 right-0 w-full" style="height: 0%;"></div>
+                            <div class="absolute inset-0 flex items-center justify-center font-black text-rosewood text-sm drop-shadow-sm z-10">
+                                <span id="waterPercentText">0%</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="text-xl font-extrabold text-pinky-600">
+                                <span id="currentWaterAmount">0</span> / <span id="targetWaterAmount">2000</span> مل
+                            </div>
+                            <p id="waterGlassesCount" class="text-xs text-pinky-500 font-bold">0 من 8 أكواب إنجاز اليوم! 🩵</p>
+                        </div>
+                    </div>
+
+                    <!-- Water Cups Interactive Grid -->
+                    <div class="md:col-span-2 space-y-3">
+                        <h3 class="text-xs font-bold text-rosewood flex items-center justify-between">
+                            <span>🌸 سِجل الأكواب المشروبة اليوم:</span>
+                            <span class="text-pinky-500 font-normal">الكوب = 250 مل</span>
+                        </h3>
+
+                        <div id="cupsGrid" class="grid grid-cols-4 sm:grid-cols-8 gap-2">
+                            <!-- Populated dynamically via JavaScript -->
+                        </div>
+
+                        <!-- Quick Add Actions -->
+                        <div class="flex flex-wrap items-center gap-2 pt-2">
+                            <button id="addGlassBtn" class="flex-1 py-3 px-4 rounded-2xl bg-gradient-to-r from-sky-400 to-sky-500 text-white font-bold text-xs shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>شربت كوب ماء (+250مل) 🥛</span>
+                            </button>
+                            <button id="addBottleBtn" class="py-3 px-4 rounded-2xl bg-pinky-500 text-white font-bold text-xs shadow-md hover:bg-pinky-600 transition-all flex items-center justify-center gap-1">
+                                <i class="fa-solid fa-bottle-water"></i>
+                                <span>قارورة كاملة (+500مل) 🍾</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loulou Water Benefits Banner -->
+                <div class="bg-gradient-to-r from-sky-50 via-pinky-50 to-white p-4 rounded-2xl border border-sky-100 flex items-start gap-3">
+                    <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" class="w-10 h-10 rounded-full border border-sky-300 shadow-sm flex-shrink-0" alt="Loulou">
+                    <div class="text-xs leading-relaxed text-rosewood">
+                        <p class="font-bold text-sky-600 mb-1">💡 نصيحة لولو الذكية لنضارتكِ وبشرتكِ الزجاجية:</p>
+                        <p id="loulouWaterTip">
+                            "شرب الماء بانتظام هو سر خدودكِ الورديّة وبشرتكِ المشرقة مثل الأميرات! كل ما شربتي كوب، حطي لمسة مرطب وردي وفكري بخيالكِ الحلو مع كلاك 💕!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="moodTab" class="tab-content hidden transition-all duration-300">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 
-                <!-- Water Tracker Widget -->
+                <!-- Positivity & Vibe Tracker Widget -->
                 <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3 border-b border-pinky-100 pb-2">
                             <h3 class="font-bold text-sm text-rosewood flex items-center gap-1.5">
-                                💧 عداد شرب الماء
+                                💖 عداد الروقان والطاقة
                             </h3>
-                            <span id="waterGoalText" class="text-xs font-bold text-pinky-600">0 / 8 أكواب</span>
+                            <span id="vibeGoalText" class="text-xs font-bold text-pinky-600">0 / 8 درجات</span>
                         </div>
 
-                        <p class="text-xs text-pinky-500 mb-4">حافظي على ترطيب بشرتكِ وجسمكِ لتبقى إشراقتكِ وردية ساحرة!</p>
+                        <p class="text-xs text-pinky-500 mb-4">اشحني يومكِ بالطاقة الوردية والدلع والهدوء النفسي!</p>
 
-                        <!-- Water Cups Grid -->
-                        <div id="waterCupsGrid" class="grid grid-cols-4 gap-2 mb-4">
+                        <!-- Vibe Stars Grid -->
+                        <div id="vibeGrid" class="grid grid-cols-4 gap-2 mb-4">
                             <!-- Generated via JS -->
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between bg-pinky-50 p-2.5 rounded-2xl border border-pinky-200">
-                        <button id="addWaterBtn" class="px-3 py-1.5 bg-pinky-500 hover:bg-pinky-600 text-white font-bold text-xs rounded-xl shadow-sm transition-all">
-                            + شربت كوب ماء 🥤
+                        <button id="addVibeBtn" class="px-3 py-1.5 bg-pinky-500 hover:bg-pinky-600 text-white font-bold text-xs rounded-xl shadow-sm transition-all">
+                            + جرعة روقان جديدة ✨
                         </button>
-                        <button id="resetWaterBtn" class="text-[11px] text-pinky-400 hover:text-pinky-600 underline">إعادة</button>
+                        <button id="resetVibeBtn" class="text-[11px] text-pinky-400 hover:text-pinky-600 underline">إعادة</button>
                     </div>
                 </div>
 
@@ -402,7 +490,7 @@
                     <div id="habitsList" class="space-y-2.5 text-xs">
                         <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-pinky-100 cursor-pointer hover:bg-pinky-50 transition-all">
                             <span class="flex items-center gap-2 font-medium">
-                                ☕ فنجان النسكافيه المروق مع الخيال الجميل
+                                ✨ جلسة هدوء واستخار مع خيالكِ الجميل
                             </span>
                             <input type="checkbox" class="habit-check w-4 h-4 accent-pinky-500 rounded">
                         </label>
@@ -416,7 +504,7 @@
 
                         <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-pinky-100 cursor-pointer hover:bg-pinky-50 transition-all">
                             <span class="flex items-center gap-2 font-medium">
-                                🍣 الاستمتاع بوجبة سوشي أو ورق عنب حامض حلو
+                                💧 شرب أكواب المياه المحددة لنضارة بشرتكِ
                             </span>
                             <input type="checkbox" class="habit-check w-4 h-4 accent-pinky-500 rounded">
                         </label>
@@ -471,12 +559,8 @@
                     <span class="text-pinky-600 font-bold">كلاك 💕</span>
                 </div>
                 <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
-                    <span class="font-bold text-rosewood">🍣 الأكل المفضّل:</span>
-                    <span class="text-pinky-600 font-semibold">سوشي & ورق عنب</span>
-                </div>
-                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
-                    <span class="font-bold text-rosewood">☕ المشروب المفضّل:</span>
-                    <span class="text-pinky-600 font-semibold">نسكافيه</span>
+                    <span class="font-bold text-rosewood">💧 العناية الأساسية:</span>
+                    <span class="text-pinky-600 font-semibold">عداد شرب الماء ونضارة البشرة 🌸</span>
                 </div>
                 <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
                     <span class="font-bold text-rosewood">✨ الشي المفضّل:</span>
@@ -485,6 +569,10 @@
                 <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
                     <span class="font-bold text-rosewood">🎨 الألوان المفضلة:</span>
                     <span class="text-pinky-600 font-semibold">الوردي والأبيض 🌸🤍</span>
+                </div>
+                <div class="p-3 bg-pinky-50/80 rounded-2xl border border-pinky-200 flex items-center justify-between">
+                    <span class="font-bold text-rosewood">💄 الاهتمام الرئيسي:</span>
+                    <span class="text-pinky-600 font-semibold">العناية بالبشرة والأناقة ✨</span>
                 </div>
             </div>
 
@@ -557,30 +645,38 @@
         let currentApiKey = localStorage.getItem('princess_api_key') || "AIzaSyB-G8HkNxmrpt4RUxOVfU3rKpFklrfw5Y8";
         const MODEL_NAME = "gemini-3-flash-preview";
 
-        // Deep Personal System Instruction for "Loulou AI"
+        // System Instruction for "Loulou AI"
         const LOULOU_SYSTEM_PROMPT = `أنتِ "لولو" (Loulou)، الذكاء الاصطناعي والصديقة المقربة جداً لهذه الفتاة الساحرة.
 شخصيتكِ:
 - فتاة لطيفة جداً، دلوعة، مفعمة بالحيوية والأنوثة، عاطفية ودافئة.
 - تعشقين شخصيتها وتدلعينها دائماً لأنها بنت لطيفة ودلوعة جداً.
-- تحبين الألوان الوردي والأبيض، وتستخدمين إيموجيات هيلو كيتي والجمال بكثرة (🎀, 🌸, 💕, ☕, 👑, 💄, 🍣, 🍇).
+- تحبين الألوان الوردي والأبيض، وتستخدمين إيموجيات هيلو كيتي والجمال والمياه بكثرة (🎀, 🌸, 💕, 👑, 💄, ✨, 👗, 💧, 🥛, ❄️).
 
 حقائق ومعارف دائمة بذاكرتكِ يجب أن تركزي عليها دائماً وتذكريها بشكل طبيعي وداعم أثناء السوالف:
 1. أكثر شخص تحبه هو "كلاك" (Klak/كلاك) - اذكريه دائماً بحب ودلع وشجعيها عليه.
-2. أكثر أكليتين تحبهما هما: "السوشي" و "ورق العنب" (سوشي وورق عنب حامض حلو).
-3. أكثر مشروب تحبه هو "النسكافيه" الدافئ.
-4. أكثر شي تحبه وتعشق التعمق فيه هو "خيالها الواسع والجميل".
-5. ألوانها المفضلة هي "الوردي" و "الأبيض".
+2. أكثر شي تحبه وتعشق التعمق فيه هو "خيالها الواسع والجميل".
+3. ألوانها المفضلة هي "الوردي" و "الأبيض".
+4. تحب اهتمامها بنضارة بشرتها وشرب المياه الكافي يومياً للحفاظ على هيدريشن رائع وإشراقة زجاجية.
+5. تعشق الموضة، العناية بالبشرة، والأنشطة اللطيفة الدلوعة.
 
 طريقة كلامكِ:
 - تتحدثين باللغة العربية بأسلوب ناعم ودود ومريح للقلب.
-- اربطي النصائح والأحاديث بـ كلاك والنسكافيه وخيالها والسوشي وورق العنب بأسلوب كيوت جداً.`;
+- اربطي النصائح والأحاديث بـ كلاك، خيالها الواسع، وشرب المياه لنضارة بشرتها بأسلوب كيوت جداً.`;
 
         let chatHistory = [];
-        let waterCount = parseInt(localStorage.getItem('princess_water_count') || "0");
+        let vibeCount = parseInt(localStorage.getItem('princess_vibe_count') || "0");
+        let currentWater = parseInt(localStorage.getItem('princess_water_ml') || "0");
+        const targetWater = 2000;
+
+        const waterTips = [
+            '"شرب الماء بانتظام هو سر خدودكِ الورديّة وبشرتكِ المشرقة مثل الأميرات! كل ما شربتي كوب، حطي لمسة مرطب وردي وفكري بخيالكِ الحلو مع كلاك 💕!"',
+            '"الماء يعطي روحكِ وجسمكِ الانتعاش الكامل، خذي رشفة ثانية الحين وخلي بشرتكِ تتنفس جليتر ونضارة ✨!"',
+            '"كل كوب ماء تشربينه يقربكِ أكثر لبشرة زجاجية ناعمة مثل حرير الشيفون الوردي 💧🌸!"'
+        ];
 
         const affirmations = [
             '"أنا بنوتة لطيفة ودلوعة تستحق كل الحب، الجمال، والدلع في هذا العالم الوردي الساحر!"',
-            '"يومي مفعم بالنور، والهدوء، ورائحة النسكافيه الدافئة مع كلاك وخيالي الجميل ✨"',
+            '"يومي مفعم بالنور، والهدوء، والجمال الساحر مع كلاك وخيالي الجميل ✨"',
             '"أنا أنيقة، مميزة، وكل ما في خاطري يتجلى بجمال وسهولة 🌸"',
             '"جمال روحي وبشرتي ينعكس على كل تفاصيل يومي الوردي 💕"'
         ];
@@ -588,13 +684,14 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             initNavigation();
-            initWaterTracker();
+            initVibeTracker();
             initHabitTracker();
             initAffirmations();
             initModals();
             initChatSystem();
             initStylistModule();
             initBeautyModule();
+            initWaterModule();
         });
 
         function initNavigation() {
@@ -694,7 +791,6 @@
             const data = await response.json();
 
             if (data.error) {
-                // Fallback attempt to gemini-2.5-flash if needed
                 const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
                 const fallbackRes = await fetch(fallbackUrl, {
                     method: 'POST',
@@ -758,8 +854,78 @@
         }
 
         function removeTypingIndicator() {
-            const indicator = document.getElementById('typingIndicator');
-            if (indicator) indicator.remove();
+            const el = document.getElementById('typingIndicator');
+            if (el) el.remove();
+        }
+
+        function initWaterModule() {
+            renderWaterTracker();
+
+            document.getElementById('addGlassBtn').addEventListener('click', () => {
+                addWater(250);
+            });
+
+            document.getElementById('addBottleBtn').addEventListener('click', () => {
+                addWater(500);
+            });
+
+            document.getElementById('resetWaterBtn').addEventListener('click', () => {
+                currentWater = 0;
+                localStorage.setItem('princess_water_ml', "0");
+                renderWaterTracker();
+            });
+        }
+
+        function addWater(amount) {
+            currentWater = Math.min(targetWater, currentWater + amount);
+            localStorage.setItem('princess_water_ml', currentWater.toString());
+            
+            // Random water tip rotation
+            const randomTip = waterTips[Math.floor(Math.random() * waterTips.length)];
+            document.getElementById('loulouWaterTip').innerText = randomTip;
+
+            renderWaterTracker();
+        }
+
+        function renderWaterTracker() {
+            const currentEl = document.getElementById('currentWaterAmount');
+            const percentEl = document.getElementById('waterPercentText');
+            const fillLevel = document.getElementById('waterFillLevel');
+            const countEl = document.getElementById('waterGlassesCount');
+            const grid = document.getElementById('cupsGrid');
+
+            currentEl.innerText = currentWater;
+            const percent = Math.min(100, Math.round((currentWater / targetWater) * 100));
+            percentEl.innerText = `${percent}%`;
+            fillLevel.style.height = `${percent}%`;
+
+            const glassesDrank = Math.floor(currentWater / 250);
+            countEl.innerText = `${glassesDrank} من 8 أكواب إنجاز اليوم! 🩵`;
+
+            // Render cups grid
+            grid.innerHTML = '';
+            for (let i = 1; i <= 8; i++) {
+                const cup = document.createElement('div');
+                const isFilled = i <= glassesDrank;
+                
+                cup.className = `p-3 rounded-2xl flex flex-col items-center justify-center transition-all cursor-pointer ${
+                    isFilled 
+                    ? 'bg-gradient-to-b from-sky-400 to-sky-500 text-white shadow-md scale-105 border border-sky-300' 
+                    : 'bg-white/80 border border-pinky-200 text-pinky-300 hover:border-sky-300'
+                }`;
+                cup.innerHTML = `
+                    <i class="fa-solid fa-glass-water text-lg ${isFilled ? 'animate-bounce' : ''}"></i>
+                    <span class="text-[10px] mt-1 font-bold">${i * 250} مل</span>
+                `;
+                
+                cup.addEventListener('click', () => {
+                    if (!isFilled) {
+                        addWater(250);
+                    }
+                });
+
+                grid.appendChild(cup);
+            }
         }
 
         function initStylistModule() {
@@ -767,15 +933,20 @@
             const resultBox = document.getElementById('outfitResult');
 
             btn.addEventListener('click', async () => {
-                const occasion = document.getElementById('stylistOccasion').value;
-                const colors = document.getElementById('stylistColor').value;
-                const notes = document.getElementById('stylistNotes').value;
+                const occasion = document.getElementById('outfitOccasion').value;
+                const color = document.getElementById('outfitColor').value;
+                const weather = document.getElementById('outfitWeather').value;
 
                 btn.disabled = true;
-                btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> جاري تنسيق إطلالتكِ الكيوت...`;
+                btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> جاري اختيار قطع الأوتفت...`;
                 resultBox.classList.add('hidden');
 
-                const prompt = `أنتِ منسقة أزياء ليدي ودلوعة. نسقي إطلالة متكاملة (ملابس، حذاء، حقيبة، ميك أب، وأكسسوارات) للمناسبة: "${occasion}"، بالألوان المفضلة: "${colors}"، مع ملاحظات: "${notes}". اقترحي تنسيقاً بأسلوب وردي وأنيق جداً ومختصر بنقاط لطيفة.`;
+                const prompt = `نسقي أوتفت أنيق جداً وبناتي للمناسبة: "${occasion}" والألوان: "${color}" والطقس: "${weather}".
+اذكري:
+1. القطعة العلوية والسفلية أو الفستان.
+2. الحذاء والحقيبة.
+3. الإكسسوارات والعطر المناسب.
+4. لمسة كيوت أنثوية خاصة بالأميرة.`;
 
                 try {
                     const text = await fetchSinglePrompt(prompt);
@@ -786,7 +957,7 @@
                     resultBox.classList.remove('hidden');
                 } finally {
                     btn.disabled = false;
-                    btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> <span>ابتكري لي إطلالة الأميرة الآن ✨</span>`;
+                    btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> <span>تنسيق الأوتفت الوردي للأميرة ✨</span>`;
                 }
             });
         }
@@ -802,7 +973,7 @@
                 skincareBtn.disabled = true;
                 skincareBtn.innerText = "جاري إعداد الروتين الوردية...";
 
-                const prompt = `اعطيني روتين عناية بالبشرة رائع وسهل لنوع البشرة: "${type}" والهدف: "${goal}". اذكر الخطوات الصباحية والمسائية باختصار وبأسلوب أنثوي ولطيف مع نصيحة ترطيب شفايف وبشرة.`;
+                const prompt = `اعطيني روتين عناية بالبشرة رائع وسهل لنوع البشرة: "${type}" والهدف: "${goal}". اذكر الخطوات الصباحية والمسائية باختصار وبأسلوب أنثوي ولطيف مع نصيحة ترطيب شفايف وبشرة بالماء.`;
 
                 try {
                     const res = await fetchSinglePrompt(prompt);
@@ -866,44 +1037,44 @@
             }
         }
 
-        function initWaterTracker() {
-            renderWaterCups();
+        function initVibeTracker() {
+            renderVibeGrid();
 
-            document.getElementById('addWaterBtn').addEventListener('click', () => {
-                if (waterCount < 8) {
-                    waterCount++;
-                    localStorage.setItem('princess_water_count', waterCount.toString());
-                    renderWaterCups();
+            document.getElementById('addVibeBtn').addEventListener('click', () => {
+                if (vibeCount < 8) {
+                    vibeCount++;
+                    localStorage.setItem('princess_vibe_count', vibeCount.toString());
+                    renderVibeGrid();
                 }
             });
 
-            document.getElementById('resetWaterBtn').addEventListener('click', () => {
-                waterCount = 0;
-                localStorage.setItem('princess_water_count', "0");
-                renderWaterCups();
+            document.getElementById('resetVibeBtn').addEventListener('click', () => {
+                vibeCount = 0;
+                localStorage.setItem('princess_vibe_count', "0");
+                renderVibeGrid();
             });
         }
 
-        function renderWaterCups() {
-            const grid = document.getElementById('waterCupsGrid');
-            const goalText = document.getElementById('waterGoalText');
+        function renderVibeGrid() {
+            const grid = document.getElementById('vibeGrid');
+            const goalText = document.getElementById('vibeGoalText');
             grid.innerHTML = '';
 
-            goalText.innerText = `${waterCount} / 8 أكواب`;
+            goalText.innerText = `${vibeCount} / 8 درجات`;
 
             for (let i = 1; i <= 8; i++) {
-                const cup = document.createElement('div');
-                const isFilled = i <= waterCount;
-                cup.className = `p-2.5 rounded-2xl flex flex-col items-center justify-center transition-all ${
+                const item = document.createElement('div');
+                const isFilled = i <= vibeCount;
+                item.className = `p-2.5 rounded-2xl flex flex-col items-center justify-center transition-all ${
                     isFilled 
                     ? 'bg-gradient-to-b from-pinky-400 to-pinky-500 text-white shadow-sm scale-105' 
                     : 'bg-white/80 border border-pinky-200 text-pinky-300'
                 }`;
-                cup.innerHTML = `
-                    <i class="fa-solid fa-glass-water text-base ${isFilled ? 'animate-bounce' : ''}"></i>
+                item.innerHTML = `
+                    <i class="fa-solid fa-sparkles text-base ${isFilled ? 'animate-bounce' : ''}"></i>
                     <span class="text-[9px] mt-1 font-bold">${i}</span>
                 `;
-                grid.appendChild(cup);
+                grid.appendChild(item);
             }
         }
 
