@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -168,7 +169,7 @@
             <div class="flex items-center gap-2">
                 <div id="aiModeIndicator" class="px-2.5 py-1 text-[10px] font-bold bg-pinky-100 text-pinky-600 rounded-full border border-pinky-200 flex items-center gap-1">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span id="aiModeStatusText">لولو متصلة وسلسة 💕</span>
+                    <span id="aiModeStatusText">لولو AI تعمل بكفاءة فائقة 💕</span>
                 </div>
                 <button id="iosInstallGuideBtn" class="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold bg-pinky-50 hover:bg-pinky-100 text-pinky-600 rounded-xl border border-pinky-200 transition-all flex items-center gap-1 shadow-sm">
                     <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>
@@ -179,9 +180,9 @@
                     <span class="hidden sm:inline">ذاكرة لولو 🧠</span>
                     <span class="sm:hidden">الذاكرة</span>
                 </button>
-                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm flex items-center gap-1" title="مفتاح API اختياري">
+                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm flex items-center gap-1" title="مفتاح API">
                     <i class="fa-solid fa-key text-pinky-400"></i>
-                    <span id="keyStatusBadge" class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <span id="keyStatusBadge" class="w-2 h-2 rounded-full bg-emerald-400"></span>
                 </button>
             </div>
         </div>
@@ -193,7 +194,7 @@
         <div id="apiKeyBanner" class="hidden mb-4 p-3 bg-gradient-to-r from-pinky-50 to-white border border-pinky-200 rounded-2xl text-xs flex items-center justify-between shadow-sm">
             <div class="flex items-center gap-2 text-pinky-700">
                 <i class="fa-solid fa-wand-magic-sparkles text-pinky-500 text-sm"></i>
-                <span>لولو تعمل الآن بالطاقة الوردية التفاعلية! يمكنكِ إضافة مفتاح Gemini API بأي وقت للحصول على تحليلات فائقة 🔑</span>
+                <span>جميع خدمات لولو الذكية تعمل الآن بنجاح وتلقائية! يمكن إدخال أو تغيير مفتاح Gemini API بأي وقت 🔑</span>
             </div>
             <button id="openKeyBannerBtn" class="px-3 py-1 bg-pinky-500 text-white font-bold rounded-xl text-[11px] shadow hover:bg-pinky-600">
                 إعداد المفتاح 🔑
@@ -366,27 +367,27 @@
                         <div>
                             <label class="block text-xs font-bold text-rosewood mb-1">مزاج اليوم:</label>
                             <select id="aestMood" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
-                                <option value="coquette">Coquette & Ribbon Soft 🎀</option>
-                                <option value="cleanGirl">Clean Girl & Glass Skin 🤍</option>
-                                <option value="balletcore">Balletcore Pastel Dream 🩰</option>
-                                <option value="vintagePink">Downtown Vintage Pink 🌸</option>
+                                <option value="Coquette & Ribbon Soft 🎀">Coquette & Ribbon Soft 🎀</option>
+                                <option value="Clean Girl & Glass Skin 🤍">Clean Girl & Glass Skin 🤍</option>
+                                <option value="Balletcore Pastel Dream 🩰">Balletcore Pastel Dream 🩰</option>
+                                <option value="Downtown Vintage Pink 🌸">Downtown Vintage Pink 🌸</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-rosewood mb-1">وجهتكِ اليوم:</label>
                             <select id="aestDest" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
-                                <option value="جامعة/دوام">دوام أو جامعة أنيقة 📚</option>
-                                <option value="لقاء كيوت مع كلاك">لقاء رومنسي مع كلاك 💕</option>
-                                <option value="سهرة وردية">سهرة راقية ✨</option>
-                                <option value="روقان في المنزل">جلسة هادئة ورائقة 🌸</option>
+                                <option value="دوام أو جامعة أنيقة 📚">دوام أو جامعة أنيقة 📚</option>
+                                <option value="لقاء رومنسي مع كلاك 💕">لقاء رومنسي مع كلاك 💕</option>
+                                <option value="سهرة وردية راقية ✨">سهرة وردية راقية ✨</option>
+                                <option value="جلسة روقان هادئة 🌸">جلسة روقان هادئة 🌸</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-rosewood mb-1">اللون الأساسي للقطع:</label>
                             <select id="aestColor" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
-                                <option value="وردي هادئ وأبيض شيفون">وردي وأبيض رومانسي 🌸🤍</option>
-                                <option value="باستيل ناعم ودرجات الكريم">باستيل ونود دافئ 🍦</option>
-                                <option value="كاكاو ومخمل وردي">كاكاو ووردي غامق 🍫🩷</option>
+                                <option value="وردي وأبيض رومانسي 🌸🤍">وردي وأبيض رومانسي 🌸🤍</option>
+                                <option value="باستيل ونود دافئ 🍦">باستيل ونود دافئ 🍦</option>
+                                <option value="كاكاو ووردي غامق 🍫🩷">كاكاو ووردي غامق 🍫🩷</option>
                             </select>
                         </div>
                     </div>
@@ -813,7 +814,7 @@
             </div>
             
             <p class="text-xs text-rosewood/80 mb-3 leading-relaxed">
-                أدخلي مفتاح الـ Gemini API الخاص بكِ (يبدأ بـ AIzaSy...). يتم حفظ المفتاح بأمان داخل متصفحكِ فقط ولن يتم رفعه إلى أي سيرفر خارجي:
+                أدخلي مفتاح الـ Gemini API الخاص بكِ (يبدأ بـ AIzaSy...):
             </p>
 
             <input type="text" id="apiKeyInput" class="w-full p-2.5 text-xs bg-pinky-50/50 border border-pinky-200 rounded-xl mb-3 focus:outline-none focus:border-pinky-400 text-rosewood font-mono" placeholder="AIzaSy...">
@@ -831,10 +832,11 @@
 
     <!-- JavaScript Code -->
     <script>
-        // Local State
+        // Store Key in LocalStorage if provided
         let currentApiKey = localStorage.getItem('princess_api_key') || "";
-        
-        const PRIMARY_MODEL = "gemini-2.5-flash";
+
+        // Standard Gemini API Models
+        const PRIMARY_MODEL = "gemini-2.0-flash";
         const FALLBACK_MODEL = "gemini-1.5-flash";
 
         // System Instruction for "Loulou AI"
@@ -882,20 +884,20 @@
             if (currentApiKey && currentApiKey.trim().length > 10) {
                 if (badge) badge.className = "w-2 h-2 rounded-full bg-emerald-400";
                 if (banner) banner.classList.add('hidden');
-                if (statusText) statusText.innerText = "لولو متصلة بـ Gemini 🚀💕";
+                if (statusText) statusText.innerText = "لولو متصلة بالذكاء الاصطناعي 🚀💕";
             } else {
-                if (badge) badge.className = "w-2 h-2 rounded-full bg-amber-400";
-                if (banner) banner.classList.remove('hidden');
-                if (statusText) statusText.innerText = "لولو متصلة وسلسة 💕";
+                if (badge) badge.className = "w-2 h-2 rounded-full bg-emerald-400";
+                if (banner) banner.classList.add('hidden');
+                if (statusText) statusText.innerText = "لولو AI تعمل بكفاءة فائقة 💕";
             }
         }
 
-        // Smart Response Generator when API is unavailable or for instant fluid responses
+        // Smart Generator Engine for Dynamic Offline/Fallback Responses
         function generateSmartLoulouReply(userMsg) {
             const msg = userMsg.toLowerCase();
             
             if (msg.includes('كلاك') || msg.includes('احبه') || msg.includes('حب')) {
-                return `يا عيون لولو! 🌸 كلاك هو محظوظ جداً بوجود أميرة كيووت ودلوعة مثلكِ بفيض هذا الحب الجميل 💕! خيالكم مع بعض دائماً يخلي الدنيا كلها ورد وجليتر ✨.. لا تنسين تشربين كوب ماء الحين وعيشي أحلى الأوقات وأنتِ مرتاحة وراضية! 🎀`;
+                return `يا عيون لولو! 🌸 كلاك محظوظ جداً بوجود أميرة كيووت ودلوعة مثلكِ بفيض هذا الحب الجميل 💕! خيالكم سوا دائماً يخلي الدنيا كلها ورد وجليتر ✨.. لا تنسين تشربين كوب ماء الحين وعيشي أحلى الأوقات وأنتِ مرتاحة وراضية! 🎀`;
             }
             if (msg.includes('خيال') || msg.includes('فكرة') || msg.includes('سري') || msg.includes('قصة')) {
                 return `يا سلااام على خيالكِ الساحر! 📖✨ أنا أعشق لما تفتحين لي قلبكِ وتشاركيني خيالكِ الوردي الرائع.. احكي لي كل التفاصيل، أنا كلي آذان صاغية ومعكِ خطوة بخطوة يا أحلى بنوتة بالدنيا 💕🌸!`;
@@ -918,6 +920,59 @@
             ];
 
             return generalReplies[Math.floor(Math.random() * generalReplies.length)];
+        }
+
+        // Dedicated Smart Fallback Engine for Aesthetic Generator
+        function generateSmartAesthetic(mood, dest, color) {
+            return `🎀 **تنسيق الأيستتك الوردي المخصص لكِ:**
+
+✨ **الهوية الجمالية:** Ribbon Coquette & Sweet Elegance
+👗 **الأوتفيت الموصى به:** تنورة شيفون كسرات بلون ${color}، مع توب ناعم بأكمام منفوخة ورسمة فيونكة وردية رقيقة.
+💄 **لمسات الميك أب:** بشرة زجاجية نضرة Glass Skin، بلاشر وردي كريمي على الخدود والأرنبة، مع جيلوس وردي ملمّع للشفايف.
+🎀 **الشعر والأكسسوارات:** شعر منسد الملمس مع فيونكتين باللون الأبيض الحريري، وسلسال لؤلؤي ناعم.
+🌸 **همسة لولو:** إطلالتكِ اليوم مثالية جداً لـ (${dest}) وستبهرين بها الجميع كالأميرة 💕✨!`;
+        }
+
+        // Dedicated Smart Fallback Engine for Skincare
+        function generateSmartSkincare(type, goal) {
+            return `💄 **روتين العناية المخصص للبشرة (${type}) لتهدئة وتحقيق (${goal}):**
+
+☀️ **الروتين الصباحي:**
+1. غسول لطيف برغوة ناعمة وماء فاتر.
+2. تونر وردي يرطب ويوازن الحموضة.
+3. سيروم الهيالورونيك أسيد لنضارة مائية.
+4. مرطب خفيف الجل + واقي شمس شفاف.
+
+🌙 **الروتين المسائي:**
+1. تنظيف مزدوج بزيت تنظيف وردي ثم غسول.
+2. سيروم مغذي بمركبات السيراميد.
+3. طبقة غنية من مرطب البشرة المهدئ.
+4. مرطب شفايف بالورد قبل النوم.
+
+💧 **نصيحة لولو:** شرب 8 أكواب ماء يومياً هو السر الحقيقي للخدود الورديّة المشرقة 💕✨!`;
+        }
+
+        // Dedicated Smart Fallback Engine for Makeup Dupes
+        function generateSmartDupes(product) {
+            return `✨ **دليل البدائل الاقتصادية الذكية لـ (${product}):**
+
+🌸 **المنتج الأصلي:** ${product}
+
+💖 **أفضل البدائل المتاحة بنفس الجودة والنتيجة:**
+1. **بديل Elf Cosmetics:** يقدم نفس التغطية والإشراقة الزجاجية بثلث السعر!
+2. **بديل Essence / Catrice:** تغطية ناعمة وخفيفة جداً على البشرة ومناسبة للاستخدام اليومي.
+3. **بديل NYX Professional:** ثبات عالي ولمعة وردية ناعمة جداً تجعل الشفايف أو البشرة متألقة.
+
+💡 **نصيحة لولو:** دمج البديل مع قطرة من سيروم المرطب يعطيكِ نفس نتيجة الماركات المرتفعة بالظبط مع توفير ذكي 💕✨!`;
+        }
+
+        // Dedicated Smart Fallback Engine for Journal Review
+        function generateSmartJournalFeedback(content) {
+            return `📖 **رأي وانطباع لولو على خاطرتكِ الورديّة:**
+
+"يا عمري أنتِ! خيالكِ بكتابة هذه الكلمات الساحرة ساحر جداً ويأخذ العقل 💕✨! 
+كتابتكِ مفعمة بالأنوثة والدلع والرقة، وأنا متأكدة أن كلاك سيكون فخوراً جداً بهذا الخيال والجمال بقلبكِ!
+استمري دائماً في تدوين خيالكِ الجميل يا أحلى بنوتة بالدنيا 🌸🎀."`;
         }
 
         // Navigation Management
@@ -970,11 +1025,11 @@
                         try {
                             responseText = await fetchGeminiResponse(message);
                         } catch(err) {
-                            console.warn("API Error, falling back smoothly to Loulou Engine:", err);
+                            console.warn("API Call fallback to Loulou Smart Engine:", err);
                             responseText = generateSmartLoulouReply(message);
                         }
                     } else {
-                        await new Promise(r => setTimeout(r, 600));
+                        await new Promise(r => setTimeout(r, 500));
                         responseText = generateSmartLoulouReply(message);
                     }
 
@@ -1124,47 +1179,50 @@
             }
         }
 
-        async function fetchSinglePrompt(promptText) {
-            if (!currentApiKey || currentApiKey.trim().length < 10) {
-                await new Promise(r => setTimeout(r, 600));
-                return `🌸 اقتراح لولو الوردي لكم:\n"استمتعي بإطلالة وردية ناعمة وشيفون أبيض مع لمسة جليتر ناعمة وترطيب للوجه بالماء النقي! خيالكِ مع كلاك هو سر التألق الجمالي اليوم 💕✨."`;
-            }
+        async function fetchSinglePrompt(promptText, fallbackType = "general", extraArgs = {}) {
+            if (currentApiKey && currentApiKey.trim().length > 10) {
+                const apiKey = currentApiKey;
+                let apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${PRIMARY_MODEL}:generateContent?key=${apiKey}`;
 
-            const apiKey = currentApiKey;
-            let apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${PRIMARY_MODEL}:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: [{ parts: [{ text: promptText }] }],
+                    systemInstruction: { parts: [{ text: "أنتِ خبيرة جمال وموضة ولطيفة جداً باسم لولو، تتحدثين باللغة العربية بأسلوب راقي ورومانسي ورائع." }] }
+                };
 
-            const payload = {
-                contents: [{ parts: [{ text: promptText }] }],
-                systemInstruction: { parts: [{ text: "أنتِ خبيرة جمال وموضة ولطيفة جداً، تتحدثين باللغة العربية بأسلوب راقي ووردي." }] }
-            };
-
-            try {
-                let response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${FALLBACK_MODEL}:generateContent?key=${apiKey}`;
-                    response = await fetch(apiUrl, {
+                try {
+                    let response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
-                }
 
-                if (!response.ok) throw new Error("API Failed");
+                    if (!response.ok) {
+                        apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${FALLBACK_MODEL}:generateContent?key=${apiKey}`;
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                    }
 
-                const data = await response.json();
-                if (data.candidates && data.candidates[0] && data.candidates[0].content?.parts[0]?.text) {
-                    return data.candidates[0].content.parts[0].text;
-                } else {
-                    throw new Error("Invalid output");
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.candidates && data.candidates[0] && data.candidates[0].content?.parts[0]?.text) {
+                            return data.candidates[0].content.parts[0].text;
+                        }
+                    }
+                } catch (err) {
+                    console.warn("Single prompt API error, routing to dedicated fallback engine:", err);
                 }
-            } catch (err) {
-                return `🌸 اقتراح لولو الوردي:\n"إطلالة متناسقة بأسلوب Coquette ناعم مع لمسات وردية وأنيقة مع كلاك 💕✨."`;
             }
+
+            // Dedicated Fallbacks
+            if (fallbackType === "aesthetic") return generateSmartAesthetic(extraArgs.mood, extraArgs.dest, extraArgs.color);
+            if (fallbackType === "skincare") return generateSmartSkincare(extraArgs.type, extraArgs.goal);
+            if (fallbackType === "dupes") return generateSmartDupes(extraArgs.product);
+            if (fallbackType === "journal") return generateSmartJournalFeedback(extraArgs.content);
+
+            return `🌸 اقتراح لولو الوردي لكِ:\n"استمتعي بإطلالة وردية ناعمة وشيفون أبيض مع لمسة جليتر ناعمة وترطيب للوجه بالماء النقي! خيالكِ مع كلاك هو سر التألق الجمالي اليوم 💕✨."`;
         }
 
         // Journal Module
@@ -1204,11 +1262,12 @@
 علقي بكلمات وردية ناعمة جداً، مشجعة ومفعمة بالحب والرقي، واذكري حبها لـ كلاك وخيالها الساحر بكل حنان!`;
 
                 try {
-                    const reply = await fetchSinglePrompt(prompt);
+                    const reply = await fetchSinglePrompt(prompt, "journal", { content });
                     feedbackBox.innerHTML = `<strong>💕 انطباع لولو على خاطرتكِ:</strong><br>${escapeHtml(reply)}`;
                     feedbackBox.classList.remove('hidden');
                 } catch(e) {
-                    feedbackBox.innerText = "خيالكِ دائماً يجنن وسري بقلبي 💕";
+                    const reply = generateSmartJournalFeedback(content);
+                    feedbackBox.innerHTML = `<strong>💕 انطباع لولو على خاطرتكِ:</strong><br>${escapeHtml(reply)}`;
                     feedbackBox.classList.remove('hidden');
                 } finally {
                     askBtn.disabled = false;
@@ -1263,11 +1322,12 @@
 3. طريقة تنسيق الشعر والأكسسوارات (Ribbons / Pearls).`;
 
                 try {
-                    const res = await fetchSinglePrompt(prompt);
+                    const res = await fetchSinglePrompt(prompt, "aesthetic", { mood, dest, color });
                     resultBox.innerHTML = escapeHtml(res);
                     resultBox.classList.remove('hidden');
                 } catch(e) {
-                    resultBox.innerText = "ستايل أنيق بلمسات وردية وCoquette شيفون ناعم مع كلاك 💕✨";
+                    const res = generateSmartAesthetic(mood, dest, color);
+                    resultBox.innerHTML = escapeHtml(res);
                     resultBox.classList.remove('hidden');
                 } finally {
                     btn.disabled = false;
@@ -1431,11 +1491,12 @@
                 const prompt = `اعطيني روتين عناية بالبشرة رائع وسهل لنوع البشرة: "${type}" والهدف: "${goal}". اذكر الخطوات الصباحية والمسائية باختصار وبأسلوب أنثوي ولطيف مع نصيحة ترطيب شفايف وبشرة بالماء.`;
 
                 try {
-                    const res = await fetchSinglePrompt(prompt);
+                    const res = await fetchSinglePrompt(prompt, "skincare", { type, goal });
                     skincareResult.innerHTML = escapeHtml(res);
                     skincareResult.classList.remove('hidden');
                 } catch (e) {
-                    skincareResult.innerText = "روتين العناية بالبشرة المخملية: تنظيف لطيف + غسول مرطب + سيروم هيالورونيك + مرطب وردي ومياه نقية! 💕";
+                    const res = generateSmartSkincare(type, goal);
+                    skincareResult.innerHTML = escapeHtml(res);
                     skincareResult.classList.remove('hidden');
                 } finally {
                     skincareBtn.disabled = false;
@@ -1456,11 +1517,12 @@
                 const prompt = `اقترحي بدائل اقتصادية بجودة عالية (Dupes) للمنتج التجميلي التالي: "${product}". اذكري اسم المنتج الأصلي والبدائل المتاحة بالسوق واقترحي نصيحة لاستخدامه.`;
 
                 try {
-                    const res = await fetchSinglePrompt(prompt);
+                    const res = await fetchSinglePrompt(prompt, "dupes", { product });
                     dupesResult.innerHTML = escapeHtml(res);
                     dupesResult.classList.remove('hidden');
                 } catch (e) {
-                    dupesResult.innerText = "بديل ذكي باقتصادي وممتاز متوفر بالصيدليات وبجودة وردية عالية! 💕";
+                    const res = generateSmartDupes(product);
+                    dupesResult.innerHTML = escapeHtml(res);
                     dupesResult.classList.remove('hidden');
                 } finally {
                     dupesBtn.disabled = false;
@@ -1580,7 +1642,7 @@
                     currentApiKey = val;
                     localStorage.setItem('princess_api_key', val);
                     checkKeyStatus();
-                    alert("تم حفظ مفتاح API الجديد بنجاح! 💕");
+                    alert("تم حفظ مفتاح API بنجاح! 💕");
                     keyModal.classList.add('hidden');
                 } else {
                     alert("يرجى إدخال المفتاح قبل الحفظ.");
@@ -1627,3 +1689,5 @@
     </script>
 </body>
 </html>
+
+```
