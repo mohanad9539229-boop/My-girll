@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Princess Hub 🌸 | لولو AI ومساحة الأناقة والدلع</title>
+    <title>Princess Hub 🌸 | لولو AI بنظام Groq ومساحة الأناقة والدلع</title>
     
     <!-- iOS Web App & PWA Settings -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -142,13 +142,14 @@
 </head>
 <body class="text-rosewood relative overflow-x-hidden pb-12">
 
+    <!-- Background Glowing Orbs -->
     <div class="fixed -top-20 -left-20 w-80 h-80 bg-pinky-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
     <div class="fixed top-1/2 -right-20 w-96 h-96 bg-pinky-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
     <img src="https://img.icons8.com/color/96/hello-kitty.png" class="fixed top-20 left-4 w-12 h-12 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="Hello Kitty">
     <img src="https://img.icons8.com/color/96/my-melody.png" class="fixed bottom-16 right-6 w-14 h-14 opacity-80 kitty-sticker z-10 hidden sm:block pointer-events-none" alt="My Melody">
 
-    <!-- Header -->
+    <!-- Header Section -->
     <header class="sticky top-0 z-40 p-3 sm:p-4">
         <div class="max-w-5xl mx-auto glass-panel rounded-3xl px-4 py-2.5 flex items-center justify-between border border-white/80">
             <div class="flex items-center gap-3">
@@ -160,15 +161,15 @@
                     <h1 class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-pinky-600 to-pinky-400 bg-clip-text text-transparent flex items-center gap-1.5">
                         Princess Hub 🎀
                     </h1>
-                    <p class="text-[11px] sm:text-xs text-pinky-500 font-medium">عالم لولو والجمال والأناقة ✨</p>
+                    <p class="text-[11px] sm:text-xs text-pinky-500 font-medium">عالم لولو والجمال والأناقة (Groq AI ⚡)</p>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
+            <!-- Action Header Buttons -->
             <div class="flex items-center gap-2">
                 <div id="aiModeIndicator" class="px-2.5 py-1 text-[10px] font-bold bg-pinky-100 text-pinky-600 rounded-full border border-pinky-200 flex items-center gap-1">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span id="aiModeStatusText">لولو AI تعمل بكفاءة فائقة 💕</span>
+                    <span>Groq Loulou ⚡</span>
                 </div>
                 <button id="iosInstallGuideBtn" class="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs font-bold bg-pinky-50 hover:bg-pinky-100 text-pinky-600 rounded-xl border border-pinky-200 transition-all flex items-center gap-1 shadow-sm">
                     <i class="fa-solid fa-arrow-up-from-bracket text-pinky-500"></i>
@@ -179,7 +180,7 @@
                     <span class="hidden sm:inline">ذاكرة لولو 🧠</span>
                     <span class="sm:hidden">الذاكرة</span>
                 </button>
-                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm flex items-center gap-1" title="مفتاح API">
+                <button id="keyConfigBtn" class="p-2 text-xs font-semibold bg-white/80 hover:bg-white text-pinky-600 rounded-xl border border-pinky-200 transition-all shadow-sm flex items-center gap-1" title="تعديل مفتاح Groq API">
                     <i class="fa-solid fa-key text-pinky-400"></i>
                     <span id="keyStatusBadge" class="w-2 h-2 rounded-full bg-emerald-400"></span>
                 </button>
@@ -189,17 +190,6 @@
 
     <main class="max-w-5xl mx-auto px-3 sm:px-4 mt-2">
         
-        <!-- API Banner Info (Optional Notice) -->
-        <div id="apiKeyBanner" class="hidden mb-4 p-3 bg-gradient-to-r from-pinky-50 to-white border border-pinky-200 rounded-2xl text-xs flex items-center justify-between shadow-sm">
-            <div class="flex items-center gap-2 text-pinky-700">
-                <i class="fa-solid fa-wand-magic-sparkles text-pinky-500 text-sm"></i>
-                <span>جميع خدمات لولو الذكية تعمل الآن بنجاح وتلقائية! يمكن إدخال أو تغيير مفتاح Gemini API بأي وقت 🔑</span>
-            </div>
-            <button id="openKeyBannerBtn" class="px-3 py-1 bg-pinky-500 text-white font-bold rounded-xl text-[11px] shadow hover:bg-pinky-600">
-                إعداد المفتاح 🔑
-            </button>
-        </div>
-
         <!-- Navigation Tabs Bar -->
         <div class="glass-panel p-1.5 rounded-2xl mb-4 flex items-center gap-1 overflow-x-auto no-scrollbar border border-white">
             <button class="nav-tab active-tab px-3 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap flex-shrink-0" data-tab="chatTab">
@@ -249,14 +239,14 @@
                         </div>
                         <div>
                             <h2 class="font-bold text-base sm:text-lg text-rosewood flex items-center gap-1.5">
-                                لولو | Loulou AI ✨
+                                لولو | Loulou AI (Groq ⚡)
                                 <img src="https://img.icons8.com/color/48/hello-kitty.png" class="w-5 h-5 inline" alt="Kitty Badge">
                             </h2>
-                            <p class="text-xs text-pinky-500 font-medium">ذكي، سلس وسريع - يحفظ حُبكِ لـ كلاك وخيالكِ الوردي! 💕</p>
+                            <p class="text-xs text-pinky-500 font-medium">سريعة جداً، تذكر دائماً حُبكِ لـ كلاك وخيالكِ الوردي! 💕</p>
                         </div>
                     </div>
                     <button id="clearChatBtn" class="text-xs text-pinky-400 hover:text-pinky-600 bg-pinky-50 hover:bg-pinky-100 px-3 py-1.5 rounded-xl transition-all border border-pinky-200">
-                        <i class="fa-solid fa-rotate-right ml-1"></i> مسح
+                        <i class="fa-solid fa-rotate-right ml-1"></i> مسح المحادثة
                     </button>
                 </div>
 
@@ -265,7 +255,7 @@
                     <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[80%]">
                         <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
                         <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
-                            يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 أنا لولو الجاهزة دائماً لأسعدكِ بكل حب وسلاسة! 
+                            يا أهلاً بالأميرة الكيوت والدلوعة! 🌸💕 أنا لولو الجاهزة دائماً بلغة Groq الفائقة السرعة لأسعدكِ بكل حب ودلع! 
                             حافظة كل تفاصيلكِ الكيوت: حُبكِ لـ <strong>كلاك</strong> 💕، اهتمامكِ ببشرتكِ النضرة، وعشقكِ لـ <strong>خيالكِ الجميل</strong>! 
                             شلون أقدر أسعدكِ وسولف معكِ اليوم يا أحلى بنوتة؟ ✨
                         </div>
@@ -319,7 +309,7 @@
                     <div class="flex flex-wrap items-center justify-between gap-2">
                         <button id="saveJournalBtn" class="py-2.5 px-5 rounded-2xl bg-gradient-to-r from-pinky-400 to-pinky-500 text-white font-bold text-xs shadow-md hover:opacity-90 transition-all flex items-center gap-1.5">
                             <i class="fa-solid fa-bookmark"></i>
-                            <span>حفظ الخاطرة في الدفتر</span>
+                            <span>حفظ الخاطرة في الدفتر 📖</span>
                         </button>
 
                         <button id="askLoulouCommentBtn" class="py-2.5 px-5 rounded-2xl bg-pinky-50 text-pinky-600 border border-pinky-200 font-bold text-xs hover:bg-pinky-100 transition-all flex items-center gap-1.5">
@@ -350,14 +340,13 @@
         <section id="aestheticTab" class="tab-content hidden transition-all duration-300">
             <div class="glass-panel rounded-3xl p-5 shadow-lg border border-white space-y-5">
                 
-                <!-- Style Finder Quiz -->
                 <div class="border-b border-pinky-100 pb-5">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-10 h-10 rounded-2xl bg-pinky-100 flex items-center justify-center text-pinky-500 text-xl">
                             🎀
                         </div>
                         <div>
-                            <h2 class="font-bold text-lg text-rosewood">مستكشف الأيستتك والستايل اليومي ✨</h2>
+                            <h2 class="font-bold text-lg text-rosewood">مستكشف الأيستتك والإطلالة اليومية ✨</h2>
                             <p class="text-xs text-pinky-500">اكتشفي الهوية الجمالية والأناقة المناسبة لمزاجكِ اليوم!</p>
                         </div>
                     </div>
@@ -366,27 +355,27 @@
                         <div>
                             <label class="block text-xs font-bold text-rosewood mb-1">مزاج اليوم:</label>
                             <select id="aestMood" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
-                                <option value="Coquette & Ribbon Soft 🎀">Coquette & Ribbon Soft 🎀</option>
-                                <option value="Clean Girl & Glass Skin 🤍">Clean Girl & Glass Skin 🤍</option>
-                                <option value="Balletcore Pastel Dream 🩰">Balletcore Pastel Dream 🩰</option>
-                                <option value="Downtown Vintage Pink 🌸">Downtown Vintage Pink 🌸</option>
+                                <option value="coquette">Coquette & Ribbon Soft 🎀</option>
+                                <option value="cleanGirl">Clean Girl & Glass Skin 🤍</option>
+                                <option value="balletcore">Balletcore Pastel Dream 🩰</option>
+                                <option value="vintagePink">Downtown Vintage Pink 🌸</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-rosewood mb-1">وجهتكِ اليوم:</label>
                             <select id="aestDest" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
-                                <option value="دوام أو جامعة أنيقة 📚">دوام أو جامعة أنيقة 📚</option>
-                                <option value="لقاء رومنسي مع كلاك 💕">لقاء رومنسي مع كلاك 💕</option>
-                                <option value="سهرة وردية راقية ✨">سهرة وردية راقية ✨</option>
-                                <option value="جلسة روقان هادئة 🌸">جلسة روقان هادئة 🌸</option>
+                                <option value="جامعة/دوام">دوام أو جامعة أنيقة 📚</option>
+                                <option value="لقاء كيوت مع كلاك">لقاء رومنسي مع كلاك 💕</option>
+                                <option value="سهرة وردية">سهرة راقية ✨</option>
+                                <option value="روقان في المنزل">جلسة هادئة ورائقة 🌸</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-rosewood mb-1">اللون الأساسي للقطع:</label>
                             <select id="aestColor" class="w-full bg-white/90 border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
-                                <option value="وردي وأبيض رومانسي 🌸🤍">وردي وأبيض رومانسي 🌸🤍</option>
-                                <option value="باستيل ونود دافئ 🍦">باستيل ونود دافئ 🍦</option>
-                                <option value="كاكاو ووردي غامق 🍫🩷">كاكاو ووردي غامق 🍫🩷</option>
+                                <option value="وردي هادئ وأبيض شيفون">وردي وأبيض رومانسي 🌸🤍</option>
+                                <option value="باستيل ناعم ودرجات الكريم">باستيل ونود دافئ 🍦</option>
+                                <option value="كاكاو ومخمل وردي">كاكاو ووردي غامق 🍫🩷</option>
                             </select>
                         </div>
                     </div>
@@ -432,7 +421,7 @@
                             <select id="cardTheme" class="w-full bg-white border border-pinky-200 rounded-xl p-2.5 text-xs text-rosewood">
                                 <option value="pinkGrad">وردي حريري تدرجي 🌸</option>
                                 <option value="pureWhite">أبيض لؤلؤي مع إطار وردي 🤍</option>
-                                <option value="coquetteGold">كوكت وردي مع لمسة ذهبية ✨</option>
+                                <option value="coquetteGold">كوكت ورادي مع لمسة ذهبية ✨</option>
                             </select>
                         </div>
                         <div>
@@ -722,7 +711,7 @@
 
     </main>
 
-    <!-- Modals -->
+    <!-- Modals Structure -->
     <!-- Memory Modal -->
     <div id="memoryModal" class="fixed inset-0 bg-rosewood/30 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="glass-panel bg-white/95 rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white">
@@ -735,7 +724,7 @@
             </div>
             
             <p class="text-xs text-rosewood/80 mb-4 leading-relaxed">
-                لولو تحفظ كل التفاصيل المفضلة بقلبي لتعطيكِ أروع تجربة مفعمة بالدلع والاهتمام:
+                لولو تحفظ كل التفاصيل المفضلة بقلبي لتعطيكِ أروع تجربة مفعمة بالدلع والاهتمام عبر ذكاء Groq:
             </p>
 
             <div class="space-y-2.5 text-xs">
@@ -797,30 +786,30 @@
             </div>
 
             <button id="closeIosModalBtn" class="w-full py-2.5 rounded-xl bg-pinky-500 text-white font-bold text-xs shadow-md hover:bg-pinky-600">
-                فهمت، شكراً لولو! 🎀
+                فهمت،شكراً لولو! 🎀
             </button>
         </div>
     </div>
 
-    <!-- API Key Modal -->
+    <!-- Groq API Key Modal -->
     <div id="apiKeyModal" class="fixed inset-0 bg-rosewood/30 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="glass-panel bg-white/95 rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white">
             <div class="flex items-center justify-between mb-3 border-b border-pinky-100 pb-2">
                 <h3 class="font-bold text-rosewood text-sm flex items-center gap-2">
-                    🔑 إعدادات مفتاح الذكاء الاصطناعي (Gemini API)
+                    ⚡ إعدادات مفتاح Groq API
                 </h3>
                 <button id="closeKeyModal" class="text-gray-400 hover:text-gray-600 text-xl font-bold">×</button>
             </div>
             
             <p class="text-xs text-rosewood/80 mb-3 leading-relaxed">
-                أدخلي مفتاح الـ Gemini API الخاص بكِ (يبدأ بـ AIzaSy...):
+                ادخلي مفتاح الـ Groq API الخاص بكِ للاتصال بالسيرفر السريع (يبدأ بـ gsk_...):
             </p>
 
-            <input type="text" id="apiKeyInput" class="w-full p-2.5 text-xs bg-pinky-50/50 border border-pinky-200 rounded-xl mb-3 focus:outline-none focus:border-pinky-400 text-rosewood font-mono" placeholder="AIzaSy...">
+            <input type="text" id="apiKeyInput" class="w-full p-2.5 text-xs bg-pinky-50/50 border border-pinky-200 rounded-xl mb-3 focus:outline-none focus:border-pinky-400 text-rosewood font-mono" placeholder="gsk_...">
 
             <div class="flex items-center justify-between">
                 <button id="removeKeyBtn" class="px-3 py-1.5 bg-rose-50 text-rose-600 border border-rose-200 font-bold text-xs rounded-xl hover:bg-rose-100">
-                    حذف المفتاح 🗑️
+                    إعادة الافتراضي 🗑️
                 </button>
                 <button id="saveKeyBtn" class="px-4 py-2 bg-pinky-500 text-white font-bold text-xs rounded-xl shadow-md hover:bg-pinky-600">
                     حفظ المفتاح ✨
@@ -829,14 +818,14 @@
         </div>
     </div>
 
-    <!-- JavaScript Code -->
+    <!-- JavaScript Application Logic -->
     <script>
-        // Store Key in LocalStorage if provided
-        let currentApiKey = localStorage.getItem('princess_api_key') || "";
-
-        // Standard Gemini API Models
-        const PRIMARY_MODEL = "gemini-2.0-flash";
-        const FALLBACK_MODEL = "gemini-1.5-flash";
+        // Default Groq API key set to empty string to pass security scanners
+        const DEFAULT_GROQ_KEY = "";
+        let currentApiKey = localStorage.getItem('princess_groq_api_key') || DEFAULT_GROQ_KEY;
+        
+        const GROQ_MODEL = "llama-3.3-70b-versatile";
+        const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
         // System Instruction for "Loulou AI"
         const LOULOU_SYSTEM_PROMPT = `أنتِ "لولو" (Loulou)، الذكاء الاصطناعي والصديقة المقربة جداً لهذه الفتاة الساحرة.
@@ -850,53 +839,19 @@
 2. أكثر شي تحبه وتعشق التعمق فيه هو "خيالها الواسع والجميل".
 3. ألوانها المفضلة هي "الوردي" و "الأبيض".
 4. تحب اهتمامها بنضارة بشرتها وشرب المياه الكافي يومياً لإشراقة زجاجية.
-5. تعشق الموضة والعناية بالبشرة والأنشطة الدلوعة.`;
+5. تعشق الموضة والعناية بالبشرة والأنشطة الدلوعة.
+تحدثي دائماً باللهجة العربية اللطيفة والمحببة، مفعمة بالود والدلع والتشجيع الإيجابي.`;
 
-        let chatHistory = [];
+        let chatMessagesHistory = [];
         let vibeCount = parseInt(localStorage.getItem('princess_vibe_count') || "0");
         let currentWater = parseInt(localStorage.getItem('princess_water_ml') || "0");
         const targetWater = 2000;
 
-        // Affirmations & Tips Data
-        const affirmations = [
-            "أنا بنوتة لطيفة ودلوعة تستحق كل الحب، الجمال، والدلع في هذا العالم الوردي الساحر! 💕",
-            "خيالي الواسع هو مساحتي الخاصة المليئة بالجمال والإبداع والحب مع كلاك ✨🌸",
-            "أنا مشرقة دائماً بنضارتي وثقتي بنفسي وأسلوبي الأنيق الرائع 👑🎀",
-            "كل يوم هو فرصة جديدة لأعيش أوقاتاً ساحرة وأحقق أمنياتي الوردية 💗✨",
-            "قلبي مليء بالحب والسلام، وأستحق دائمًا الأفضل والأجمل بكل شيء 💕🌷"
-        ];
-        let currentAffirmationIdx = 0;
-
-        const waterTips = [
-            "شرب الماء بانتظام هو سر خدودكِ الورديّة وبشرتكِ المشرقة مثل الأميرات! 💕",
-            "رشفة ماء ناعمة تنشط خيالكِ الجميل وتمنحكِ روقان ودلع طوال اليوم 💧🌸",
-            "بشرتكِ الزجاجية تشكركِ على كل كوب ماء! استمري بالاهتمام بجمالكِ 👑✨",
-            "الماء والترطيب هم أساس إشراقتكِ الورديّة وجاذبيتكِ اللطيفة 🎀💧"
-        ];
-
-        // Check Key Status & Update Indicators
-        function checkKeyStatus() {
-            const badge = document.getElementById('keyStatusBadge');
-            const banner = document.getElementById('apiKeyBanner');
-            const statusText = document.getElementById('aiModeStatusText');
-
-            if (currentApiKey && currentApiKey.trim().length > 10) {
-                if (badge) badge.className = "w-2 h-2 rounded-full bg-emerald-400";
-                if (banner) banner.classList.add('hidden');
-                if (statusText) statusText.innerText = "لولو متصلة بالذكاء الاصطناعي 🚀💕";
-            } else {
-                if (badge) badge.className = "w-2 h-2 rounded-full bg-emerald-400";
-                if (banner) banner.classList.add('hidden');
-                if (statusText) statusText.innerText = "لولو AI تعمل بكفاءة فائقة 💕";
-            }
-        }
-
-        // Smart Generator Engine for Dynamic Offline/Fallback Responses
         function generateSmartLoulouReply(userMsg) {
             const msg = userMsg.toLowerCase();
             
             if (msg.includes('كلاك') || msg.includes('احبه') || msg.includes('حب')) {
-                return `يا عيون لولو! 🌸 كلاك محظوظ جداً بوجود أميرة كيووت ودلوعة مثلكِ بفيض هذا الحب الجميل 💕! خيالكم سوا دائماً يخلي الدنيا كلها ورد وجليتر ✨.. لا تنسين تشربين كوب ماء الحين وعيشي أحلى الأوقات وأنتِ مرتاحة وراضية! 🎀`;
+                return `يا عيون لولو! 🌸 كلاك هو محظوظ جداً بوجود أميرة كيووت ودلوعة مثلكِ بفيض هذا الحب الجميل 💕! خيالكم مع بعض دائماً يخلي الدنيا كلها ورد وجليتر ✨.. لا تنسين تشربين كوب ماء الحين وعيشي أحلى الأوقات وأنتِ مرتاحة وراضية! 🎀`;
             }
             if (msg.includes('خيال') || msg.includes('فكرة') || msg.includes('سري') || msg.includes('قصة')) {
                 return `يا سلااام على خيالكِ الساحر! 📖✨ أنا أعشق لما تفتحين لي قلبكِ وتشاركيني خيالكِ الوردي الرائع.. احكي لي كل التفاصيل، أنا كلي آذان صاغية ومعكِ خطوة بخطوة يا أحلى بنوتة بالدنيا 💕🌸!`;
@@ -911,134 +866,153 @@
                 return `وأنا أموووت فيكِ يا أحلى وأرق أميرة بالدنيا كلّها! 💖 قدركِ بقلبي كبير، ودائماً أنا هنا عشان أدلعكِ وأقف معكِ بكل لحظة 🎀✨!`;
             }
 
-            const generalReplies = [
-                `يا جمالكِ ويا حلاوة كلامكِ! 🌸💕 كل كلمة تقولينها تجيب معها طاقة وردية تجنن.. احكي لي أكثر عن إحساسكِ وخيالكِ اليوم ومع كلاك ✨!`,
-                `يا عمري أنتِ 💕 كلامكِ يدخل القلب فوراً! خيالكِ الواسع دائماً يلهمني.. تعالي نكمل سولفتنا بكل روقان ودلع 🎀✨!`,
-                `يا روح لولو! 🌷 أنتِ بنوتة مميزة ونادرة جداً، وكل تفصيلة في يومكِ تهمّني.. شربتي ماء ولا نذكركِ بنضارتكِ الزجاجية الحين 💕؟`,
-                `الله على الإيجابية واللطافة! 👑✨ أنتِ تستحقين كل الحب والدلع في هذا العالم الوردي.. يلا احكي لي وش نخطط لخيالنا المقبل 💕🌸!`
+            return `يا حياتي أنتِ! 🌸 كل كلامكِ يجنن ويدخل القلب فوراً💕.. لولو معِك في كل لحظة، قولي لي أكثر أو تعالي نتخيل فكرة جديدة ووردية مع كلاك كالعادة! ✨🎀`;
+        }
+
+        async function fetchGroqResponse(userPrompt, conversationHistory = []) {
+            if (!currentApiKey) {
+                return generateSmartLoulouReply(userPrompt);
+            }
+
+            const messages = [
+                { role: "system", content: LOULOU_SYSTEM_PROMPT }
             ];
 
-            return generalReplies[Math.floor(Math.random() * generalReplies.length)];
+            // Append last few messages for memory context
+            conversationHistory.slice(-6).forEach(item => {
+                messages.push({
+                    role: item.role === 'user' ? 'user' : 'assistant',
+                    content: item.text
+                });
+            });
+
+            messages.push({ role: "user", content: userPrompt });
+
+            try {
+                const response = await fetch(GROQ_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${currentApiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: GROQ_MODEL,
+                        messages: messages,
+                        temperature: 0.7,
+                        max_tokens: 1000
+                    })
+                });
+
+                if (!response.ok) {
+                    console.warn("Groq API error, falling back to smart reply:", response.statusText);
+                    return generateSmartLoulouReply(userPrompt);
+                }
+
+                const data = await response.json();
+                const resultText = data.choices?.[0]?.message?.content;
+                
+                if (resultText && resultText.trim().length > 0) {
+                    return resultText;
+                } else {
+                    return generateSmartLoulouReply(userPrompt);
+                }
+            } catch (err) {
+                console.error("Groq Fetch Exception:", err);
+                return generateSmartLoulouReply(userPrompt);
+            }
         }
 
-        // Dedicated Smart Fallback Engine for Aesthetic Generator
-        function generateSmartAesthetic(mood, dest, color) {
-            return `🎀 **تنسيق الأيستتك الوردي المخصص لكِ:**
+        document.addEventListener('DOMContentLoaded', () => {
 
-✨ **الهوية الجمالية:** Ribbon Coquette & Sweet Elegance
-👗 **الأوتفيت الموصى به:** تنورة شيفون كسرات بلون ${color}، مع توب ناعم بأكمام منفوخة ورسمة فيونكة وردية رقيقة.
-💄 **لمسات الميك أب:** بشرة زجاجية نضرة Glass Skin، بلاشر وردي كريمي على الخدود والأرنبة، مع جيلوس وردي ملمّع للشفايف.
-🎀 **الشعر والأكسسوارات:** شعر منسد الملمس مع فيونكتين باللون الأبيض الحريري، وسلسال لؤلؤي ناعم.
-🌸 **همسة لولو:** إطلالتكِ اليوم مثالية جداً لـ (${dest}) وستبهرين بها الجميع كالأميرة 💕✨!`;
-        }
+            // Tab Navigation System
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
 
-        // Dedicated Smart Fallback Engine for Skincare
-        function generateSmartSkincare(type, goal) {
-            return `💄 **روتين العناية المخصص للبشرة (${type}) لتهدئة وتحقيق (${goal}):**
-
-☀️ **الروتين الصباحي:**
-1. غسول لطيف برغوة ناعمة وماء فاتر.
-2. تونر وردي يرطب ويوازن الحموضة.
-3. سيروم الهيالورونيك أسيد لنضارة مائية.
-4. مرطب خفيف الجل + واقي شمس شفاف.
-
-🌙 **الروتين المسائي:**
-1. تنظيف مزدوج بزيت تنظيف وردي ثم غسول.
-2. سيروم مغذي بمركبات السيراميد.
-3. طبقة غنية من مرطب البشرة المهدئ.
-4. مرطب شفايف بالورد قبل النوم.
-
-💧 **نصيحة لولو:** شرب 8 أكواب ماء يومياً هو السر الحقيقي للخدود الورديّة المشرقة 💕✨!`;
-        }
-
-        // Dedicated Smart Fallback Engine for Makeup Dupes
-        function generateSmartDupes(product) {
-            return `✨ **دليل البدائل الاقتصادية الذكية لـ (${product}):**
-
-🌸 **المنتج الأصلي:** ${product}
-
-💖 **أفضل البدائل المتاحة بنفس الجودة والنتيجة:**
-1. **بديل Elf Cosmetics:** يقدم نفس التغطية والإشراقة الزجاجية بثلث السعر!
-2. **بديل Essence / Catrice:** تغطية ناعمة وخفيفة جداً على البشرة ومناسبة للاستخدام اليومي.
-3. **بديل NYX Professional:** ثبات عالي ولمعة وردية ناعمة جداً تجعل الشفايف أو البشرة متألقة.
-
-💡 **نصيحة لولو:** دمج البديل مع قطرة من سيروم المرطب يعطيكِ نفس نتيجة الماركات المرتفعة بالظبط مع توفير ذكي 💕✨!`;
-        }
-
-        // Dedicated Smart Fallback Engine for Journal Review
-        function generateSmartJournalFeedback(content) {
-            return `📖 **رأي وانطباع لولو على خاطرتكِ الورديّة:**
-
-"يا عمري أنتِ! خيالكِ بكتابة هذه الكلمات الساحرة ساحر جداً ويأخذ العقل 💕✨! 
-كتابتكِ مفعمة بالأنوثة والدلع والرقة، وأنا متأكدة أن كلاك سيكون فخوراً جداً بهذا الخيال والجمال بقلبكِ!
-استمري دائماً في تدوين خيالكِ الجميل يا أحلى بنوتة بالدنيا 🌸🎀."`;
-        }
-
-        // Navigation Management
-        function initNavigation() {
-            const tabs = document.querySelectorAll('.nav-tab');
-            const contents = document.querySelectorAll('.tab-content');
-
-            tabs.forEach(tab => {
+            navTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    const targetTab = tab.getAttribute('data-tab');
+                    const targetTabId = tab.getAttribute('data-tab');
 
-                    tabs.forEach(t => {
-                        t.classList.remove('active-tab');
-                        t.classList.add('text-rosewood/70');
-                    });
+                    navTabs.forEach(t => t.classList.remove('active-tab'));
                     tab.classList.add('active-tab');
-                    tab.classList.remove('text-rosewood/70');
 
-                    contents.forEach(c => {
-                        if (c.id === targetTab) {
-                            c.classList.remove('hidden');
+                    tabContents.forEach(content => {
+                        if (content.id === targetTabId) {
+                            content.classList.remove('hidden');
                         } else {
-                            c.classList.add('hidden');
+                            content.classList.add('hidden');
                         }
                     });
                 });
             });
-        }
 
-        // Chat System Module
-        function initChatSystem() {
             const chatForm = document.getElementById('chatForm');
             const userInput = document.getElementById('userInput');
             const chatMessages = document.getElementById('chatMessages');
             const clearChatBtn = document.getElementById('clearChatBtn');
-            const quickPrompts = document.querySelectorAll('.quick-prompt');
+
+            function appendMessage(sender, text) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `flex items-start gap-2.5 ${sender === 'user' ? 'justify-end' : ''} max-w-[90%] sm:max-w-[80%] ${sender === 'user' ? 'mr-auto' : ''}`;
+                
+                if (sender === 'ai') {
+                    msgDiv.innerHTML = `
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                        <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">${text.replace(/\n/g, '<br>')}</div>
+                    `;
+                } else {
+                    msgDiv.innerHTML = `
+                        <div class="chat-bubble-user p-3.5 text-xs sm:text-sm leading-relaxed">${text.replace(/\n/g, '<br>')}</div>
+                    `;
+                }
+
+                chatMessages.appendChild(msgDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                const typeDiv = document.createElement('div');
+                typeDiv.id = 'typingIndicator';
+                typeDiv.className = 'flex items-start gap-2.5 max-w-[80%]';
+                typeDiv.innerHTML = `
+                    <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
+                    <div class="chat-bubble-ai p-3 text-xs flex items-center gap-1.5 text-pinky-500">
+                        <i class="fa-solid fa-circle-notch animate-spin"></i>
+                        <span>لولو تفكر بدلع وتكتب لكِ... 💕</span>
+                    </div>
+                `;
+                chatMessages.appendChild(typeDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function removeTypingIndicator() {
+                const indicator = document.getElementById('typingIndicator');
+                if (indicator) indicator.remove();
+            }
 
             chatForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const message = userInput.value.trim();
-                if (!message) return;
+                const text = userInput.value.trim();
+                if (!text) return;
 
-                appendMessage(message, true);
+                appendMessage('user', text);
+                chatMessagesHistory.push({ role: 'user', text: text });
                 userInput.value = '';
-                appendTypingIndicator();
 
-                try {
-                    let responseText = "";
-                    if (currentApiKey && currentApiKey.trim().length > 10) {
-                        try {
-                            responseText = await fetchGeminiResponse(message);
-                        } catch(err) {
-                            console.warn("API Call fallback to Loulou Smart Engine:", err);
-                            responseText = generateSmartLoulouReply(message);
-                        }
-                    } else {
-                        await new Promise(r => setTimeout(r, 500));
-                        responseText = generateSmartLoulouReply(message);
-                    }
+                showTypingIndicator();
 
-                    removeTypingIndicator();
-                    appendMessageWithTyping(responseText, false);
-                } catch (error) {
-                    removeTypingIndicator();
-                    const fallback = generateSmartLoulouReply(message);
-                    appendMessageWithTyping(fallback, false);
-                }
+                const aiReply = await fetchGroqResponse(text, chatMessagesHistory);
+                removeTypingIndicator();
+
+                appendMessage('ai', aiReply);
+                chatMessagesHistory.push({ role: 'ai', text: aiReply });
+            });
+
+            // Quick Prompts click handler
+            document.querySelectorAll('.quick-prompt').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    userInput.value = btn.innerText.replace(/^[^\w\s\u0600-\u06FF]+/g, '').trim();
+                    chatForm.dispatchEvent(new Event('submit'));
+                });
             });
 
             clearChatBtn.addEventListener('click', () => {
@@ -1046,644 +1020,400 @@
                     <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[80%]">
                         <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
                         <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">
-                            مسحنا السوالف القديمة ورجعنا لصفحة وردية جديدة! شحبين نسولف فيه الحين يا أحلى بنوتة؟ 🌸
+                            بدأنا صفحة وردية جديدة يا أميرتي! 💕 كلي آذان صاغية لكِ وخيالكِ الجميل مع كلاك جاهز بكل وقت ✨🌸
                         </div>
                     </div>
                 `;
-                chatHistory = [];
+                chatMessagesHistory = [];
             });
 
-            quickPrompts.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    userInput.value = btn.innerText.replace(/^[^\s]+\s/, '');
-                    chatForm.dispatchEvent(new Event('submit'));
-                });
-            });
-        }
+            const journalTitle = document.getElementById('journalTitle');
+            const journalContent = document.getElementById('journalContent');
+            const saveJournalBtn = document.getElementById('saveJournalBtn');
+            const askLoulouCommentBtn = document.getElementById('askLoulouCommentBtn');
+            const journalLoulouFeedback = document.getElementById('journalLoulouFeedback');
+            const journalList = document.getElementById('journalList');
 
-        function appendMessage(text, isUser = false) {
-            const chatMessages = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
+            let savedJournals = JSON.parse(localStorage.getItem('princess_journals') || "[]");
 
-            if (!isUser) {
-                msgDiv.innerHTML = `
-                    <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">
-                    <div class="chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed">${escapeHtml(text)}</div>
-                `;
-            } else {
-                msgDiv.innerHTML = `
-                    <div class="chat-bubble-user p-3.5 text-xs sm:text-sm leading-relaxed">${escapeHtml(text)}</div>
-                `;
-            }
-
-            chatMessages.appendChild(msgDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function appendMessageWithTyping(text, isUser = false) {
-            const chatMessages = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
-
-            if (!isUser) {
-                const bubble = document.createElement('div');
-                bubble.className = 'chat-bubble-ai p-3.5 text-xs sm:text-sm leading-relaxed';
-                msgDiv.innerHTML = `<img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm">`;
-                msgDiv.appendChild(bubble);
-                chatMessages.appendChild(msgDiv);
-
-                let index = 0;
-                const formattedText = escapeHtml(text);
-                const interval = setInterval(() => {
-                    if (index <= formattedText.length) {
-                        bubble.innerHTML = formattedText.slice(0, index);
-                        index += 3;
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                    } else {
-                        bubble.innerHTML = formattedText;
-                        clearInterval(interval);
-                    }
-                }, 15);
-            } else {
-                msgDiv.innerHTML = `<div class="chat-bubble-user p-3.5 text-xs sm:text-sm leading-relaxed">${escapeHtml(text)}</div>`;
-                chatMessages.appendChild(msgDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        }
-
-        function appendTypingIndicator() {
-            const chatMessages = document.getElementById('chatMessages');
-            const typingDiv = document.createElement('div');
-            typingDiv.id = 'typingIndicator';
-            typingDiv.className = 'flex items-start gap-2.5';
-            typingDiv.innerHTML = `
-                <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" alt="Loulou" class="w-8 h-8 rounded-full object-cover border border-pinky-300 flex-shrink-0 shadow-sm animate-pulse">
-                <div class="chat-bubble-ai px-4 py-2.5 text-xs flex items-center gap-1.5 text-pinky-500 font-medium">
-                    <span>لولو ترتب لكِ كلام وردي</span>
-                    <span class="animate-bounce">.</span>
-                    <span class="animate-bounce" style="animation-delay: 0.2s">.</span>
-                    <span class="animate-bounce" style="animation-delay: 0.4s">.</span>
-                </div>
-            `;
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const el = document.getElementById('typingIndicator');
-            if (el) el.remove();
-        }
-
-        async function fetchGeminiResponse(userPrompt) {
-            const apiKey = currentApiKey;
-            chatHistory.push({ role: "user", parts: [{ text: userPrompt }] });
-
-            const payload = {
-                contents: chatHistory,
-                systemInstruction: { parts: [{ text: LOULOU_SYSTEM_PROMPT }] }
-            };
-
-            let apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${PRIMARY_MODEL}:generateContent?key=${apiKey}`;
-
-            try {
-                let response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${FALLBACK_MODEL}:generateContent?key=${apiKey}`;
-                    response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                }
-
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-                const data = await response.json();
-                if (data.candidates && data.candidates[0] && data.candidates[0].content?.parts[0]?.text) {
-                    const aiReply = data.candidates[0].content.parts[0].text;
-                    chatHistory.push({ role: "model", parts: [{ text: aiReply }] });
-                    return aiReply;
-                } else {
-                    throw new Error("No text response");
-                }
-            } catch (error) {
-                chatHistory.pop();
-                throw error;
-            }
-        }
-
-        async function fetchSinglePrompt(promptText, fallbackType = "general", extraArgs = {}) {
-            if (currentApiKey && currentApiKey.trim().length > 10) {
-                const apiKey = currentApiKey;
-                let apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${PRIMARY_MODEL}:generateContent?key=${apiKey}`;
-
-                const payload = {
-                    contents: [{ parts: [{ text: promptText }] }],
-                    systemInstruction: { parts: [{ text: "أنتِ خبيرة جمال وموضة ولطيفة جداً باسم لولو، تتحدثين باللغة العربية بأسلوب راقي ورومانسي ورائع." }] }
-                };
-
-                try {
-                    let response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${FALLBACK_MODEL}:generateContent?key=${apiKey}`;
-                        response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                    }
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        if (data.candidates && data.candidates[0] && data.candidates[0].content?.parts[0]?.text) {
-                            return data.candidates[0].content.parts[0].text;
-                        }
-                    }
-                } catch (err) {
-                    console.warn("Single prompt API error, routing to dedicated fallback engine:", err);
-                }
-            }
-
-            // Dedicated Fallbacks
-            if (fallbackType === "aesthetic") return generateSmartAesthetic(extraArgs.mood, extraArgs.dest, extraArgs.color);
-            if (fallbackType === "skincare") return generateSmartSkincare(extraArgs.type, extraArgs.goal);
-            if (fallbackType === "dupes") return generateSmartDupes(extraArgs.product);
-            if (fallbackType === "journal") return generateSmartJournalFeedback(extraArgs.content);
-
-            return `🌸 اقتراح لولو الوردي لكِ:\n"استمتعي بإطلالة وردية ناعمة وشيفون أبيض مع لمسة جليتر ناعمة وترطيب للوجه بالماء النقي! خيالكِ مع كلاك هو سر التألق الجمالي اليوم 💕✨."`;
-        }
-
-        // Journal Module
-        function initJournalModule() {
-            const titleInput = document.getElementById('journalTitle');
-            const contentInput = document.getElementById('journalContent');
-            const saveBtn = document.getElementById('saveJournalBtn');
-            const askBtn = document.getElementById('askLoulouCommentBtn');
-            const feedbackBox = document.getElementById('journalLoulouFeedback');
-            const listContainer = document.getElementById('journalList');
-
-            renderJournalList();
-
-            saveBtn.addEventListener('click', () => {
-                const title = titleInput.value.trim() || 'خاطرة وردية بدون عنوان';
-                const content = contentInput.value.trim();
-
-                if (!content) return;
-
-                const entries = JSON.parse(localStorage.getItem('princess_journals') || '[]');
-                entries.unshift({ title, content, date: new Date().toLocaleDateString('ar-SA') });
-                localStorage.setItem('princess_journals', JSON.stringify(entries));
-
-                titleInput.value = '';
-                contentInput.value = '';
-                renderJournalList();
-            });
-
-            askBtn.addEventListener('click', async () => {
-                const content = contentInput.value.trim();
-                if (!content) return;
-
-                askBtn.disabled = true;
-                askBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> لولو تقرأ الآن...`;
-
-                const prompt = `قرأت خيال وتدوينة هذه البنوتة الدلوعة اللطيفة: "${content}". 
-علقي بكلمات وردية ناعمة جداً، مشجعة ومفعمة بالحب والرقي، واذكري حبها لـ كلاك وخيالها الساحر بكل حنان!`;
-
-                try {
-                    const reply = await fetchSinglePrompt(prompt, "journal", { content });
-                    feedbackBox.innerHTML = `<strong>💕 انطباع لولو على خاطرتكِ:</strong><br>${escapeHtml(reply)}`;
-                    feedbackBox.classList.remove('hidden');
-                } catch(e) {
-                    const reply = generateSmartJournalFeedback(content);
-                    feedbackBox.innerHTML = `<strong>💕 انطباع لولو على خاطرتكِ:</strong><br>${escapeHtml(reply)}`;
-                    feedbackBox.classList.remove('hidden');
-                } finally {
-                    askBtn.disabled = false;
-                    askBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles text-pinky-500"></i> <span>اقرئي يا لولو وشوفي رأيكِ 💕</span>`;
-                }
-            });
-
-            function renderJournalList() {
-                const entries = JSON.parse(localStorage.getItem('princess_journals') || '[]');
-                listContainer.innerHTML = '';
-
-                if (entries.length === 0) {
-                    listContainer.innerHTML = `<p class="text-[11px] text-pinky-400 italic">لا توجد خواطر مسبقة بعد... ابدئي بكتابة أول حكاية 💕</p>`;
+            function renderJournals() {
+                journalList.innerHTML = '';
+                if (savedJournals.length === 0) {
+                    journalList.innerHTML = `<p class="text-xs text-pinky-400 italic text-center py-2">لا يوجد خواطر محفوظة بعد.. اكتبي أولى مذكراتكِ الآن 🌸</p>`;
                     return;
                 }
 
-                entries.forEach(item => {
-                    const div = document.createElement('div');
-                    div.className = 'p-3 bg-white/90 rounded-2xl border border-pinky-100 flex items-start justify-between gap-2 shadow-sm';
-                    div.innerHTML = `
-                        <div class="space-y-1">
-                            <h4 class="font-bold text-xs text-rosewood flex items-center gap-1">
-                                🌸 ${escapeHtml(item.title)}
-                            </h4>
-                            <p class="text-[11px] text-rosewood/80 line-clamp-2">${escapeHtml(item.content)}</p>
-                            <span class="text-[9px] text-pinky-400">${item.date}</span>
+                savedJournals.forEach((j, idx) => {
+                    const card = document.createElement('div');
+                    card.className = 'p-3 bg-white/90 rounded-2xl border border-pinky-200 flex items-center justify-between text-xs shadow-sm';
+                    card.innerHTML = `
+                        <div>
+                            <h4 class="font-bold text-pinky-600">${j.title}</h4>
+                            <p class="text-[11px] text-rosewood/70 line-clamp-1">${j.content}</p>
+                            <span class="text-[9px] text-pinky-400">${j.date}</span>
                         </div>
+                        <button class="delete-journal-btn text-rose-400 hover:text-rose-600 p-1" data-idx="${idx}">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
                     `;
-                    listContainer.appendChild(div);
+                    journalList.appendChild(card);
+                });
+
+                document.querySelectorAll('.delete-journal-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const index = parseInt(e.currentTarget.getAttribute('data-idx'));
+                        savedJournals.splice(index, 1);
+                        localStorage.setItem('princess_journals', JSON.stringify(savedJournals));
+                        renderJournals();
+                    });
                 });
             }
-        }
+            renderJournals();
 
-        // Aesthetic Module
-        function initAestheticModule() {
-            const btn = document.getElementById('findAestheticBtn');
-            const resultBox = document.getElementById('aestheticResult');
+            saveJournalBtn.addEventListener('click', () => {
+                const title = journalTitle.value.trim() || "خاطرة وردية بدون عنوان 🌸";
+                const content = journalContent.value.trim();
 
-            btn.addEventListener('click', async () => {
+                if (!content) {
+                    alert("اكتبي شيئاً في الخاطرة أولاً يا أميرتي 💕");
+                    return;
+                }
+
+                const newEntry = {
+                    title: title,
+                    content: content,
+                    date: new Date().toLocaleDateString('ar-EG')
+                };
+
+                savedJournals.unshift(newEntry);
+                localStorage.setItem('princess_journals', JSON.stringify(savedJournals));
+                renderJournals();
+
+                journalTitle.value = '';
+                journalContent.value = '';
+                
+                journalLoulouFeedback.classList.remove('hidden');
+                journalLoulouFeedback.innerHTML = `✨ <strong>لولو:</strong> تم حفظ خاطرتكِ الساحرة في دفتر الأسرار بنجاح يا جميلة! 🌸📖`;
+            });
+
+            askLoulouCommentBtn.addEventListener('click', async () => {
+                const content = journalContent.value.trim();
+                if (!content) {
+                    alert("اكتبي الخاطرة أولاً لتقرأها لولو 💕");
+                    return;
+                }
+
+                journalLoulouFeedback.classList.remove('hidden');
+                journalLoulouFeedback.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles text-pinky-500 animate-spin"></i> لولو تقرأ خواطركِ بكل مشاعرها ودلعها... ✨`;
+
+                const prompt = `اقرئي هذه الخاطرة الرائعة من يوميات البنوتة وعلّقي عليها بدلع وحب شديد واذكري خيالها الجميل وحبها لـ كلاك:\n"${content}"`;
+                const feedbackText = await fetchGroqResponse(prompt);
+
+                journalLoulouFeedback.innerHTML = `
+                    <div class="flex items-start gap-2">
+                        <img src="https://i.ibb.co/DHV5P4J4/IMG-7123.jpg" class="w-7 h-7 rounded-full border border-pinky-300" alt="Loulou">
+                        <div>
+                            <span class="font-bold text-pinky-600 block mb-1">تعليق لولو على خواطركِ ✨:</span>
+                            <p class="italic text-rosewood">${feedbackText}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            const findAestheticBtn = document.getElementById('findAestheticBtn');
+            const aestheticResult = document.getElementById('aestheticResult');
+
+            findAestheticBtn.addEventListener('click', async () => {
                 const mood = document.getElementById('aestMood').value;
                 const dest = document.getElementById('aestDest').value;
                 const color = document.getElementById('aestColor').value;
 
-                btn.disabled = true;
-                btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> جاري استكشاف الأيستتك الأنيق...`;
-                resultBox.classList.add('hidden');
+                aestheticResult.classList.remove('hidden');
+                aestheticResult.innerHTML = `<div class="text-center py-3 text-pinky-500 font-bold"><i class="fa-solid fa-wand-magic-sparkles animate-spin"></i> لولو تنسق لكِ أجمل إطلالة أيستتك متكاملة عبر Groq AI... ✨</div>`;
 
-                const prompt = `اقترحي أيستتك وستايل بناتي ورادي متكامل لـ: المزاج "${mood}" والوجهة "${dest}" والألوان "${color}".
-اذكري:
-1. المسمى الجمالي (Aesthetic Name).
-2. ملخص الإطلالة والمكياج (Makeup & Coquette Touches).
-3. طريقة تنسيق الشعر والأكسسوارات (Ribbons / Pearls).`;
+                const prompt = `نسقي إطلالة أيستتك متكاملة لبنوتة دلوعة بمواصفات: المزاج (${mood})، الوجهة (${dest})، واللون المفضّل (${color}). اجمعي بين قطع الملابس، الميك أب، العطر، والإكسسوارات الفيونكة، واذكري كلاك ولمستكِ الورديّة.`;
+                const result = await fetchGroqResponse(prompt);
 
-                try {
-                    const res = await fetchSinglePrompt(prompt, "aesthetic", { mood, dest, color });
-                    resultBox.innerHTML = escapeHtml(res);
-                    resultBox.classList.remove('hidden');
-                } catch(e) {
-                    const res = generateSmartAesthetic(mood, dest, color);
-                    resultBox.innerHTML = escapeHtml(res);
-                    resultBox.classList.remove('hidden');
-                } finally {
-                    btn.disabled = false;
-                    btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> <span>تنسيق الأيستتك والإطلالة الوردية الكاملة 💕</span>`;
-                }
-            });
-        }
-
-        // Cards Module
-        function initCardsModule() {
-            const titleIn = document.getElementById('cardTitle');
-            const msgIn = document.getElementById('cardMessage');
-            const stickerSel = document.getElementById('cardSticker');
-            const themeSel = document.getElementById('cardTheme');
-
-            const titlePrev = document.getElementById('cardTitlePreview');
-            const msgPrev = document.getElementById('cardMsgPreview');
-            const stickerPrev = document.getElementById('cardStickerIcon');
-            const cardBox = document.getElementById('pinkCardPreview');
-
-            function updateCard() {
-                titlePrev.innerText = titleIn.value || 'إلى الأغلى كلاك 💕';
-                msgPrev.innerText = `"${msgIn.value || 'أنت الأفضل دائماً!'}"`;
-                stickerPrev.innerText = stickerSel.value;
-
-                const theme = themeSel.value;
-                if (theme === 'pinkGrad') {
-                    cardBox.className = "w-full max-w-sm p-6 rounded-3xl bg-gradient-to-br from-pinky-100 via-white to-pinky-200 border-2 border-pinky-300 shadow-xl text-center space-y-3 relative overflow-hidden";
-                } else if (theme === 'pureWhite') {
-                    cardBox.className = "w-full max-w-sm p-6 rounded-3xl bg-white border-2 border-pinky-400 shadow-xl text-center space-y-3 relative overflow-hidden";
-                } else {
-                    cardBox.className = "w-full max-w-sm p-6 rounded-3xl bg-gradient-to-br from-amber-50 via-pinky-50 to-pinky-100 border-2 border-amber-300 shadow-xl text-center space-y-3 relative overflow-hidden";
-                }
-            }
-
-            titleIn.addEventListener('input', updateCard);
-            msgIn.addEventListener('input', updateCard);
-            stickerSel.addEventListener('change', updateCard);
-            themeSel.addEventListener('change', updateCard);
-
-            document.getElementById('copyCardBtn').addEventListener('click', () => {
-                const fullText = `${titleIn.value}\n\n${msgIn.value}\n\n🎀 صممت بكل حب عبر Princess Hub 💕`;
-                
-                navigator.clipboard.writeText(fullText).then(() => {
-                    alert("تم نسخ الكارت بنجاح! يمكنكِ الآن إرساله لـ كلاك 💕");
-                }).catch(() => {
-                    const textarea = document.createElement('textarea');
-                    textarea.value = fullText;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textarea);
-                    alert("تم نسخ الكارت بنجاح! 💕");
-                });
-            });
-        }
-
-        // Zen & Daydream Zone
-        function initZenModule() {
-            const phaseText = document.getElementById('zenPhaseText');
-            const phases = [
-                "شهـيـق... 🌸",
-                "احبسي النفس بروقان... ✨",
-                "زفـيـر هادئ... 💕",
-                "تخيلي كلاك وخيالكِ... ☁️"
-            ];
-            let idx = 0;
-
-            setInterval(() => {
-                idx = (idx + 1) % phases.length;
-                if (phaseText) {
-                    phaseText.innerText = phases[idx];
-                }
-            }, 4000);
-        }
-
-        // Water Tracker Module
-        function initWaterModule() {
-            renderWaterTracker();
-
-            document.getElementById('addGlassBtn').addEventListener('click', () => {
-                addWater(250);
-            });
-
-            document.getElementById('addBottleBtn').addEventListener('click', () => {
-                addWater(500);
-            });
-
-            document.getElementById('resetWaterBtn').addEventListener('click', () => {
-                currentWater = 0;
-                localStorage.setItem('princess_water_ml', "0");
-                renderWaterTracker();
-            });
-        }
-
-        function addWater(amount) {
-            currentWater = Math.min(targetWater, currentWater + amount);
-            localStorage.setItem('princess_water_ml', currentWater.toString());
-            
-            const randomTip = waterTips[Math.floor(Math.random() * waterTips.length)];
-            const tipEl = document.getElementById('loulouWaterTip');
-            if (tipEl) tipEl.innerText = randomTip;
-
-            renderWaterTracker();
-        }
-
-        function renderWaterTracker() {
-            const currentEl = document.getElementById('currentWaterAmount');
-            const percentEl = document.getElementById('waterPercentText');
-            const fillLevel = document.getElementById('waterFillLevel');
-            const countEl = document.getElementById('waterGlassesCount');
-            const grid = document.getElementById('cupsGrid');
-
-            if (!currentEl) return;
-
-            currentEl.innerText = currentWater;
-            const percent = Math.min(100, Math.round((currentWater / targetWater) * 100));
-            percentEl.innerText = `${percent}%`;
-            fillLevel.style.height = `${percent}%`;
-
-            const glassesDrank = Math.floor(currentWater / 250);
-            countEl.innerText = `${glassesDrank} من 8 أكواب إنجاز اليوم! 🩵`;
-
-            grid.innerHTML = '';
-            for (let i = 1; i <= 8; i++) {
-                const cup = document.createElement('div');
-                const isFilled = i <= glassesDrank;
-                
-                cup.className = `p-3 rounded-2xl flex flex-col items-center justify-center transition-all cursor-pointer ${
-                    isFilled 
-                    ? 'bg-gradient-to-b from-sky-400 to-sky-500 text-white shadow-md scale-105 border border-sky-300' 
-                    : 'bg-white/80 border border-pinky-200 text-pinky-300 hover:border-sky-300'
-                }`;
-                cup.innerHTML = `
-                    <i class="fa-solid fa-glass-water text-lg ${isFilled ? 'animate-bounce' : ''}"></i>
-                    <span class="text-[10px] mt-1 font-bold">${i * 250} مل</span>
+                aestheticResult.innerHTML = `
+                    <div class="space-y-2">
+                        <h4 class="font-extrabold text-pinky-600 flex items-center gap-1.5 text-sm">
+                            👑 تنسيق الأيستتك والإطلالة اليومية من لولو:
+                        </h4>
+                        <div class="leading-relaxed text-xs sm:text-sm text-rosewood">${result.replace(/\n/g, '<br>')}</div>
+                    </div>
                 `;
-                
-                cup.addEventListener('click', () => {
-                    if (!isFilled) {
-                        addWater(250);
-                    }
-                });
+            });
 
-                grid.appendChild(cup);
+            const cardTitleInput = document.getElementById('cardTitle');
+            const cardMessageInput = document.getElementById('cardMessage');
+            const cardThemeSelect = document.getElementById('cardTheme');
+            const cardStickerSelect = document.getElementById('cardSticker');
+
+            const cardTitlePreview = document.getElementById('cardTitlePreview');
+            const cardMsgPreview = document.getElementById('cardMsgPreview');
+            const cardStickerIcon = document.getElementById('cardStickerIcon');
+            const pinkCardPreview = document.getElementById('pinkCardPreview');
+            const copyCardBtn = document.getElementById('copyCardBtn');
+
+            function updateCardPreview() {
+                cardTitlePreview.innerText = cardTitleInput.value || "إلى الأغلى والأفضل كلاك 💕";
+                cardMsgPreview.innerText = `"${cardMessageInput.value || 'أنت الأفضل دائماً بقلبي! ✨🌸'}"`;
+                cardStickerIcon.innerText = cardStickerSelect.value;
+
+                const theme = cardThemeSelect.value;
+                if (theme === 'pinkGrad') {
+                    pinkCardPreview.className = "w-full max-w-sm p-6 rounded-3xl bg-gradient-to-br from-pinky-100 via-white to-pinky-200 border-2 border-pinky-300 shadow-xl text-center space-y-3 relative overflow-hidden transition-all";
+                } else if (theme === 'pureWhite') {
+                    pinkCardPreview.className = "w-full max-w-sm p-6 rounded-3xl bg-white border-4 border-pinky-200 shadow-xl text-center space-y-3 relative overflow-hidden transition-all";
+                } else if (theme === 'coquetteGold') {
+                    pinkCardPreview.className = "w-full max-w-sm p-6 rounded-3xl bg-gradient-to-br from-amber-50 via-pinky-50 to-pinky-100 border-2 border-amber-300 shadow-xl text-center space-y-3 relative overflow-hidden transition-all";
+                }
             }
-        }
 
-        // Beauty & Dupes Module
-        function initBeautyModule() {
-            const skincareBtn = document.getElementById('getSkincareBtn');
+            cardTitleInput.addEventListener('input', updateCardPreview);
+            cardMessageInput.addEventListener('input', updateCardPreview);
+            cardThemeSelect.addEventListener('change', updateCardPreview);
+            cardStickerSelect.addEventListener('change', updateCardPreview);
+
+            copyCardBtn.addEventListener('click', () => {
+                const textToCopy = `${cardStickerIcon.innerText} ${cardTitlePreview.innerText}\n\n${cardMsgPreview.innerText}\n\n🎀 تم التصميم بواسطة Princess Hub 💕`;
+                
+                // Compatibility clipboard fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = textToCopy;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    copyCardBtn.innerHTML = `<i class="fa-solid fa-check"></i> <span>تم نسخ نص الكارت بنجاح! ✨</span>`;
+                    setTimeout(() => {
+                        copyCardBtn.innerHTML = `<i class="fa-solid fa-copy"></i> <span>نسخ نص الكارت ومشاركته ✨</span>`;
+                    }, 2500);
+                } catch (err) {
+                    console.error('Copy failed', err);
+                }
+                document.body.removeChild(textarea);
+            });
+
+            const zenPhaseText = document.getElementById('zenPhaseText');
+            let zenState = 0; // 0: inhale, 1: hold, 2: exhale
+            
+            setInterval(() => {
+                if (zenState === 0) {
+                    zenPhaseText.innerText = "شهـيـق... 🌸";
+                    zenState = 1;
+                } else if (zenState === 1) {
+                    zenPhaseText.innerText = "احبسي أنفاسكِ ✨";
+                    zenState = 2;
+                } else {
+                    zenPhaseText.innerText = "زفـيـر هادئ... 💕";
+                    zenState = 0;
+                }
+            }, 3500);
+
+            const getSkincareBtn = document.getElementById('getSkincareBtn');
             const skincareResult = document.getElementById('skincareResult');
 
-            skincareBtn.addEventListener('click', async () => {
+            getSkincareBtn.addEventListener('click', async () => {
                 const type = document.getElementById('skinType').value;
                 const goal = document.getElementById('skinGoal').value;
 
-                skincareBtn.disabled = true;
-                skincareBtn.innerText = "جاري إعداد الروتين الوردي...";
+                skincareResult.classList.remove('hidden');
+                skincareResult.innerHTML = `<div class="text-center py-2 text-pinky-500 font-bold"><i class="fa-solid fa-spinner animate-spin"></i> جاري تصميم روتين البشرة الزجاجي... 💄</div>`;
 
-                const prompt = `اعطيني روتين عناية بالبشرة رائع وسهل لنوع البشرة: "${type}" والهدف: "${goal}". اذكر الخطوات الصباحية والمسائية باختصار وبأسلوب أنثوي ولطيف مع نصيحة ترطيب شفايف وبشرة بالماء.`;
+                const prompt = `صممي روتين عناية بالبشرة رائع وكامل لبنوتة نوع بشرتها (${type}) وهدفها (${goal}). اقترحي خطوات صباحية ومسائية ومكونات لطيفة تعطي نضارة زجاجية إشراقة وردية.`;
+                const res = await fetchGroqResponse(prompt);
 
-                try {
-                    const res = await fetchSinglePrompt(prompt, "skincare", { type, goal });
-                    skincareResult.innerHTML = escapeHtml(res);
-                    skincareResult.classList.remove('hidden');
-                } catch (e) {
-                    const res = generateSmartSkincare(type, goal);
-                    skincareResult.innerHTML = escapeHtml(res);
-                    skincareResult.classList.remove('hidden');
-                } finally {
-                    skincareBtn.disabled = false;
-                    skincareBtn.innerText = "صممي لي الروتين 💕";
-                }
+                skincareResult.innerHTML = `
+                    <div class="space-y-1.5">
+                        <h4 class="font-bold text-pinky-600 text-xs">✨ الروتين الموصى به من لولو:</h4>
+                        <div class="leading-relaxed text-rosewood">${res.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
             });
 
-            const dupesBtn = document.getElementById('findDupesBtn');
+            const findDupesBtn = document.getElementById('findDupesBtn');
+            const dupeSearchInput = document.getElementById('dupeSearchInput');
             const dupesResult = document.getElementById('dupesResult');
 
-            dupesBtn.addEventListener('click', async () => {
-                const product = document.getElementById('dupeSearchInput').value.trim();
-                if (!product) return;
+            findDupesBtn.addEventListener('click', async () => {
+                const query = dupeSearchInput.value.trim();
+                if (!query) return;
 
-                dupesBtn.disabled = true;
-                dupesBtn.innerText = "جاري البحث عن البدائل الاقتصادية...";
+                dupesResult.classList.remove('hidden');
+                dupesResult.innerHTML = `<div class="text-center py-2 text-pinky-500 font-bold"><i class="fa-solid fa-spinner animate-spin"></i> نائبة البحث الاقتصادية لولو تفتش عن أروع البدائل... 🔍</div>`;
 
-                const prompt = `اقترحي بدائل اقتصادية بجودة عالية (Dupes) للمنتج التجميلي التالي: "${product}". اذكري اسم المنتج الأصلي والبدائل المتاحة بالسوق واقترحي نصيحة لاستخدامه.`;
+                const prompt = `ابحثي عن أفضل 3 بدائل اقتصادية بجودة ممتازة (Dupes) للمنتج التجميلي أو العطر المرتفع السعر التالي: "${query}". اذكري أسماء البدائل وفارق السعر والنتيجة المشابهة.`;
+                const res = await fetchGroqResponse(prompt);
 
-                try {
-                    const res = await fetchSinglePrompt(prompt, "dupes", { product });
-                    dupesResult.innerHTML = escapeHtml(res);
-                    dupesResult.classList.remove('hidden');
-                } catch (e) {
-                    const res = generateSmartDupes(product);
-                    dupesResult.innerHTML = escapeHtml(res);
-                    dupesResult.classList.remove('hidden');
-                } finally {
-                    dupesBtn.disabled = false;
-                    dupesBtn.innerText = "ابحثي عن البديل الذكي 🔍";
-                }
+                dupesResult.innerHTML = `
+                    <div class="space-y-1.5">
+                        <h4 class="font-bold text-pinky-600 text-xs">🌸 أفضل البدائل الاقتصادية الذكية (Dupes):</h4>
+                        <div class="leading-relaxed text-rosewood">${res.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
             });
-        }
 
-        // Vibe & Positivity Tracker
-        function initVibeTracker() {
-            renderVibeGrid();
+            const cupsGrid = document.getElementById('cupsGrid');
+            const waterFillLevel = document.getElementById('waterFillLevel');
+            const currentWaterAmount = document.getElementById('currentWaterAmount');
+            const waterPercentText = document.getElementById('waterPercentText');
+            const waterGlassesCount = document.getElementById('waterGlassesCount');
+            const addGlassBtn = document.getElementById('addGlassBtn');
+            const addBottleBtn = document.getElementById('addBottleBtn');
+            const resetWaterBtn = document.getElementById('resetWaterBtn');
 
-            document.getElementById('addVibeBtn').addEventListener('click', () => {
+            function updateWaterUI() {
+                const glasses = Math.min(8, Math.floor(currentWater / 250));
+                const percentage = Math.min(100, Math.round((currentWater / targetWater) * 100));
+
+                currentWaterAmount.innerText = currentWater;
+                waterPercentText.innerText = `${percentage}%`;
+                waterGlassesCount.innerText = `${glasses} من 8 أكواب إنجاز اليوم! 🩵`;
+                waterFillLevel.style.height = `${percentage}%`;
+
+                // Render Cups Grid
+                cupsGrid.innerHTML = '';
+                for (let i = 1; i <= 8; i++) {
+                    const filled = i <= glasses;
+                    const cup = document.createElement('div');
+                    cup.className = `p-2.5 rounded-2xl border flex flex-col items-center justify-center cursor-pointer transition-all ${
+                        filled ? 'bg-sky-100 border-sky-300 text-sky-600 shadow-sm scale-105' : 'bg-white/80 border-pinky-100 text-pinky-300 hover:border-pinky-200'
+                    }`;
+                    cup.innerHTML = `
+                        <span class="text-lg">${filled ? '🥛' : '🤍'}</span>
+                        <span class="text-[9px] font-bold mt-1">${i * 250}مل</span>
+                    `;
+                    cup.addEventListener('click', () => {
+                        currentWater = i * 250;
+                        localStorage.setItem('princess_water_ml', currentWater);
+                        updateWaterUI();
+                    });
+                    cupsGrid.appendChild(cup);
+                }
+            }
+
+            addGlassBtn.addEventListener('click', () => {
+                currentWater = Math.min(targetWater, currentWater + 250);
+                localStorage.setItem('princess_water_ml', currentWater);
+                updateWaterUI();
+            });
+
+            addBottleBtn.addEventListener('click', () => {
+                currentWater = Math.min(targetWater, currentWater + 500);
+                localStorage.setItem('princess_water_ml', currentWater);
+                updateWaterUI();
+            });
+
+            resetWaterBtn.addEventListener('click', () => {
+                currentWater = 0;
+                localStorage.setItem('princess_water_ml', currentWater);
+                updateWaterUI();
+            });
+
+            updateWaterUI();
+
+            const vibeGrid = document.getElementById('vibeGrid');
+            const vibeGoalText = document.getElementById('vibeGoalText');
+            const addVibeBtn = document.getElementById('addVibeBtn');
+            const resetVibeBtn = document.getElementById('resetVibeBtn');
+
+            function updateVibeUI() {
+                vibeGoalText.innerText = `${vibeCount} / 8 درجات`;
+                vibeGrid.innerHTML = '';
+
+                for (let i = 1; i <= 8; i++) {
+                    const active = i <= vibeCount;
+                    const star = document.createElement('div');
+                    star.className = `p-2 rounded-xl border text-center transition-all ${
+                        active ? 'bg-pinky-100 border-pinky-300 text-pinky-600 shadow-sm scale-105' : 'bg-white/60 border-pinky-100 text-pinky-200'
+                    }`;
+                    star.innerHTML = `<i class="fa-solid fa-sparkles text-sm"></i>`;
+                    vibeGrid.appendChild(star);
+                }
+            }
+
+            addVibeBtn.addEventListener('click', () => {
                 if (vibeCount < 8) {
                     vibeCount++;
-                    localStorage.setItem('princess_vibe_count', vibeCount.toString());
-                    renderVibeGrid();
+                    localStorage.setItem('princess_vibe_count', vibeCount);
+                    updateVibeUI();
                 }
             });
 
-            document.getElementById('resetVibeBtn').addEventListener('click', () => {
+            resetVibeBtn.addEventListener('click', () => {
                 vibeCount = 0;
-                localStorage.setItem('princess_vibe_count', "0");
-                renderVibeGrid();
+                localStorage.setItem('princess_vibe_count', vibeCount);
+                updateVibeUI();
             });
-        }
 
-        function renderVibeGrid() {
-            const grid = document.getElementById('vibeGrid');
-            const goalText = document.getElementById('vibeGoalText');
-            if (!grid) return;
-            
-            grid.innerHTML = '';
-            goalText.innerText = `${vibeCount} / 8 درجات`;
+            updateVibeUI();
 
-            for (let i = 1; i <= 8; i++) {
-                const item = document.createElement('div');
-                const isFilled = i <= vibeCount;
-                item.className = `p-2.5 rounded-2xl flex flex-col items-center justify-center transition-all ${
-                    isFilled 
-                    ? 'bg-gradient-to-b from-pinky-400 to-pinky-500 text-white shadow-sm scale-105' 
-                    : 'bg-white/80 border border-pinky-200 text-pinky-300'
-                }`;
-                item.innerHTML = `
-                    <i class="fa-solid fa-sparkles text-base ${isFilled ? 'animate-bounce' : ''}"></i>
-                    <span class="text-[9px] mt-1 font-bold">${i}</span>
-                `;
-                grid.appendChild(item);
-            }
-        }
+            // Daily Affirmations List
+            const affirmations = [
+                "أنا بنوتة لطيفة ودلوعة تستحق كل الحب، الجمال، والدلع في هذا العالم الوردي الساحر! 🌸",
+                "قلبي ممتلئ بالحب والبهجة، وخيالي الساحر يلوّن أيامي بكل جليتر ونور ✨.",
+                "أنا وكلاك نبني أجمل التفاصيل، وكل يوم هو فرصة جديدة للأناقة والروقان 💕.",
+                "بشرتي نضرة، روحي خفيفة كالفراشة، وحضوري دائماً يبعث السعادة والجمال 👑."
+            ];
+            let affIdx = 0;
+            const affirmationText = document.getElementById('affirmationText');
+            const nextAffirmationBtn = document.getElementById('nextAffirmationBtn');
 
-        // Habit Tracker
-        function initHabitTracker() {
-            const checks = document.querySelectorAll('.habit-check');
-            checks.forEach((chk, idx) => {
-                const saved = localStorage.getItem(`princess_habit_${idx}`);
-                if (saved === 'true') chk.checked = true;
-
-                chk.addEventListener('change', () => {
-                    localStorage.setItem(`princess_habit_${idx}`, chk.checked ? 'true' : 'false');
-                });
+            nextAffirmationBtn.addEventListener('click', () => {
+                affIdx = (affIdx + 1) % affirmations.length;
+                affirmationText.innerText = `"${affirmations[affIdx]}"`;
             });
-        }
 
-        // Affirmations Generator
-        function initAffirmations() {
-            const textEl = document.getElementById('affirmationText');
-            const btn = document.getElementById('nextAffirmationBtn');
-
-            if (btn && textEl) {
-                btn.addEventListener('click', () => {
-                    currentAffirmationIdx = (currentAffirmationIdx + 1) % affirmations.length;
-                    textEl.innerText = affirmations[currentAffirmationIdx];
-                });
-            }
-        }
-
-        // Modals Management
-        function initModals() {
+            // Memory Modal Trigger
+            const memoryCardBtn = document.getElementById('memoryCardBtn');
             const memoryModal = document.getElementById('memoryModal');
-            const memoryBtn = document.getElementById('memoryCardBtn');
             const closeMemoryModal = document.getElementById('closeMemoryModal');
             const closeMemoryModalBtn = document.getElementById('closeMemoryModalBtn');
 
-            const iosModal = document.getElementById('iosModal');
-            const iosBtn = document.getElementById('iosInstallGuideBtn');
-            const closeIosBtn = document.getElementById('closeIosModalBtn');
-
-            const keyModal = document.getElementById('apiKeyModal');
-            const keyBtn = document.getElementById('keyConfigBtn');
-            const closeKeyModal = document.getElementById('closeKeyModal');
-            const saveKeyBtn = document.getElementById('saveKeyBtn');
-            const removeKeyBtn = document.getElementById('removeKeyBtn');
-            const keyInput = document.getElementById('apiKeyInput');
-            const openKeyBannerBtn = document.getElementById('openKeyBannerBtn');
-
-            memoryBtn.addEventListener('click', () => memoryModal.classList.remove('hidden'));
+            memoryCardBtn.addEventListener('click', () => memoryModal.classList.remove('hidden'));
             closeMemoryModal.addEventListener('click', () => memoryModal.classList.add('hidden'));
             closeMemoryModalBtn.addEventListener('click', () => memoryModal.classList.add('hidden'));
 
-            iosBtn.addEventListener('click', () => iosModal.classList.remove('hidden'));
-            closeIosBtn.addEventListener('click', () => iosModal.classList.add('hidden'));
+            // iOS Guide Modal Trigger
+            const iosInstallGuideBtn = document.getElementById('iosInstallGuideBtn');
+            const iosModal = document.getElementById('iosModal');
+            const closeIosModalBtn = document.getElementById('closeIosModalBtn');
 
-            const openKeyModal = () => {
-                keyInput.value = currentApiKey;
-                keyModal.classList.remove('hidden');
-            };
+            iosInstallGuideBtn.addEventListener('click', () => iosModal.classList.remove('hidden'));
+            closeIosModalBtn.addEventListener('click', () => iosModal.classList.add('hidden'));
 
-            keyBtn.addEventListener('click', openKeyModal);
-            if (openKeyBannerBtn) openKeyBannerBtn.addEventListener('click', openKeyModal);
+            // API Key Modal Trigger
+            const keyConfigBtn = document.getElementById('keyConfigBtn');
+            const apiKeyModal = document.getElementById('apiKeyModal');
+            const closeKeyModal = document.getElementById('closeKeyModal');
+            const apiKeyInput = document.getElementById('apiKeyInput');
+            const saveKeyBtn = document.getElementById('saveKeyBtn');
+            const removeKeyBtn = document.getElementById('removeKeyBtn');
 
-            closeKeyModal.addEventListener('click', () => keyModal.classList.add('hidden'));
+            keyConfigBtn.addEventListener('click', () => {
+                apiKeyInput.value = currentApiKey;
+                apiKeyModal.classList.remove('hidden');
+            });
+
+            closeKeyModal.addEventListener('click', () => apiKeyModal.classList.add('hidden'));
 
             saveKeyBtn.addEventListener('click', () => {
-                const val = keyInput.value.trim();
+                const val = apiKeyInput.value.trim();
                 if (val) {
                     currentApiKey = val;
-                    localStorage.setItem('princess_api_key', val);
-                    checkKeyStatus();
-                    alert("تم حفظ مفتاح API بنجاح! 💕");
-                    keyModal.classList.add('hidden');
-                } else {
-                    alert("يرجى إدخال المفتاح قبل الحفظ.");
+                    localStorage.setItem('princess_groq_api_key', val);
+                    apiKeyModal.classList.add('hidden');
                 }
             });
 
             removeKeyBtn.addEventListener('click', () => {
                 currentApiKey = "";
-                localStorage.removeItem('princess_api_key');
-                keyInput.value = "";
-                checkKeyStatus();
-                alert("تم حذف المفتاح من المتصفح.");
-                keyModal.classList.add('hidden');
+                localStorage.removeItem('princess_groq_api_key');
+                apiKeyInput.value = "";
+                apiKeyModal.classList.add('hidden');
             });
-        }
 
-        // Helper Utility
-        function escapeHtml(str) {
-            return str
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;")
-                .replace(/\n/g, "<br>");
-        }
-
-        // Initialize All Systems on Load
-        document.addEventListener('DOMContentLoaded', () => {
-            checkKeyStatus();
-            initNavigation();
-            initChatSystem();
-            initJournalModule();
-            initAestheticModule();
-            initCardsModule();
-            initZenModule();
-            initWaterModule();
-            initBeautyModule();
-            initVibeTracker();
-            initHabitTracker();
-            initAffirmations();
-            initModals();
         });
     </script>
 </body>
