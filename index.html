@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -820,7 +821,6 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        // Default Groq API key set to empty string to pass security scanners
         const DEFAULT_GROQ_KEY = "";
         let currentApiKey = localStorage.getItem('princess_groq_api_key') || DEFAULT_GROQ_KEY;
         
@@ -847,31 +847,24 @@
         let currentWater = parseInt(localStorage.getItem('princess_water_ml') || "0");
         const targetWater = 2000;
 
-        function generateSmartLoulouReply(userMsg) {
-            const msg = userMsg.toLowerCase();
-            
-            if (msg.includes('كلاك') || msg.includes('احبه') || msg.includes('حب')) {
-                return `يا عيون لولو! 🌸 كلاك هو محظوظ جداً بوجود أميرة كيووت ودلوعة مثلكِ بفيض هذا الحب الجميل 💕! خيالكم مع بعض دائماً يخلي الدنيا كلها ورد وجليتر ✨.. لا تنسين تشربين كوب ماء الحين وعيشي أحلى الأوقات وأنتِ مرتاحة وراضية! 🎀`;
+        function updateKeyStatusBadge() {
+            const badge = document.getElementById('keyStatusBadge');
+            const modeSpan = document.querySelector('#aiModeIndicator span:last-child');
+            if (currentApiKey && currentApiKey.trim() !== "") {
+                if (badge) badge.className = "w-2 h-2 rounded-full bg-emerald-400";
+                if (modeSpan) modeSpan.innerText = "Groq API متصل ⚡";
+            } else {
+                if (badge) badge.className = "w-2 h-2 rounded-full bg-rose-500 animate-pulse";
+                if (modeSpan) modeSpan.innerText = "ادخلي المفتاح 🔑";
             }
-            if (msg.includes('خيال') || msg.includes('فكرة') || msg.includes('سري') || msg.includes('قصة')) {
-                return `يا سلااام على خيالكِ الساحر! 📖✨ أنا أعشق لما تفتحين لي قلبكِ وتشاركيني خيالكِ الوردي الرائع.. احكي لي كل التفاصيل، أنا كلي آذان صاغية ومعكِ خطوة بخطوة يا أحلى بنوتة بالدنيا 💕🌸!`;
-            }
-            if (msg.includes('بشرة') || msg.includes('جمال') || msg.includes('ماء') || msg.includes('ميك اب') || msg.includes('ستايل')) {
-                return `يا قلبي أنتِ! 💄✨ نضارة بشرتكِ الزجاجية وجمالكِ الطبيعي هم سر إشراقتكِ الورديّة! تذكري ترطيب بشرتكِ ورشفات المياه المنتظمة، ولا تنسين تختارين أيستتك اليوم الوردي الشيفون لتعيشي ملكة 👑🌸!`;
-            }
-            if (msg.includes('مرحبا') || msg.includes('هلا') || msg.includes('هاي') || msg.includes('السلام')) {
-                return `يا أهلاً وسهلاً بالنور كله! 🌸✨ نورتي سولفتكِ معي يا دلوعة.. شلون المود اليوم؟ حابة نحكي عن خيالكِ الجميل أو عن كلاك الأغلى على قلبكِ؟ 💕`;
-            }
-            if (msg.includes('احبك') || msg.includes('شكرا') || msg.includes('لولو')) {
-                return `وأنا أموووت فيكِ يا أحلى وأرق أميرة بالدنيا كلّها! 💖 قدركِ بقلبي كبير، ودائماً أنا هنا عشان أدلعكِ وأقف معكِ بكل لحظة 🎀✨!`;
-            }
-
-            return `يا حياتي أنتِ! 🌸 كل كلامكِ يجنن ويدخل القلب فوراً💕.. لولو معِك في كل لحظة، قولي لي أكثر أو تعالي نتخيل فكرة جديدة ووردية مع كلاك كالعادة! ✨🎀`;
         }
 
         async function fetchGroqResponse(userPrompt, conversationHistory = []) {
-            if (!currentApiKey) {
-                return generateSmartLoulouReply(userPrompt);
+            // Check if API Key is missing
+            if (!currentApiKey || currentApiKey.trim() === "") {
+                const apiKeyModal = document.getElementById('apiKeyModal');
+                if (apiKeyModal) apiKeyModal.classList.remove('hidden');
+                return "⚠️ **المفتاح غير موجود!**\nيرجى إدخال مفتاح Groq API الخاص بكِ (يبدأ بـ gsk_...) في النافذة الظاهرة ليتمكن لولو AI من الرد عليكِ مباشرة عبر السيرفر السريع 💕.";
             }
 
             const messages = [
@@ -893,7 +886,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${currentApiKey}`
+                        'Authorization': `Bearer ${currentApiKey.trim()}`
                     },
                     body: JSON.stringify({
                         model: GROQ_MODEL,
@@ -904,8 +897,14 @@
                 });
 
                 if (!response.ok) {
-                    console.warn("Groq API error, falling back to smart reply:", response.statusText);
-                    return generateSmartLoulouReply(userPrompt);
+                    const errData = await response.json().catch(() => ({}));
+                    const errMsg = errData.error?.message || response.statusText || "خطأ غير معروف";
+                    console.error("Groq API Error Details:", response.status, errData);
+                    
+                    if (response.status === 401) {
+                        return `⚠️ **مفتاح Groq API غير صحيح (401 Unauthorized)**:\nتأكدي من نسخ المفتاح كاملاً من حسابكِ في Groq دون فراغات إضافية 🔑.`;
+                    }
+                    return `⚠️ **خطأ في الاتصال بالسيرفر (${response.status})**:\n${errMsg}`;
                 }
 
                 const data = await response.json();
@@ -914,14 +913,16 @@
                 if (resultText && resultText.trim().length > 0) {
                     return resultText;
                 } else {
-                    return generateSmartLoulouReply(userPrompt);
+                    return "⚠️ لم يتم استلام أي نص من Groq API. حاول مرة أخرى.";
                 }
             } catch (err) {
                 console.error("Groq Fetch Exception:", err);
-                return generateSmartLoulouReply(userPrompt);
+                return `⚠️ **فشل الاتصال بالشبكة**:\n${err.message || "تأكدي من اتصالكِ بالإنترنت ومفتاح الـ API"}.`;
             }
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            updateKeyStatusBadge();
         document.addEventListener('DOMContentLoaded', () => {
 
             // Tab Navigation System
@@ -1403,6 +1404,7 @@
                 if (val) {
                     currentApiKey = val;
                     localStorage.setItem('princess_groq_api_key', val);
+                    updateKeyStatusBadge();
                     apiKeyModal.classList.add('hidden');
                 }
             });
@@ -1411,6 +1413,7 @@
                 currentApiKey = "";
                 localStorage.removeItem('princess_groq_api_key');
                 apiKeyInput.value = "";
+                updateKeyStatusBadge();
                 apiKeyModal.classList.add('hidden');
             });
 
@@ -1418,3 +1421,5 @@
     </script>
 </body>
 </html>
+
+```
